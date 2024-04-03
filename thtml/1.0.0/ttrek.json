@@ -11,7 +11,8 @@
 	},
 	"lifecycle": {
 		"install": [
-			{ "cmd": "git", "url": "https://github.com/jerily/thtml.git" },
+			{ "cmd": "curl", "url": "https://github.com/jerily/thtml/archive/refs/tags/v1.0.0.tar.gz" },
+			{ "cmd": "unpack" },
 			{ "cmd": "cd" },
 			{ "cmd": "cmake_config" },
 			{ "cmd": "make_install" }
