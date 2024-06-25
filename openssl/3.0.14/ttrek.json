@@ -1,0 +1,22 @@
+{
+	"name":	"openssl",
+	"version":	"3.0.14",
+	"scripts":	{
+	},
+	"dependencies":	{
+	},
+	"devDependencies":	{
+	},
+	"build": {
+		"linux.x86_64": [
+			{
+				"cmd": "download",
+				"url": "https://www.openssl.org/source/openssl-3.0.14.tar.gz"
+			},
+			{ "cmd": "unpack" },
+			{ "cmd": "cd" },
+			{ "cmd": "configure", "path": "./Configure" },
+			{ "cmd": "make_install" }
+		]
+	}
+}
