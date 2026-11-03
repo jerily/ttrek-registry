@@ -1,0 +1,28 @@
+{
+  "name": "nssmtpd",
+  "version": "5.1.1",
+  "scripts": {},
+  "dependencies": {
+    "naviserver": "=5.1.1"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/naviserver/naviserver/5.1.1/naviserver-5.1.1-modules.tar.gz"
+      },
+      { "cmd": "unpack" },
+      { "cmd": "cd", "dirname": "$SOURCE_DIR/nssmtpd" },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [{ "name": "NAVISERVER", "value": "$INSTALL_DIR" }]
+      },
+      {
+        "cmd": "make_install",
+        "options": [{ "name": "NAVISERVER", "value": "$INSTALL_DIR" }]
+      }
+    ]
+  }
+}

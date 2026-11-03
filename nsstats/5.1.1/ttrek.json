@@ -1,0 +1,27 @@
+{
+  "name": "nsstats",
+  "version": "5.1.1",
+  "scripts": {},
+  "dependencies": {
+    "naviserver": "=5.1.1"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/naviserver/naviserver/5.1.1/naviserver-5.1.1-modules.tar.gz"
+      },
+      { "cmd": "unpack" },
+      { "cmd": "patch", "filename": "install-directory.diff", "p_num": "1" },
+      { "cmd": "cd", "dirname": "$SOURCE_DIR/nsstats" },
+      {
+        "cmd": "make_install",
+        "options": [
+          { "name": "NAVISERVER", "value": "$INSTALL_DIR" },
+          { "name": "INSTSRVPAG", "value": "$INSTALL_DIR/share/nsstats" }
+        ]
+      }
+    ]
+  }
+}
