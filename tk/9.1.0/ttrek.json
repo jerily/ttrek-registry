@@ -5,7 +5,8 @@
     "demo-widgets": "#!/bin/sh\nset -eu\nexec \"$PROJECT_INSTALL_DIR/bin/wish9.1\" \"$PROJECT_INSTALL_DIR/lib/tk9.1/demos/widget\"\n"
   },
   "dependencies": {
-    "tcl": ">=9.1.0,<9.2.0"
+    "tcl": ">=9.1.0,<9.2.0",
+    "libxft": "^2.3.9"
   },
   "devDependencies": {},
   "build": {
@@ -16,6 +17,11 @@
       },
       {
         "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "xft-static.diff",
+        "p_num": "1"
       },
       {
         "cmd": "cd"
@@ -32,7 +38,7 @@
             "name": "disable-bidi"
           },
           {
-            "name": "disable-xft"
+            "name": "enable-xft"
           },
           {
             "name": "disable-shared",

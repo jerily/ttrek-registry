@@ -1,0 +1,34 @@
+--- a/unix/configure.ac
++++ b/unix/configure.ac
+@@ -478,2 +478,7 @@
+-	XFT_CFLAGS=`xft-config --cflags 2>/dev/null` || found_xft="no"
+-	XFT_LIBS=`xft-config --libs 2>/dev/null` || found_xft="no"
++	# Prefer pkg-config so the project's font libraries take precedence.
++	XFT_CFLAGS=`pkg-config --cflags xft fontconfig 2>/dev/null` || found_xft="no"
++	if test "$SHARED_BUILD" = "0"; then
++	    XFT_LIBS=`pkg-config --static --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	else
++	    XFT_LIBS=`pkg-config --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	fi
+@@ -482,2 +487,2 @@
+-	    XFT_CFLAGS=`pkg-config --cflags xft fontconfig 2>/dev/null` || found_xft="no"
+-	    XFT_LIBS=`pkg-config --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	    XFT_CFLAGS=`xft-config --cflags 2>/dev/null` || found_xft="no"
++	    XFT_LIBS=`xft-config --libs 2>/dev/null` || found_xft="no"
+--- a/unix/configure
++++ b/unix/configure
+@@ -8699,2 +8699,7 @@
+-	XFT_CFLAGS=`xft-config --cflags 2>/dev/null` || found_xft="no"
+-	XFT_LIBS=`xft-config --libs 2>/dev/null` || found_xft="no"
++	# Prefer pkg-config so the project's font libraries take precedence.
++	XFT_CFLAGS=`pkg-config --cflags xft fontconfig 2>/dev/null` || found_xft="no"
++	if test "$SHARED_BUILD" = "0"; then
++	    XFT_LIBS=`pkg-config --static --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	else
++	    XFT_LIBS=`pkg-config --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	fi
+@@ -8703,2 +8708,2 @@
+-	    XFT_CFLAGS=`pkg-config --cflags xft fontconfig 2>/dev/null` || found_xft="no"
+-	    XFT_LIBS=`pkg-config --libs xft fontconfig 2>/dev/null` || found_xft="no"
++	    XFT_CFLAGS=`xft-config --cflags 2>/dev/null` || found_xft="no"
++	    XFT_LIBS=`xft-config --libs 2>/dev/null` || found_xft="no"

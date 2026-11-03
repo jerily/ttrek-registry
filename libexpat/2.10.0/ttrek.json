@@ -1,0 +1,78 @@
+{
+  "name": "libexpat",
+  "version": "2.10.0",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.xz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "EXPAT_SHARED_LIBS",
+            "value": "ON"
+          },
+          {
+            "name": "EXPAT_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "EXPAT_BUILD_TOOLS",
+            "value": "OFF"
+          },
+          {
+            "name": "EXPAT_BUILD_EXAMPLES",
+            "value": "OFF"
+          },
+          {
+            "name": "EXPAT_BUILD_TESTS",
+            "value": "OFF"
+          },
+          {
+            "name": "EXPAT_BUILD_DOCS",
+            "value": "OFF"
+          },
+          {
+            "name": "EXPAT_BUILD_FUZZERS",
+            "value": "OFF"
+          },
+          {
+            "name": "EXPAT_BUILD_PKGCONFIG",
+            "value": "ON"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install"
+      }
+    ]
+  }
+}

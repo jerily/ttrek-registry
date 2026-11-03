@@ -1,0 +1,92 @@
+{
+  "name": "fontconfig",
+  "version": "2.18.3",
+  "scripts": {},
+  "dependencies": {
+    "libfreetype": "^2.15.0",
+    "libexpat": "^2.10.0",
+    "gperf": "^3.3.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.18.3/fontconfig-2.18.3.tar.xz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PATH",
+        "op": "set",
+        "value": "$INSTALL_DIR/bin:$PATH"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG",
+        "op": "set",
+        "value": "pkg-config --static",
+        "if": "+static"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "libdir",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "disable-static"
+          },
+          {
+            "name": "enable-static",
+            "if": "+static"
+          },
+          {
+            "name": "disable-shared",
+            "if": "+static"
+          },
+          {
+            "name": "with-pic"
+          },
+          {
+            "name": "disable-docs"
+          },
+          {
+            "name": "disable-nls"
+          },
+          {
+            "name": "disable-cache-build"
+          },
+          {
+            "name": "disable-libxml2"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}

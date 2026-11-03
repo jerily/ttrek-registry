@@ -4,13 +4,16 @@ Tk adds desktop windows and widgets to Tcl. These recipes provide
 [Tk 8.6.18 and 9.1.0](https://www.tcl-lang.org/software/tcltk/download.html),
 each with the matching Tcl release line.
 
-Building requires a C compiler, make, and X11 development files
-(`build-essential` and `libx11-dev` on Debian/Ubuntu). The registry supplies
-Tcl and zlib.
+Building Tk 9.1 requires C/C++ compilers, make, CMake, pkg-config, Python 3,
+and X11 development files. The registry supplies Tcl, zlib, and the font
+libraries; no system Xft, Fontconfig, FreeType, or HarfBuzz development
+packages are needed.
 
-The Tk 9.1 recipe uses classic X11 fonts (`--disable-bidi --disable-xft`), so
-it needs no HarfBuzz, FreeType, Fontconfig, or Xft development packages. This
-disables antialiased Xft fonts and the new bidirectional text/shaping support.
+Tk 9.1 uses Xft for smooth, antialiased fonts (`--enable-xft --disable-bidi`).
+Its `libxft` dependency brings in Fontconfig, FreeType, Expat, Xrender, and
+the gperf build tool. It uses your existing system and user fonts.
+HarfBuzz is not needed; the new bidirectional text/shaping support remains
+disabled.
 Tk 8.6 uses Xft when its development files are available and otherwise falls
 back to classic X11 fonts.
 
@@ -28,6 +31,9 @@ cd tk-project
 ttrek init -y
 ttrek install tk -y
 ```
+
+To rebuild an existing Tk 9.1 installation with smooth fonts, run
+`ttrek sync` followed by `ttrek install tk -force -y` in its project directory.
 
 For Tk 8.6, run `ttrek install tk@8.6.18 -y` instead and use `wish8.6` below.
 Use separate project directories to try both release lines.
