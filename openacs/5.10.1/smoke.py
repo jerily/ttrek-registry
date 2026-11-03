@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build-independent integration check: smoke.py /absolute/install/prefix.
+"""Build-independent integration check: smoke.py /absolute/install/prefix [ttrek].
 
-Creates an isolated PostgreSQL cluster, installs OpenACS through its web
-installer, restarts it, and verifies the schema and application response.
+Runs the example project's named scripts to create an isolated PostgreSQL
+cluster, installs OpenACS through its web installer, restarts it, and verifies
+the schema and application response.
 Uses a private Unix socket for PostgreSQL and loopback HTTP for NaviServer.
 Stops both processes on success or failure; retains failed runs for diagnosis.
 """
@@ -11,8 +12,8 @@ import getpass
 import os
 from pathlib import Path
 import secrets
-import shlex
 import shutil
+import signal
 import socket
 import subprocess
 import sys
@@ -24,15 +25,22 @@ from urllib.request import urlopen
 
 
 def main():
-    if len(sys.argv) != 2:
-        raise SystemExit("Usage: smoke.py INSTALL_PREFIX")
+    if len(sys.argv) not in (2, 3):
+        raise SystemExit("Usage: smoke.py INSTALL_PREFIX [TTREK]")
+    ttrek = shutil.which(sys.argv[2] if len(sys.argv) == 3 else "ttrek")
+    if ttrek is None:
+        raise SystemExit("ttrek was not found; supply its path as the second argument")
+    ttrek = str(Path(ttrek).resolve())
     prefix = Path(sys.argv[1]).resolve()
     pg = prefix / "postgresql/bin"
     work = Path(tempfile.mkdtemp(prefix="ttrek-openacs-smoke-"))
-    sock = work / "socket"
-    sock.mkdir()
-    site = work / "site"
-    pg_started = False
+    shutil.copyfile(Path(__file__).resolve().parents[1] / "ttrek.json", work / "ttrek.json")
+    runtime = work / "openacs-local"
+    sock = runtime / "socket"
+    site = runtime / "site"
+    env = {key: value for key, value in os.environ.items()
+           if not key.startswith("oacs_") and key not in ("OACS_PREFIX", "OACS_RUNTIME")}
+    env.update(OACS_PREFIX=str(prefix), SHELL="/bin/sh", TTREK_NO_UPDATE_CHECK="1")
     server = None
     success = False
     print(f"Temporary instance: {work}", flush=True)
@@ -44,40 +52,50 @@ def main():
             return subprocess.run(
                 [str(arg) for arg in args], check=True, text=True,
                 stdout=command_log, stderr=subprocess.STDOUT, timeout=90,
+                cwd=work, env=env,
             )
 
         def sql(statement):
             return subprocess.check_output(
-                [str(pg / "psql"), "-X", "-h", str(sock), "-p", "5432",
-                 "-d", "openacs", "-v", "ON_ERROR_STOP=1", "-Atc", statement],
+                [str(pg / "psql"), "-X", "-h", str(sock), "-p", "55432",
+                 "-U", getpass.getuser(), "-d", "openacs", "-v", "ON_ERROR_STOP=1", "-Atc", statement],
                 text=True, timeout=30,
             ).strip()
 
+        def database_running():
+            return subprocess.run(
+                [str(pg / "pg_ctl"), "-D", str(runtime / "db"), "status"],
+                stdout=command_log, stderr=subprocess.STDOUT, timeout=10,
+            ).returncode == 0
+
         def stop_server():
             if server is not None and server.poll() is None:
-                server.terminate()
+                # Signal ttrek, its script, and foreground NaviServer together,
+                # as a terminal does for Ctrl-C. PostgreSQL has its own session.
+                os.killpg(server.pid, signal.SIGINT)
                 try:
                     server.wait(timeout=30)
                 except subprocess.TimeoutExpired:
-                    server.kill()
+                    os.killpg(server.pid, signal.SIGKILL)
                     server.wait(timeout=10)
+                deadline = time.monotonic() + 30
+                while database_running() and time.monotonic() < deadline:
+                    time.sleep(0.1)
 
         try:
-            run(pg / "initdb", "-D", work / "db", "--encoding=UTF8",
-                "--no-locale", "--auth-local=peer", "--auth-host=reject")
-            options = shlex.join(["-k", str(sock), "-p", "5432", "-c", "listen_addresses="])
-            run(pg / "pg_ctl", "-D", work / "db", "-l", work / "postgres.log",
-                "-o", options, "-w", "start")
-            pg_started = True
-            run(pg / "createdb", "-h", sock, "-p", "5432", "--encoding=UTF8", "openacs")
-            sql("CREATE EXTENSION hstore; CREATE EXTENSION pgcrypto")
-            assert sql("SELECT 'k=>v'::hstore -> 'k'") == "v"
-            print("PostgreSQL cluster and extensions: PASS", flush=True)
+            run(ttrek, "run", "-script", "init-local")
+            assert not database_running(), "init-local left PostgreSQL running"
+            assert runtime.stat().st_mode & 0o777 == 0o700
 
-            run(prefix / "bin/openacs-create-instance", site)
-            # Recreating an instance must fail without modifying existing files.
+            # Reinitialization and the helper must preserve existing instances.
             marker = site / "keep.txt"
             marker.write_text("existing instance\n")
+            retry = subprocess.run(
+                [ttrek, "run", "-script", "init-local"], cwd=work, env=env,
+                stdout=command_log, stderr=subprocess.STDOUT, timeout=10,
+            )
+            assert retry.returncode != 0 and marker.read_text() == "existing instance\n"
+            assert not database_running()
             retry = subprocess.run(
                 [str(prefix / "bin/openacs-create-instance"), str(site)],
                 stdout=command_log, stderr=subprocess.STDOUT, timeout=10,
@@ -88,18 +106,13 @@ def main():
                 probe.bind(("127.0.0.1", 0))
                 port = probe.getsockname()[1]
             url = f"http://127.0.0.1:{port}/"
-            env = {key: value for key, value in os.environ.items()
-                   if not key.startswith("oacs_")}
-            env.update(PGHOST=str(sock), oacs_db_host="localhost", oacs_db_port="5432",
-                       oacs_db_name="openacs", oacs_db_user=getpass.getuser(),
-                       oacs_httpport=str(port), oacs_hostname="127.0.0.1",
+            env.update(oacs_httpport=str(port), oacs_hostname="127.0.0.1",
                        oacs_ipaddress="127.0.0.1", oacs_httpsport="",
                        oacs_smtpdport="", oacs_nscpport="")
-            command = [str(prefix / "bin/nsd"), "-f", "-t",
-                       str(site / "etc/ttrek-config.tcl")]
+            command = [ttrek, "run", "-script", "start-local"]
 
             def start_server():
-                return subprocess.Popen(command, env=env, cwd=site,
+                return subprocess.Popen(command, env=env, cwd=work, start_new_session=True,
                                         stdout=server_log, stderr=subprocess.STDOUT)
 
             def wait_for_page():
@@ -119,6 +132,11 @@ def main():
 
             server = start_server()
             page = wait_for_page()
+            sql("CREATE EXTENSION pgcrypto")
+            assert sql("SELECT 'k=>v'::hstore -> 'k'") == "v"
+            assert sql("SHOW listen_addresses") == ""
+            assert sql("SHOW unix_socket_directories") == str(sock)
+            print("Named scripts, PostgreSQL cluster and extensions: PASS", flush=True)
             (work / "installer.html").write_text(page)
             assert "driver is correctly installed and configured" in page
             assert "Start installation" in page
@@ -134,24 +152,29 @@ def main():
             assert "Installation finished" in installation
             server.wait(timeout=60)
             assert server.returncode == 0
+            assert not database_running(), "start-local left PostgreSQL running after the installer"
+
+            server = start_server()
+            page = wait_for_page()
             assert sql("SELECT count(*) FROM apm_packages WHERE package_key='acs-kernel'") == "1"
             assert sql("SELECT count(*) FROM parties WHERE email='admin@example.invalid'") == "1"
             print("OpenACS schema and administrator installation: PASS", flush=True)
 
-            server = start_server()
-            page = wait_for_page()
             (work / "installed.html").write_text(page)
             assert "ttrek OpenACS smoke" in page
             assert "OpenACS Installer" not in page
-            run(pg / "pg_dump", "-h", sock, "-p", "5432", "-d", "openacs",
+            run(pg / "pg_dump", "-h", sock, "-p", "55432", "-U", getpass.getuser(), "-d", "openacs",
                 "--schema-only", "-f", work / "schema.sql")
             assert (work / "schema.sql").stat().st_size > 1000
             print("OpenACS restart, HTTP response, and pg_dump: PASS", flush=True)
+            stop_server()
+            assert not database_running(), "start-local left PostgreSQL running after Ctrl-C"
+            print("Ctrl-C stops NaviServer and PostgreSQL: PASS", flush=True)
             success = True
         finally:
             stop_server()
-            if pg_started:
-                run(pg / "pg_ctl", "-D", work / "db", "-m", "fast", "-w", "stop")
+            if database_running():
+                run(pg / "pg_ctl", "-D", runtime / "db", "-m", "fast", "-w", "stop")
             if success:
                 shutil.rmtree(work)
             else:
