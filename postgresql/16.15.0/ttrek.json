@@ -1,0 +1,69 @@
+{
+  "name": "postgresql",
+  "version": "16.15.0",
+  "scripts": {},
+  "dependencies": {
+    "openssl": "^3.5.9",
+    "zlib": "^1.3.2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://ftp.postgresql.org/pub/source/v16.15/postgresql-16.15.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "value": "-Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "prefix",
+            "value": "$INSTALL_DIR/postgresql"
+          },
+          {
+            "name": "with-ssl",
+            "value": "openssl"
+          },
+          {
+            "name": "with-includes",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "with-libraries",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "without-readline"
+          },
+          {
+            "name": "without-icu"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          {
+            "name": "world-bin"
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-world-bin"
+      }
+    ]
+  }
+}

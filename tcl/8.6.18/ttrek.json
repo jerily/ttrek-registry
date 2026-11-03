@@ -1,0 +1,76 @@
+{
+  "name": "tcl",
+  "version": "8.6.18",
+  "scripts": {},
+  "dependencies": {
+    "zlib": "^1.3.2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.18-src.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "private-compile-header.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "configure",
+        "path": "$SOURCE_DIR/unix/configure",
+        "options": [
+          {
+            "name": "enable-threads"
+          },
+          {
+            "name": "with-zlib",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "disable-shared",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          {
+            "name": "binaries"
+          },
+          {
+            "name": "libraries"
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "INSTALL_PACKAGE_TARGETS",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-private-headers",
+        "options": [
+          {
+            "name": "PRIVATE_INCLUDE_DIR",
+            "value": "$INSTALL_DIR/include"
+          }
+        ]
+      }
+    ]
+  }
+}

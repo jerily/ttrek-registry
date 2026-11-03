@@ -1,0 +1,6 @@
+--- a/unix/Makefile.in
++++ b/unix/Makefile.in
+@@ -984 +984,2 @@
+-	@for i in $(GENERIC_DIR)/tclInt.h $(GENERIC_DIR)/tclIntDecls.h \
++	@for i in $(GENERIC_DIR)/tclCompile.h \
++		$(GENERIC_DIR)/tclInt.h $(GENERIC_DIR)/tclIntDecls.h \

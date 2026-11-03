@@ -1,0 +1,63 @@
+{
+  "name": "thread-naviserver",
+  "version": "2.8.13",
+  "scripts": {},
+  "dependencies": {
+    "tcl": "^8.6.18",
+    "naviserver": "=5.1.1"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.18-src.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "configure",
+        "path": "$SOURCE_DIR/pkgs/thread2.8.13/configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "with-naviserver",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "without-gdbm"
+          },
+          {
+            "name": "without-lmdb"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          {
+            "name": "PKG_DIR",
+            "value": "thread-ns2.8.13"
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PKG_DIR",
+            "value": "thread-ns2.8.13"
+          }
+        ]
+      }
+    ]
+  }
+}
