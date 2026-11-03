@@ -1,0 +1,38 @@
+{
+  "name": "libpq",
+  "version": "16.15.0",
+  "scripts": {},
+  "dependencies": {
+    "openssl": "^3.5.9"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://ftp.postgresql.org/pub/source/v16.15/postgresql-16.15.tar.gz"
+      },
+      { "cmd": "unpack" },
+      { "cmd": "cd" },
+      {
+        "cmd": "configure",
+        "options": [
+          { "name": "with-ssl", "value": "openssl" },
+          { "name": "with-includes", "value": "$INSTALL_DIR/include" },
+          { "name": "with-libraries", "value": "$INSTALL_DIR/lib" },
+          { "name": "without-readline" },
+          { "name": "without-icu" },
+          { "name": "without-zlib" }
+        ]
+      },
+      { "cmd": "cd", "dirname": "$BUILD_DIR/src/interfaces/libpq" },
+      { "cmd": "make", "parallel": true },
+      { "cmd": "make_install" },
+      { "cmd": "cd", "dirname": "$BUILD_DIR/src/include" },
+      { "cmd": "make_install" },
+      { "cmd": "cd", "dirname": "$BUILD_DIR/src/bin/pg_config" },
+      { "cmd": "make", "parallel": true },
+      { "cmd": "make_install" }
+    ]
+  }
+}
