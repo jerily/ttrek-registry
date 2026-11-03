@@ -29,6 +29,12 @@
             "value": "$INSTALL_DIR/lib"
           },
           {
+            "name": "disable-bidi"
+          },
+          {
+            "name": "disable-xft"
+          },
+          {
             "name": "disable-shared",
             "if": "+static"
           }
