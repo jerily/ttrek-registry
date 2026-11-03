@@ -14,8 +14,9 @@ ttrek install -registry /path/to/ttrek-registry libfreetype@2.15.0
 The default build is shared; `useFlags: ["+static"]` or
 `ttrek gen-script -static` builds a static archive.
 
-HarfBuzz's recipe depends on this package. FreeType's optional HarfBuzz
-auto-hinting integration is disabled to avoid a dependency cycle. Optional
+Fontconfig, Xft, and HarfBuzz recipes depend on this package. FreeType's
+optional HarfBuzz auto-hinting integration is disabled to avoid a dependency
+cycle. Optional
 bzip2-compressed fonts, PNG-compressed bitmap glyphs, Brotli/WOFF2 fonts, and
 Apple HVF fonts are also disabled; ordinary TrueType/OpenType fonts and zlib
 compression are supported.

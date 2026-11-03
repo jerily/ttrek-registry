@@ -1,0 +1,58 @@
+{
+  "name": "libxrender",
+  "version": "0.9.13",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXrender-0.9.13.tar.xz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG",
+        "op": "set",
+        "value": "pkg-config --static",
+        "if": "+static"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "libdir",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "disable-static"
+          },
+          {
+            "name": "enable-static",
+            "if": "+static"
+          },
+          {
+            "name": "disable-shared",
+            "if": "+static"
+          },
+          {
+            "name": "with-pic"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
