@@ -18,21 +18,27 @@ installation pages finish correctly on persistent HTTP connections.
 
 ## Install
 
-Create a project using the supplied [project spec](ttrek.json), then install
-OpenACS and its dependencies:
+Create a project, then install OpenACS and its dependencies:
 
 ```sh
 mkdir openacs-project
 cd openacs-project
-cp /path/to/ttrek-registry/openacs/ttrek.json ./ttrek.json
-ttrek install -registry /path/to/ttrek-registry
+ttrek init -y
+ttrek install -registry /path/to/ttrek-registry openacs@5.10.1
 ```
 
-The project spec declares `openacs@5.10.1` as a dependency and provides the local
-instance scripts below. In an existing project, use
-`ttrek install -registry /path/to/ttrek-registry openacs@5.10.1` and copy the
-`scripts` entries into your project's `ttrek.json`. Named scripts belong to the
-project spec; installing a dependency does not import its scripts.
+In an existing project, run just the install command. Omit `-registry` to use
+your synced registry or the registry API. Use a CLI with `run -package` support
+and a registry containing the OpenACS recipe scripts.
+
+Installation saves this recipe's named scripts with the installed package in
+`ttrek-venv/ttrek-manifest.json`. They run offline against this environment;
+there is no need to copy scripts into the project spec. For an older installation,
+refresh the recipe and cache its scripts with:
+
+```sh
+ttrek install -force -registry /path/to/ttrek-registry openacs@5.10.1
+```
 
 The recipe installs a source template in `ttrek-venv/local/share/openacs-5.10.1`
 and `ttrek-venv/local/bin/openacs-create-instance`. The helper copies the template
@@ -51,8 +57,8 @@ Run these commands as your ordinary account from the project directory after
 installation:
 
 ```sh
-ttrek run -script init-local
-ttrek run -script start-local
+ttrek run -package openacs -script init-local
+ttrek run -package openacs -script start-local
 ```
 
 `init-local` creates `openacs-local` outside the package installation tree, with
@@ -67,16 +73,24 @@ PostgreSQL when NaviServer exits or you stop it with Ctrl-C.
 
 Open `http://127.0.0.1:8000/` to install the schema and create the administrator
 account. The installer stops NaviServer when it finishes; run
-`ttrek run -script start-local` again to start the installed application.
+`ttrek run -package openacs -script start-local` again to start the installed
+application.
 
-The scripts use `PROJECT_HOME`, which `ttrek run` sets to the project directory,
-so its change of working directory does not affect these paths. To use another
-installation or runtime directory, export absolute paths as `OACS_PREFIX` and
+List or inspect the installed recipe's scripts with:
+
+```sh
+ttrek scripts -package openacs ls
+ttrek scripts -package openacs describe init-local
+```
+
+The scripts use `PROJECT_HOME` and `PROJECT_INSTALL_DIR`, which `ttrek run` sets
+to the project root and installation prefix. To use another installation or
+runtime directory, export absolute paths as `OACS_PREFIX` and
 `OACS_RUNTIME` before both commands. Keep runtime data outside `ttrek-venv` and
 the installation prefix. To change the HTTP port:
 
 ```sh
-oacs_httpport=8001 ttrek run -script start-local
+oacs_httpport=8001 ttrek run -package openacs -script start-local
 ```
 
 For local sockets, `nsdbpg` treats `localhost` as libpq's default host, so
@@ -86,37 +100,35 @@ directly as `oacs_db_host` with the bundled driver.
 For an existing database, create an instance with `openacs-create-instance` and
 run `nsd` directly, supplying the appropriate `oacs_db_host`, `oacs_db_port`,
 `oacs_db_name`, and `oacs_db_user`. The local scripts manage their own cluster.
-NaviServer's `oacs_db_passwordfile` setting reads a password from a private file. Configure
-TLS, mail delivery, database credentials, and service supervision for the actual
+NaviServer's `oacs_db_passwordfile` setting reads a password from a private file.
+Configure TLS, mail delivery, database credentials, and service supervision for the actual
 deployment; package installation does not provision those settings.
 
 ## Generate a standalone build script
 
 For a build script that can run independently of `ttrek`, use `gen-script`
-instead of `ttrek install`. From the project directory containing the supplied
-`ttrek.json`:
+instead of `ttrek install`:
 
 ```sh
-ttrek gen-script -registry /path/to/ttrek-registry > build.sh
+ttrek gen-script -registry /path/to/ttrek-registry openacs@5.10.1 > build.sh
 bash build.sh
-export OACS_PREFIX="$PWD/build/install"
-ttrek run -script init-local
-ttrek run -script start-local
 ```
 
 Generated builds install under `build/install`; `ttrek install` uses
-`ttrek-venv/local`. Keep `OACS_PREFIX` set when starting a generated installation.
+`ttrek-venv/local`. Generated builds do not create installed-package metadata;
+the package script commands above require a `ttrek install` installation.
 
 ## Verify the installation
 
 From the registry checkout, run:
 
 ```sh
-python3 openacs/5.10.1/smoke.py /absolute/path/to/openacs-project/ttrek-venv/local
+python3 openacs/5.10.1/smoke.py /absolute/path/to/openacs-project
 ```
 
-The test runs the project's named scripts through `ttrek`, completes the web
-installer, and checks application restart, `pg_dump`, and shutdown on Ctrl-C.
+The test runs the installed package's scripts through `ttrek` with a temporary
+runtime directory, completes the web installer, and checks application restart,
+`pg_dump`, and shutdown on Ctrl-C.
 It stops both processes and removes successful test instances; failed runs
 retain their logs. It uses `ttrek` from `PATH`; pass a binary path as the second
 argument to test another build.

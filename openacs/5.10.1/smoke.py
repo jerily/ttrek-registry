@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build-independent integration check: smoke.py /absolute/install/prefix [ttrek].
+"""Build-independent integration check: smoke.py /absolute/project/directory [ttrek].
 
-Runs the example project's named scripts to create an isolated PostgreSQL
+Runs the installed OpenACS package's named scripts to create an isolated PostgreSQL
 cluster, installs OpenACS through its web installer, restarts it, and verifies
 the schema and application response.
 Uses a private Unix socket for PostgreSQL and loopback HTTP for NaviServer.
@@ -26,21 +26,21 @@ from urllib.request import urlopen
 
 def main():
     if len(sys.argv) not in (2, 3):
-        raise SystemExit("Usage: smoke.py INSTALL_PREFIX [TTREK]")
+        raise SystemExit("Usage: smoke.py PROJECT_DIR [TTREK]")
     ttrek = shutil.which(sys.argv[2] if len(sys.argv) == 3 else "ttrek")
     if ttrek is None:
         raise SystemExit("ttrek was not found; supply its path as the second argument")
     ttrek = str(Path(ttrek).resolve())
-    prefix = Path(sys.argv[1]).resolve()
+    project = Path(sys.argv[1]).resolve()
+    prefix = project / "ttrek-venv/local"
     pg = prefix / "postgresql/bin"
     work = Path(tempfile.mkdtemp(prefix="ttrek-openacs-smoke-"))
-    shutil.copyfile(Path(__file__).resolve().parents[1] / "ttrek.json", work / "ttrek.json")
     runtime = work / "openacs-local"
     sock = runtime / "socket"
     site = runtime / "site"
     env = {key: value for key, value in os.environ.items()
            if not key.startswith("oacs_") and key not in ("OACS_PREFIX", "OACS_RUNTIME")}
-    env.update(OACS_PREFIX=str(prefix), SHELL="/bin/sh", TTREK_NO_UPDATE_CHECK="1")
+    env.update(OACS_RUNTIME=str(runtime), SHELL="/bin/sh", TTREK_NO_UPDATE_CHECK="1")
     server = None
     success = False
     print(f"Temporary instance: {work}", flush=True)
@@ -52,7 +52,7 @@ def main():
             return subprocess.run(
                 [str(arg) for arg in args], check=True, text=True,
                 stdout=command_log, stderr=subprocess.STDOUT, timeout=90,
-                cwd=work, env=env,
+                cwd=project, env=env,
             )
 
         def sql(statement):
@@ -83,7 +83,7 @@ def main():
                     time.sleep(0.1)
 
         try:
-            run(ttrek, "run", "-script", "init-local")
+            run(ttrek, "run", "-package", "openacs", "-script", "init-local")
             assert not database_running(), "init-local left PostgreSQL running"
             assert runtime.stat().st_mode & 0o777 == 0o700
 
@@ -91,7 +91,7 @@ def main():
             marker = site / "keep.txt"
             marker.write_text("existing instance\n")
             retry = subprocess.run(
-                [ttrek, "run", "-script", "init-local"], cwd=work, env=env,
+                [ttrek, "run", "-package", "openacs", "-script", "init-local"], cwd=project, env=env,
                 stdout=command_log, stderr=subprocess.STDOUT, timeout=10,
             )
             assert retry.returncode != 0 and marker.read_text() == "existing instance\n"
@@ -109,10 +109,10 @@ def main():
             env.update(oacs_httpport=str(port), oacs_hostname="127.0.0.1",
                        oacs_ipaddress="127.0.0.1", oacs_httpsport="",
                        oacs_smtpdport="", oacs_nscpport="")
-            command = [ttrek, "run", "-script", "start-local"]
+            command = [ttrek, "run", "-package", "openacs", "-script", "start-local"]
 
             def start_server():
-                return subprocess.Popen(command, env=env, cwd=work, start_new_session=True,
+                return subprocess.Popen(command, env=env, cwd=project, start_new_session=True,
                                         stdout=server_log, stderr=subprocess.STDOUT)
 
             def wait_for_page():
