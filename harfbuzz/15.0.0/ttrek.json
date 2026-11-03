@@ -1,0 +1,80 @@
+{
+  "name": "harfbuzz",
+  "version": "15.0.0",
+  "scripts": {},
+  "dependencies": {
+    "libfreetype": "^2.15.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/harfbuzz/harfbuzz/releases/download/15.0.0/harfbuzz-15.0.0.tar.xz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "HB_HAVE_FREETYPE",
+            "value": "ON"
+          },
+          {
+            "name": "HB_BUILD_UTILS",
+            "value": "OFF"
+          },
+          {
+            "name": "HB_BUILD_SUBSET",
+            "value": "OFF"
+          },
+          {
+            "name": "HB_BUILD_RASTER",
+            "value": "OFF"
+          },
+          {
+            "name": "HB_BUILD_VECTOR",
+            "value": "OFF"
+          },
+          {
+            "name": "HB_BUILD_GPU",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "name": "libfreetype",
+  "version": "2.15.0",
+  "scripts": {},
+  "dependencies": {
+    "zlib": "^1.3.2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/freetype/freetype2/2.15.0/freetype-2.15.0.tar.xz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "ZLIB_ROOT",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "FT_REQUIRE_ZLIB",
+            "value": "ON"
+          },
+          {
+            "name": "FT_DISABLE_HARFBUZZ",
+            "value": "ON"
+          },
+          {
+            "name": "FT_DISABLE_BZIP2",
+            "value": "ON"
+          },
+          {
+            "name": "FT_DISABLE_PNG",
+            "value": "ON"
+          },
+          {
+            "name": "FT_DISABLE_BROTLI",
+            "value": "ON"
+          },
+          {
+            "name": "FT_DISABLE_HVF",
+            "value": "ON"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install"
+      }
+    ]
+  }
+}
