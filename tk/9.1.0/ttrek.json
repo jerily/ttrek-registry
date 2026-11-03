@@ -1,0 +1,46 @@
+{
+  "name": "tk",
+  "version": "9.1.0",
+  "scripts": {
+    "demo-widgets": "#!/bin/sh\nset -eu\nexec \"$PROJECT_INSTALL_DIR/bin/wish9.1\" \"$PROJECT_INSTALL_DIR/lib/tk9.1/demos/widget\"\n"
+  },
+  "dependencies": {
+    "tcl": ">=9.1.0,<9.2.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://prdownloads.sourceforge.net/tcl/tk9.1.0-src.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "configure",
+        "path": "$SOURCE_DIR/unix/configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "disable-shared",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
