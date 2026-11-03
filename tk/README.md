@@ -7,12 +7,14 @@ each with the matching Tcl release line.
 On Debian/Ubuntu, install the build prerequisites first:
 
 ```sh
-sudo apt install build-essential pkg-config libx11-dev libxft-dev libharfbuzz-dev
+sudo apt install build-essential cmake pkg-config libx11-dev libxft-dev
 ```
 
-HarfBuzz is needed for Tk 9.1's default bidirectional text support. The examples
-need a graphical desktop with an X display (`DISPLAY` set); Wayland desktops
-can use XWayland.
+Tk 9.1 automatically installs [HarfBuzz](../harfbuzz/README.md) and
+[FreeType](../libfreetype/README.md) for text shaping and font rendering.
+X11 and Xft come from the system. Tk 8.6 uses the system font libraries.
+The examples need a graphical desktop with an X display (`DISPLAY` set);
+Wayland desktops can use XWayland.
 
 ## Install
 
@@ -25,6 +27,9 @@ cd tk-project
 ttrek init -y
 ttrek install -registry "$REGISTRY" tk@9.1.0
 ```
+
+For an existing Tk 9.1 installation, rebuild against the packaged font libraries
+with `ttrek install -force -registry "$REGISTRY" tk@9.1.0`.
 
 For Tk 8.6, install `tk@8.6.18` instead and use `wish8.6` below.
 Use separate project directories to try both release lines.
