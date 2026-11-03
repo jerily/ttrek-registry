@@ -5,7 +5,8 @@
     "demo-widgets": "#!/bin/sh\nset -eu\nexec \"$PROJECT_INSTALL_DIR/bin/wish9.1\" \"$PROJECT_INSTALL_DIR/lib/tk9.1/demos/widget\"\n"
   },
   "dependencies": {
-    "tcl": ">=9.1.0,<9.2.0"
+    "tcl": ">=9.1.0,<9.2.0",
+    "harfbuzz": "^15.0.0"
   },
   "devDependencies": {},
   "build": {
@@ -18,7 +19,24 @@
         "cmd": "unpack"
       },
       {
+        "cmd": "patch",
+        "filename": "harfbuzz-static.diff",
+        "p_num": "1"
+      },
+      {
         "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib"
       },
       {
         "cmd": "configure",
