@@ -1,0 +1,30 @@
+{
+  "name": "tcllib",
+  "version": "2.0.0",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.18,<10.0.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/tcllib/tcllib/2.0/tcllib-2.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "configure"
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-tcl"
+      }
+    ]
+  }
+}
