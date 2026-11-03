@@ -4,16 +4,16 @@ Tk adds desktop windows and widgets to Tcl. These recipes provide
 [Tk 8.6.18 and 9.1.0](https://www.tcl-lang.org/software/tcltk/download.html),
 each with the matching Tcl release line.
 
-On Debian/Ubuntu, install the build prerequisites first:
+Building requires a C compiler, make, and X11 development files
+(`build-essential` and `libx11-dev` on Debian/Ubuntu). The registry supplies
+Tcl and zlib.
 
-```sh
-sudo apt install build-essential pkg-config libx11-dev libxft-dev libharfbuzz-dev
-```
+The Tk 9.1 recipe uses classic X11 fonts (`--disable-bidi --disable-xft`), so
+it needs no HarfBuzz, FreeType, Fontconfig, or Xft development packages. This
+disables antialiased Xft fonts and the new bidirectional text/shaping support.
+Tk 8.6 uses Xft when its development files are available and otherwise falls
+back to classic X11 fonts.
 
-Both recipes use system X11, Xft, Fontconfig, and FreeType libraries. Tk 9.1
-also requires system HarfBuzz development files; Tk 8.6 does not need HarfBuzz.
-The registry supplies Tcl and zlib. Install the development packages above
-before running `ttrek install`; runtime libraries alone are insufficient.
 The examples need a graphical desktop with an X display (`DISPLAY` set);
 Wayland desktops can use XWayland.
 
