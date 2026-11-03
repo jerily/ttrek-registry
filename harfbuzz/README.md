@@ -20,5 +20,5 @@ ttrek install -registry /path/to/ttrek-registry harfbuzz@15.0.0
 ```
 
 The default build is shared. Use the project's `useFlags: ["+static"]` or
-`ttrek gen-script -static` to build a static archive. Tk 9.1 installs this
-package automatically.
+`ttrek gen-script -static` to build a static archive. This is a standalone
+package; the Tk recipes use system font libraries.
