@@ -18,6 +18,18 @@ Shared builds link only the Tcl stub archive.
 `ttrigrams/0.1.0` adds a static C index and Tcl extension for substring search
 and verified typo suggestions; shared builds also use Tcl stubs.
 
+`ksuid-tcl/1.0.4` also uses Tcl stubs for shared builds and supports `+static`
+for embedding. Run the examples after installing the shared packages:
+
+```sh
+ttrek run -package ksuid-tcl -script demo
+ttrek run -package ttrie -script demo
+ttrek run -package ttrigrams -script demo
+```
+
+The demos show KSUID generation and round trips, exact and fuzzy trie lookup,
+and substring search with verified typo suggestions.
+
 To generate a build script using this registry, run the following from a project
 containing `ttrek.json`:
 
