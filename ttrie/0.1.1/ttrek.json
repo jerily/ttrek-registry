@@ -2,7 +2,9 @@
   "name": "ttrie",
   "description": "String trie with exact lookup and edit-distance search for C and Tcl.",
   "version": "0.1.1",
-  "scripts": {},
+  "scripts": {
+    "demo": "#!/bin/sh\nset -eu\nfor tcl_shell in \"$PROJECT_INSTALL_DIR/bin/tclsh\" \"$PROJECT_INSTALL_DIR\"/bin/tclsh9.* \"$PROJECT_INSTALL_DIR/bin/tclsh8.6\"; do\n    if [ -x \"$tcl_shell\" ]; then break; fi\ndone\nif [ ! -x \"$tcl_shell\" ]; then\n    echo \"No Tcl shell found in $PROJECT_INSTALL_DIR/bin\" >&2\n    exit 1\nfi\nexec \"$tcl_shell\" <<'TCL'\ntry {\n    lappend auto_path [file join $::env(PROJECT_INSTALL_DIR) lib]\n    package require ttrie 0.1.1\n\n    set trie [::ttrie::create names {tcl tclx tk}]\n    try {\n        puts \"Exact lookup for tcl: [$trie contains tcl]\"\n        puts \"Exact search: [$trie search tcl 0]\"\n        $trie insert tjson\n        puts \"Inserted tjson: [$trie contains tjson]\"\n        puts \"Within one edit of tcl: [$trie search tcl 1]\"\n        puts \"Within two edits of tcl (distance, then name):\"\n        foreach match [$trie search tcl 2] {\n            puts \"  [dict get $match name]: distance [dict get $match distance]\"\n        }\n        puts \"Missing key: [$trie contains missing]\"\n    } finally {\n        $trie destroy\n    }\n} on error {message options} {\n    puts stderr $message\n    exit 1\n}\nTCL\n"
+  },
   "dependencies": {
     "tcl": ">=8.6.14"
   },
