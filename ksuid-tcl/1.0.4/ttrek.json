@@ -1,0 +1,55 @@
+{
+  "name": "ksuid-tcl",
+  "description": "Generation and parsing of sortable unique identifiers for Tcl.",
+  "version": "1.0.4",
+  "scripts": {
+    "demo": "#!/bin/sh\nset -eu\nfor tcl_shell in \"$PROJECT_INSTALL_DIR/bin/tclsh\" \"$PROJECT_INSTALL_DIR\"/bin/tclsh9.* \"$PROJECT_INSTALL_DIR/bin/tclsh8.6\"; do\n    if [ -x \"$tcl_shell\" ]; then break; fi\ndone\nif [ ! -x \"$tcl_shell\" ]; then\n    echo \"No Tcl shell found in $PROJECT_INSTALL_DIR/bin\" >&2\n    exit 1\nfi\nexec \"$tcl_shell\" <<'TCL'\ntry {\n    lappend auto_path [file join $::env(PROJECT_INSTALL_DIR) lib]\n    package require ksuid 1.0.4\n\n    set id [::ksuid::generate_ksuid]\n    set parts [::ksuid::ksuid_to_parts $id]\n    puts \"Generated KSUID: $id\"\n    puts \"Length: [string length $id]\"\n    puts \"Parts: $parts\"\n    # KSUID timestamps count seconds since 1400000000 (the KSUID epoch).\n    set unixTime [expr {1400000000 + [dict get $parts timestamp]}]\n    puts \"Created (UTC): [clock format $unixTime -gmt 1 -format {%Y-%m-%d %H:%M:%S}]\"\n    puts \"Parts round trip: [expr {$id eq [::ksuid::parts_to_ksuid $parts]}]\"\n\n    set next [::ksuid::next_ksuid $id]\n    puts \"Next: $next\"\n    puts \"Previous of next: [::ksuid::prev_ksuid $next]\"\n    set payload [::ksuid::hex_decode [dict get $parts payload]]\n    puts \"Payload bytes: [string length $payload]\"\n    puts \"Payload hex round trip: [::ksuid::hex_encode $payload]\"\n\n    # Same payload, increasing timestamps: lexical order follows time.\n    set earlier [::ksuid::parts_to_ksuid [dict create timestamp 1 payload [string repeat 0 32]]]\n    set later [::ksuid::parts_to_ksuid [dict create timestamp 2 payload [string repeat 0 32]]]\n    puts \"Sorted IDs (earlier first): [lsort [list $later $earlier]]\"\n} on error {message options} {\n    puts stderr $message\n    exit 1\n}\nTCL\n"
+  },
+  "dependencies": {
+    "tcl": ">=8.6.14"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/ksuid-tcl/archive/refs/tags/v1.0.4.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "TCL_INCLUDE_DIR",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
