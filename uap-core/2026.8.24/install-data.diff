@@ -1,0 +1,8 @@
+--- /dev/null
++++ b/CMakeLists.txt
+@@ -0,0 +1,5 @@
++cmake_minimum_required(VERSION 3.18)
++project(uap-core VERSION 2026.8.24 LANGUAGES NONE)
++install(FILES regexes.yaml LICENSE README.md DESTINATION share/uap-core)
++install(DIRECTORY tests test_resources DESTINATION share/uap-core
++    FILES_MATCHING PATTERN "*.yaml")
