@@ -7,10 +7,16 @@ Each package version lives at `<package>/<version>/ttrek.json`. Any patches used
 by that recipe are stored beside its specification. Add new versions in separate
 directories so existing versions remain available.
 
+Every recipe includes a short, single-line `description` explaining the package.
+Search indexes names and descriptions and displays the matching description.
+Example packages should identify themselves as dependency-solver fixtures.
+
 `ttrie/0.1.1` provides a static C trie and a Tcl 8.6/9.x extension for exact and
 edit-distance search. Its recipe builds the loadable extension by default;
 `+static` builds the Tcl wrapper for embedding. Both install `ttrie::core` for CMake.
 Shared builds link only the Tcl stub archive.
+`ttrigrams/0.1.0` adds a static C index and Tcl extension for substring search
+and verified typo suggestions; shared builds also use Tcl stubs.
 
 To generate a build script using this registry, run the following from a project
 containing `ttrek.json`:

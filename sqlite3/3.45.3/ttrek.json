@@ -1,5 +1,6 @@
 {
 	"name":	"sqlite3",
+	"description": "Embedded SQL database engine with Tcl bindings.",
 	"version":	"3.45.3",
 	"scripts":	{
 	},

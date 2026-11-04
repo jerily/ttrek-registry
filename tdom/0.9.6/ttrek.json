@@ -1,5 +1,6 @@
 {
   "name": "tdom",
+  "description": "XML and HTML parsing, DOM manipulation, and XPath support for Tcl.",
   "version": "0.9.6",
   "scripts": {},
   "dependencies": {

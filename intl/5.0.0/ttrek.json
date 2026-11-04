@@ -1,5 +1,6 @@
 {
 	"name":	"intl",
+	"description": "Example internationalization package for dependency resolution tests.",
 	"version":	"5.0.0",
 	"scripts":	{
 	},

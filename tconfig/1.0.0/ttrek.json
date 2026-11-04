@@ -1,5 +1,6 @@
 {
 	"name":	"tconfig",
+	"description": "Encrypted configuration storage with AWS KMS and SSM integration for Tcl.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

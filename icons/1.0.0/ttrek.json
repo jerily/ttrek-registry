@@ -1,5 +1,6 @@
 {
 	"name":	"icons",
+	"description": "Example icons package for dependency resolution tests.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

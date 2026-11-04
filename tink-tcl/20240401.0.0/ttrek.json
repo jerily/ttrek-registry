@@ -1,5 +1,6 @@
 {
 	"name":	"tink-tcl",
+	"description": "Tcl bindings for Tink encryption, signatures, and key management.",
 	"version":	"20240401.0.0",
 	"scripts":	{
 	},

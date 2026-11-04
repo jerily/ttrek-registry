@@ -1,5 +1,6 @@
 {
 	"name":	"example-bt-c",
+	"description": "Example package C for dependency solver backtracking tests.",
 	"version":	"2.0.0",
 	"scripts":	{
 	},

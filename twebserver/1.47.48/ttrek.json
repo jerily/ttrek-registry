@@ -1,5 +1,6 @@
 {
 	"name":	"twebserver",
+	"description": "Multithreaded HTTP and HTTPS web server extension for Tcl.",
 	"version":	"1.47.48",
 	"scripts":	{
 	},

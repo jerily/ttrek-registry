@@ -1,5 +1,6 @@
 {
   "name": "fontconfig",
+  "description": "Font discovery, configuration, and matching library.",
   "version": "2.18.3",
   "scripts": {},
   "dependencies": {

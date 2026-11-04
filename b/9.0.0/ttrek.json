@@ -1,5 +1,6 @@
 {
 	"name":	"b",
+	"description": "Example package B for dependency resolution tests.",
 	"version":	"9.0.0",
 	"scripts":	{
 	},

@@ -1,5 +1,6 @@
 {
   "name": "nsf",
+  "description": "Next Scripting Framework for object-oriented programming in Tcl.",
   "version": "2.5.0",
   "scripts": {},
   "dependencies": {
