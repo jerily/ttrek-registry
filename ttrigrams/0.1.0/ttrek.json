@@ -2,7 +2,9 @@
   "name": "ttrigrams",
   "description": "Trigram substring search with typo suggestions for C and Tcl.",
   "version": "0.1.0",
-  "scripts": {},
+  "scripts": {
+    "demo": "#!/bin/sh\nset -eu\nfor tcl_shell in \"$PROJECT_INSTALL_DIR/bin/tclsh\" \"$PROJECT_INSTALL_DIR\"/bin/tclsh9.* \"$PROJECT_INSTALL_DIR/bin/tclsh8.6\"; do\n    if [ -x \"$tcl_shell\" ]; then break; fi\ndone\nif [ ! -x \"$tcl_shell\" ]; then\n    echo \"No Tcl shell found in $PROJECT_INSTALL_DIR/bin\" >&2\n    exit 1\nfi\nexec \"$tcl_shell\" <<'TCL'\ntry {\n    lappend auto_path [file join $::env(PROJECT_INSTALL_DIR) lib]\n    package require ttrigrams 0.1.0\n\n    set documents {{web server} {encryption toolkit} {web client}}\n    set index [::ttrigrams::create descriptions $documents]\n    try {\n        puts \"Literal substring search for web:\"\n        foreach match [$index search web 0] {\n            puts \"  [lindex $documents [dict get $match document]]\"\n        }\n        puts \"Typo suggestions for encrytion:\"\n        foreach match [$index search encrytion 1] {\n            set text [lindex $documents [dict get $match document]]\n            puts \"  $text: distance [dict get $match distance], trigrams [dict get $match shared_trigrams]/[dict get $match query_trigrams]\"\n        }\n        puts \"Short queries use literal matching: [$index search we]\"\n        puts \"No matches: [$index search zzzzz 0]\"\n    } finally {\n        $index destroy\n    }\n} on error {message options} {\n    puts stderr $message\n    exit 1\n}\nTCL\n"
+  },
   "dependencies": {
     "tcl": ">=8.6.14"
   },
