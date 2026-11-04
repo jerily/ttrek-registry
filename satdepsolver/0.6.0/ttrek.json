@@ -1,5 +1,6 @@
 {
   "name": "satdepsolver",
+  "description": "C++ dependency solver for package versions and constraints.",
   "version": "0.6.0",
   "scripts": {},
   "dependencies": {},

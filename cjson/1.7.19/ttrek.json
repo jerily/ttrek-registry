@@ -1,5 +1,6 @@
 {
   "name": "cjson",
+  "description": "Lightweight JSON parser and generator for C.",
   "version": "1.7.19",
   "scripts": {},
   "dependencies": {},

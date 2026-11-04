@@ -1,5 +1,6 @@
 {
   "name": "tk",
+  "description": "Cross-platform graphical user interface toolkit for Tcl.",
   "version": "8.6.18",
   "scripts": {
     "demo-widgets": "#!/bin/sh\nset -eu\nexec \"$PROJECT_INSTALL_DIR/bin/wish8.6\" \"$PROJECT_INSTALL_DIR/lib/tk8.6/demos/widget\"\n"

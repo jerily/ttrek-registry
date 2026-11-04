@@ -1,5 +1,6 @@
 {
 	"name":	"thtml",
+	"description": "HTML template engine for Tcl web applications.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

@@ -1,5 +1,6 @@
 {
 	"name":	"aws-lambda-cpp",
+	"description": "C++ runtime for AWS Lambda functions.",
 	"version":	"0.2.10",
 	"scripts":	{
 	},

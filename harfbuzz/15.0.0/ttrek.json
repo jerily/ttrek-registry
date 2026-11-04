@@ -1,5 +1,6 @@
 {
   "name": "harfbuzz",
+  "description": "Text shaping library for converting Unicode text into positioned glyphs.",
   "version": "15.0.0",
   "scripts": {},
   "dependencies": {

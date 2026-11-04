@@ -1,5 +1,6 @@
 {
 	"name":	"tratelimit",
+	"description": "Request rate limiting middleware for Tcl web applications.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

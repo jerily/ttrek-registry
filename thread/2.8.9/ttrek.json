@@ -1,5 +1,6 @@
 {
 	"name":	"thread",
+	"description": "Thread creation and communication for Tcl interpreters.",
 	"version":	"2.8.9",
 	"scripts":	{
 	},

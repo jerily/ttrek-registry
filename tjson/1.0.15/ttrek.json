@@ -1,5 +1,6 @@
 {
 	"name":	"tjson",
+	"description": "JSON parsing, generation, and JSONPath queries for Tcl.",
 	"version":	"1.0.15",
 	"scripts":	{
 	},

@@ -1,5 +1,6 @@
 {
   "name": "openssl",
+  "description": "TLS protocol implementation and cryptographic library and tools.",
   "version": "3.5.9",
   "scripts": {},
   "dependencies": {},
