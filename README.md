@@ -7,6 +7,18 @@ Each package version lives at `<package>/<version>/ttrek.json`. Any patches used
 by that recipe are stored beside its specification. Add new versions in separate
 directories so existing versions remain available.
 
+Store example scripts as UTF-8 files in the version's recipe directory and
+reference them from the spec, for example:
+
+```json
+"scripts": {"demo": {"file": "demo.sh"}}
+```
+
+The local reader and hosted API expand file references into script bodies for
+installation. Scripts remain cached for offline use. References must name a
+regular file directly in the recipe directory; paths and symbolic links are
+rejected. Inline script strings remain supported for existing recipes.
+
 Every recipe includes a short, single-line `description` explaining the package.
 Search indexes names and descriptions and displays the matching description.
 Example packages should identify themselves as dependency-solver fixtures.
@@ -25,10 +37,19 @@ for embedding. Run the examples after installing the shared packages:
 ttrek run -package ksuid-tcl -script demo
 ttrek run -package ttrie -script demo
 ttrek run -package ttrigrams -script demo
+ttrek run -package uap-tcl -script demo
+ttrek run -package uap-core -script demo
 ```
 
 The demos show KSUID generation and round trips, exact and fuzzy trie lookup,
-and substring search with verified typo suggestions.
+substring search with verified typo suggestions, and user-agent parsing.
+`uap-tcl/1.1.0` uses Tcl stubs and supports `+static`. Its `uap-core/2026.8.24`
+dependency pins upstream commit `73e7340c3ed8055051607b296bf46ead7aa5f19e`
+and installs the patterns and YAML tests under `share/uap-core`.
+The Tcl recipe regenerates its tables from that installed data.
+
+Both Tk recipes keep `demo-widgets.sh` beside their specs; run
+`ttrek run -package tk -script demo-widgets` after installing Tk.
 
 To generate a build script using this registry, run the following from a project
 containing `ttrek.json`:

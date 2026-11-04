@@ -3,7 +3,9 @@
   "description": "Cross-platform graphical user interface toolkit for Tcl.",
   "version": "8.6.18",
   "scripts": {
-    "demo-widgets": "#!/bin/sh\nset -eu\nexec \"$PROJECT_INSTALL_DIR/bin/wish8.6\" \"$PROJECT_INSTALL_DIR/lib/tk8.6/demos/widget\"\n"
+    "demo-widgets": {
+      "file": "demo-widgets.sh"
+    }
   },
   "dependencies": {
     "tcl": ">=8.6.18,<8.7.0"
