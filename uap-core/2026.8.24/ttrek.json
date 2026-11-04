@@ -1,0 +1,38 @@
+{
+  "name": "uap-core",
+  "description": "Shared user-agent patterns and test data for browser, OS, and device detection.",
+  "version": "2026.8.24",
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/ua-parser/uap-core/archive/73e7340c3ed8055051607b296bf46ead7aa5f19e.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "install-data.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config"
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
