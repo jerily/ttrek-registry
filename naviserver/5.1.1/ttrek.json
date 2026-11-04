@@ -1,5 +1,6 @@
 {
   "name": "naviserver",
+  "description": "Multithreaded web application server with embedded Tcl.",
   "version": "5.1.1",
   "scripts": {},
   "dependencies": {

@@ -1,5 +1,6 @@
 {
   "name": "libxft",
+  "description": "X11 font rendering library using FreeType and Fontconfig.",
   "version": "2.3.9",
   "scripts": {},
   "dependencies": {

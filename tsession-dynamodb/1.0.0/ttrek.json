@@ -1,5 +1,6 @@
 {
 	"name":	"tsession-dynamodb",
+	"description": "DynamoDB session storage backend for Tcl web applications.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

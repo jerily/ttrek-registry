@@ -1,5 +1,6 @@
 {
 	"name":	"aws-sdk-tcl",
+	"description": "Tcl bindings for AWS service clients.",
 	"version":	"1.0.10",
 	"scripts":	{
 	},

@@ -1,5 +1,6 @@
 {
 	"name":	"treqmon",
+	"description": "HTTP request monitoring and statistics for Tcl web applications.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

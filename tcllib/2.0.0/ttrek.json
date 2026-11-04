@@ -1,5 +1,6 @@
 {
   "name": "tcllib",
+  "description": "Standard library of Tcl modules for common programming tasks.",
   "version": "2.0.0",
   "scripts": {},
   "dependencies": {

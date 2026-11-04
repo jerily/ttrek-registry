@@ -1,5 +1,6 @@
 {
   "name": "libexpat",
+  "description": "Streaming XML parser library for C.",
   "version": "2.10.0",
   "scripts": {},
   "dependencies": {},

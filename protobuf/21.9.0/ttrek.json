@@ -1,5 +1,6 @@
 {
 	"name": "protobuf",
+	"description": "Protocol Buffers compiler and serialization libraries.",
 	"version": "21.9.0",
 	"scripts": {
 	},

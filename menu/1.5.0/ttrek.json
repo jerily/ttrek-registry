@@ -1,5 +1,6 @@
 {
 	"name":	"menu",
+	"description": "Example menu package for dependency resolution and USE flag tests.",
 	"version":	"1.5.0",
 	"scripts":	{
 	},

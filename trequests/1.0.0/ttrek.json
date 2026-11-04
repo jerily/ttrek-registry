@@ -1,5 +1,6 @@
 {
 	"name": "trequests",
+	"description": "HTTP and HTTPS client extension for Tcl using curl.",
 	"version": "1.0.0",
 	"scripts": {
 	},

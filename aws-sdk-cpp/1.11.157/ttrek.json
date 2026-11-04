@@ -1,5 +1,6 @@
 {
 	"name": "aws-sdk-cpp",
+	"description": "C++ client libraries for AWS services.",
 	"version": "1.11.157",
 	"scripts": {
 	},

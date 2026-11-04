@@ -1,5 +1,6 @@
 {
   "name": "gperf",
+  "description": "Generator of perfect hash functions for sets of keywords.",
   "version": "3.3.0",
   "scripts": {},
   "dependencies": {},

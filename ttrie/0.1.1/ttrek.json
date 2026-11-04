@@ -1,5 +1,6 @@
 {
   "name": "ttrie",
+  "description": "String trie with exact lookup and edit-distance search for C and Tcl.",
   "version": "0.1.1",
   "scripts": {},
   "dependencies": {

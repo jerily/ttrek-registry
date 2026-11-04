@@ -1,5 +1,6 @@
 {
   "name": "libarchive",
+  "description": "C library and tools for reading and writing archive formats.",
   "version": "3.8.11",
   "scripts": {},
   "dependencies": {

@@ -1,5 +1,6 @@
 {
 	"name":	"example-bt-b",
+	"description": "Example package B for dependency solver backtracking tests.",
 	"version":	"6.0.0",
 	"scripts":	{
 	},

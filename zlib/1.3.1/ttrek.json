@@ -1,5 +1,6 @@
 {
 	"name":	"zlib",
+	"description": "General-purpose compression library implementing the DEFLATE format.",
 	"version":	"1.3.1",
 	"scripts":	{
 	},
