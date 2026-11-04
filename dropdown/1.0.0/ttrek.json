@@ -1,5 +1,6 @@
 {
 	"name":	"dropdown",
+	"description": "Example dropdown package for dependency resolution tests.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

@@ -1,5 +1,6 @@
 {
 	"name":	"tsession",
+	"description": "Session management middleware for Tcl web applications.",
 	"version":	"1.0.3",
 	"scripts":	{
 	},

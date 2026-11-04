@@ -1,5 +1,6 @@
 {
   "name": "libxrender",
+  "description": "Client library for the X11 Render extension.",
   "version": "0.9.13",
   "scripts": {},
   "dependencies": {},

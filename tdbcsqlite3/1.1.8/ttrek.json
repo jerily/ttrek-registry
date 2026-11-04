@@ -1,5 +1,6 @@
 {
 	"name":	"tdbcsqlite3",
+	"description": "SQLite database driver for Tcl Database Connectivity.",
 	"version":	"1.1.8",
 	"scripts":	{
 	},

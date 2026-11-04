@@ -1,5 +1,6 @@
 {
   "name": "nsdbpg",
+  "description": "PostgreSQL database driver for NaviServer.",
   "version": "5.1.1",
   "scripts": {},
   "dependencies": {

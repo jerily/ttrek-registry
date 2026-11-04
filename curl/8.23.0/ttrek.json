@@ -1,5 +1,6 @@
 {
   "name": "curl",
+  "description": "Command-line tool and C library for HTTP and other network transfers.",
   "version": "8.23.0",
   "scripts": {},
   "dependencies": {

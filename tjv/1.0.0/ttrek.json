@@ -1,5 +1,6 @@
 {
 	"name":	"tjv",
+	"description": "JSON validation extension for Tcl.",
 	"version":	"1.0.0",
 	"scripts":	{
 	},
