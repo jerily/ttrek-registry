@@ -1,7 +1,7 @@
 {
   "name": "topenapi",
-  "description": "OpenAPI request validation for Tcl and C, with a native twebserver adapter.",
-  "version": "0.1.0",
+  "description": "OpenAPI validation and typed Tcl variable binding, with a C API and native twebserver adapter.",
+  "version": "0.2.0",
   "scripts": {
     "demo": {
       "file": "demo.sh"
@@ -16,7 +16,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/topenapi/releases/download/v0.1.0/topenapi-0.1.0.tar.gz"
+        "url": "https://github.com/jerily/topenapi/releases/download/v0.2.0/topenapi-0.2.0.tar.gz"
       },
       {
         "cmd": "unpack"
