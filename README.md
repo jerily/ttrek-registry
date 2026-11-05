@@ -30,6 +30,12 @@ Shared builds link only the Tcl stub archive.
 `ttrigrams/0.1.0` adds a static C index and Tcl extension for substring search
 and verified typo suggestions; shared builds also use Tcl stubs.
 
+`topenapi/0.1.0` validates inline OpenAPI operation fragments and JSON schemas
+through C and Tcl APIs. Its C adapter converts twebserver dictionaries and exposes
+upload metadata without copying contents. It uses Tcl stubs for shared builds,
+supports `+static` for embedding, and depends on cJSON. Run
+`ttrek run -package topenapi -script demo` for a query-validation example.
+
 `ksuid-tcl/1.0.4` also uses Tcl stubs for shared builds and supports `+static`
 for embedding. Run the examples after installing the shared packages:
 
