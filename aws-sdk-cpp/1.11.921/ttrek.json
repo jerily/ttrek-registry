@@ -29,6 +29,7 @@
 					{"name": "BUILD_ONLY", "value": "s3;dynamodb;lambda;sqs;iam;transfer;sts;ssm;kms"},
 					{"name": "ENABLE_TESTING", "value": "OFF"},
 					{"name": "AUTORUN_UNIT_TESTS", "value": "OFF"},
+					{"name": "ENFORCE_SUBMODULE_VERSIONS", "value": "OFF"},
 					{"name": "BUILD_SHARED_LIBS", "value": "OFF", "if": "+static"},
 					{"name": "CMAKE_POSITION_INDEPENDENT_CODE", "value": "ON"}
 				]
