@@ -14,7 +14,7 @@
   "devDependencies": {},
   "build": {
     "default": [
-      { "cmd": "download", "url": "https://github.com/jerily/snappy-tcl/archive/refs/tags/v1.0.5.tar.gz" },
+      { "cmd": "download", "url": "https://github.com/jerily/snappy-tcl/releases/download/v1.0.5/snappy-tcl-1.0.5.tar.gz" },
       { "cmd": "unpack" },
       { "cmd": "cd" },
       {
