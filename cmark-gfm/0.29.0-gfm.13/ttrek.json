@@ -1,0 +1,60 @@
+{
+  "name": "cmark-gfm",
+  "description": "GitHub Flavored Markdown parser with table, task-list and strikethrough extensions.",
+  "version": "0.29.0-gfm.13",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/github/cmark-gfm/archive/587a12bb54d95ac37241377e6ddc93ea0e45439b.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_POLICY_VERSION_MINIMUM",
+            "value": "3.5"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "CMARK_TESTS",
+            "value": "OFF"
+          },
+          {
+            "name": "CMARK_SHARED",
+            "value": "OFF"
+          },
+          {
+            "name": "CMARK_STATIC",
+            "value": "ON"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
