@@ -1,0 +1,29 @@
+{
+	"name":	"aws-sdk-tcl",
+	"description": "AWS service clients for Tcl 8.6 and 9.x, linked with Tcl stubs.",
+	"version":	"1.0.13",
+	"scripts":	{
+	},
+	"dependencies":	{
+		"tcl": ">=8.6.0",
+		"aws-sdk-cpp": "^1.11.921"
+	},
+	"devDependencies":	{
+	},
+	"build": {
+		"default": [
+			{ "cmd": "download", "url": "https://github.com/jerily/aws-sdk-tcl/archive/refs/tags/v1.0.13.tar.gz" },
+			{ "cmd": "unpack" },
+			{ "cmd": "cd" },
+			{ "cmd": "cmake_config",
+				"options": [
+					{"name": "TCL_LIBRARY_DIR", "value":  "$INSTALL_DIR/lib"},
+					{"name": "TCL_INCLUDE_DIR", "value":  "$INSTALL_DIR/include"},
+					{"name": "AWS_SDK_CPP_DIR", "value":  "$INSTALL_DIR"}
+				]
+			},
+			{ "cmd": "make", "parallel": true },
+			{ "cmd": "make_install" }
+		]
+	}
+}
