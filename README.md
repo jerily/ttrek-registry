@@ -30,6 +30,12 @@ Shared builds link only the Tcl stub archive.
 `ttrigrams/0.1.0` adds a static C index and Tcl extension for substring search
 and verified typo suggestions; shared builds also use Tcl stubs.
 
+`cmark-gfm/0.29.0-gfm.13` builds the GitHub Flavored Markdown core and extensions
+as position-independent static libraries. Its registry version represents
+upstream `0.29.0.gfm.13`. `cmark-gfm-tcl/0.1.0` links those libraries into a Tcl
+extension, uses Tcl stubs for shared builds, and supports `+static` for embedding.
+Both recipes pin source commits; the Tcl package is named `cmark_gfm` at runtime.
+
 `topenapi/0.2.0` validates inline OpenAPI operation fragments and JSON schemas
 through C and Tcl APIs. Its C adapter converts twebserver dictionaries and exposes
 upload metadata without copying contents. Its `bind` command creates typed Tcl
