@@ -1,0 +1,60 @@
+{
+  "name": "cmark-gfm-tcl",
+  "description": "Tcl and C/C++ bindings for GitHub Flavored Markdown rendering and CommonMark normalization.",
+  "version": "0.1.0",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.14,<10.0.0",
+    "cmark-gfm": "0.29.0-gfm.13"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/cmark-gfm-tcl/archive/1b4798243d3f84e2006d01e2735409ea6149edae.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "TCL_INCLUDE_PATH",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
