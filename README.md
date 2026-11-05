@@ -58,6 +58,17 @@ The Tcl recipe regenerates its tables from that installed data.
 Both Tk recipes keep `demo-widgets.sh` beside their specs; run
 `ttrek run -package tk -script demo-widgets` after installing Tk.
 
+`snappy/1.3.1` installs a static library with position-independent code and its
+CMake package. `snappy-tcl/1.0.5` links that library into a Tcl extension using
+stubs, and supports `+static` for embedding. After installing the shared Tcl
+package, run its Unicode, binary/corrupt-input, and temporary-file examples:
+
+```sh
+ttrek run -package snappy-tcl -script demo
+ttrek run -package snappy-tcl -script demo-binary
+ttrek run -package snappy-tcl -script demo-file
+```
+
 To generate a build script using this registry, run the following from a project
 containing `ttrek.json`:
 
