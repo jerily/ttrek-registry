@@ -21,7 +21,8 @@
         "cmd": "unpack"
       },
       {
-        "cmd": "cd"
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
       },
       {
         "cmd": "make_install",
