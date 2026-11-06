@@ -85,6 +85,10 @@ ttrek gen-script -registry /path/to/ttrek-registry > build.sh
 Recipes may use `if: "+static"` for optional static build settings. Enable these
 with `ttrek gen-script -static` or the project's `useFlags: ["+static"]` setting.
 
+`tmfa/1.1.0` provides HOTP, TOTP, and binary-safe Base32 using OpenSSL 3.
+It uses Tcl stubs for shared builds and supports `+static` for embedding.
+Run `ttrek run -package tmfa -script demo` after installation.
+
 The [ttrek.sh website](https://github.com/jerily/ttrek.sh) includes this repository
 as its `registry` submodule. After publishing registry changes, update and commit
 that submodule's revision in `ttrek.sh` to make the website use them.
