@@ -103,6 +103,10 @@ The [ttrek.sh website](https://github.com/jerily/ttrek.sh) includes this reposit
 as its `registry` submodule. After publishing registry changes, update and commit
 that submodule's revision in `ttrek.sh` to make the website use them.
 
+`treqmon/2.1.0` mounts a request monitor on `tpathexp`, with configurable Jinja
+master templates and package-owned chart assets. It supports Valkey and in-memory
+event stores. The recipe pins the public `v2.1.0` release tag.
+
 `web-wiki/0.1.0` and `web-blog/0.1.0` provide editable Markdown collections
 with SQLite persistence and bundled browser editors. `example-personal-site/0.1.0`
 combines them in a local twebserver demonstration with one-time content seeding.

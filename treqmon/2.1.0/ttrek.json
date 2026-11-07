@@ -1,0 +1,39 @@
+{
+  "name": "treqmon",
+  "description": "HTTP request monitoring with configurable Jinja layouts and tpathexp routes.",
+  "version": "2.1.0",
+  "scripts": {},
+  "dependencies": {
+    "valkey-tcl": ">=1.0.1",
+    "twebserver": ">=1.47.53",
+    "jinja2-tcl": "^0.1.0",
+    "tjson": ">=1.0.26",
+    "thread": ">=2.8.9",
+    "tpathexp": "^1.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/treqmon/archive/refs/tags/v2.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
