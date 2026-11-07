@@ -32,6 +32,10 @@ and verified typo suggestions; shared builds also use Tcl stubs. Both packages
 provide portable binary `serialize`/`load` APIs for indexes built ahead of time.
 Loading restores trie nodes or sorted trigram postings without reindexing.
 
+`trequests/1.1.0` adds binary request bodies and per-request/session CA bundles.
+Its shared builds use Tcl stubs for Tcl 8.6 or 9.x; `+static` supports embedding.
+The recipe pins the public `v1.1.0` release tag.
+
 `cmark-gfm/0.29.0-gfm.13` builds the GitHub Flavored Markdown core and extensions
 as position-independent static libraries. Its registry version represents
 upstream `0.29.0.gfm.13`. `cmark-gfm-tcl/0.1.0` links those libraries into a Tcl
