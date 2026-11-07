@@ -23,12 +23,14 @@ Every recipe includes a short, single-line `description` explaining the package.
 Search indexes names and descriptions and displays the matching description.
 Example packages should identify themselves as dependency-solver fixtures.
 
-`ttrie/0.1.1` provides a static C trie and a Tcl 8.6/9.x extension for exact and
+`ttrie/0.2.0` provides a static C trie and a Tcl 8.6/9.x extension for exact and
 edit-distance search. Its recipe builds the loadable extension by default;
 `+static` builds the Tcl wrapper for embedding. Both install `ttrie::core` for CMake.
 Shared builds link only the Tcl stub archive.
-`ttrigrams/0.1.0` adds a static C index and Tcl extension for substring search
-and verified typo suggestions; shared builds also use Tcl stubs.
+`ttrigrams/0.2.0` adds a static C index and Tcl extension for substring search
+and verified typo suggestions; shared builds also use Tcl stubs. Both packages
+provide portable binary `serialize`/`load` APIs for indexes built ahead of time.
+Loading restores trie nodes or sorted trigram postings without reindexing.
 
 `cmark-gfm/0.29.0-gfm.13` builds the GitHub Flavored Markdown core and extensions
 as position-independent static libraries. Its registry version represents
