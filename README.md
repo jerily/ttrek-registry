@@ -21,7 +21,7 @@ rejected. Inline script strings remain supported for existing recipes.
 
 Every recipe includes a short, single-line `description` explaining the package.
 Search indexes names and descriptions and displays the matching description.
-Example packages should identify themselves as dependency-solver fixtures.
+Dependency-solver fixture packages should identify themselves as such.
 
 `ttrie/0.2.0` provides a static C trie and a Tcl 8.6/9.x extension for exact and
 edit-distance search. Its recipe builds the loadable extension by default;
@@ -102,3 +102,15 @@ after installing the shared package.
 The [ttrek.sh website](https://github.com/jerily/ttrek.sh) includes this repository
 as its `registry` submodule. After publishing registry changes, update and commit
 that submodule's revision in `ttrek.sh` to make the website use them.
+
+`web-wiki/0.1.0` and `web-blog/0.1.0` provide editable Markdown collections
+with SQLite persistence and bundled browser editors. `example-personal-site/0.1.0`
+combines them in a local twebserver demonstration with one-time content seeding.
+
+```sh
+ttrek install -y example-personal-site
+ttrek run -package example-personal-site -script start
+```
+
+Open `http://localhost:8080`. The first start imports bundled Markdown; subsequent
+starts preserve browser edits and new items in `data/personal-site.sqlite3`.
