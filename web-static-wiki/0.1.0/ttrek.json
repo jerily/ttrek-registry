@@ -1,0 +1,41 @@
+{
+  "name": "web-static-wiki",
+  "version": "0.1.0",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.0,<10.0.0",
+    "tpathexp": "^1.1.0",
+    "cmark-gfm-tcl": "^0.1.0",
+    "jinja2-tcl": "^0.1.0",
+    "tjson": "^1.0.26"
+  },
+  "devDependencies": {},
+  "description": "Read-only Markdown wiki served from a directory with Jinja templates.",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/web-static-wiki/archive/1d01d9bda8602a22dec54e3f482ead1322b64775.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
