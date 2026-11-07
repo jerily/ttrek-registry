@@ -95,6 +95,10 @@ with `ttrek gen-script -static` or the project's `useFlags: ["+static"]` setting
 It uses Tcl stubs for shared builds and supports `+static` for embedding.
 Run `ttrek run -package tmfa -script demo` after installation.
 
+`tqrcodegen/1.1.0` generates QR codes as SVG with Tcl 8.6/9.x stubs and supports
+`+static` for embedding. Run `ttrek run -package tqrcodegen -script demo`
+after installing the shared package.
+
 The [ttrek.sh website](https://github.com/jerily/ttrek.sh) includes this repository
 as its `registry` submodule. After publishing registry changes, update and commit
 that submodule's revision in `ttrek.sh` to make the website use them.
