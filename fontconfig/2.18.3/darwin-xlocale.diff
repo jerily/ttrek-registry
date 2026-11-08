@@ -1,0 +1,10 @@
+--- a/configure
++++ b/configure
+@@ -15885,6 +15885,7 @@
+ 		;;
+ 	darwin*)
+ 		os_darwin=yes
++		CPPFLAGS="$CPPFLAGS -DHAVE_XLOCALE_H=1"
+ 		;;
+ esac
+  if test "$os_win32" = "yes"; then
