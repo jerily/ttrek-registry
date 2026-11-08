@@ -21,6 +21,11 @@
         "cmd": "unpack"
       },
       {
+        "cmd": "patch",
+        "filename": "darwin-x11.diff",
+        "p_num": "1"
+      },
+      {
         "cmd": "cd"
       },
       {
