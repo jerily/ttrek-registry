@@ -6,7 +6,8 @@
 	},
 	"dependencies":	{
 		"tink-tcl": ">=20240704.0.0",
-		"aws-sdk-tcl": ">=1.0.10"
+		"aws-sdk-tcl-kms": "^1.0.14",
+		"aws-sdk-tcl-ssm": "^1.0.14"
 	},
 	"devDependencies":	{
 	},

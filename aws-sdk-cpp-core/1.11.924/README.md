@@ -1,11 +1,27 @@
-# Core and common runtime sources
+# Core and common runtime releases
 
-The SDK release tarball omits submodules. The 15 additional `fetch` steps restore
-their exact recursive gitlinks under the original source directories. The pins
-come from SDK tag `1.11.924`, CRT commit
-`58bca57cbc8b242468414972a6a35f92676b164d`, and S2N commit
-`b170000016fb44fa4dfdd86ed0b75bd28241e707`.
+SDK `1.11.924` requires CRT `v0.44.2`. These tags point to the exact commits
+recorded by that SDK/CRT release, preserving the recursive-clone build inputs.
+All upstream downloads use tagged tar.gz archives and the sources stay unmodified.
 
-Only the core package builds and installs CRT and shared AWSSDK metadata.
-Service packages reuse these libraries. The patch also makes exported targets
-resolve curl, OpenSSL, and zlib for static consumers.
+| Dependency | Tag |
+| --- | --- |
+| aws-crt-cpp | `v0.44.2` |
+| aws-c-auth | `v1.0.0` |
+| aws-c-cal | `v1.0.0` |
+| aws-c-common | `v1.0.3` |
+| aws-c-compression | `v1.0.0` |
+| aws-c-event-stream | `v1.0.0` |
+| aws-c-http | `v1.1.0` |
+| aws-c-io | `v1.1.0` |
+| aws-c-mqtt | `v1.1.2` |
+| aws-c-s3 | `v1.3.1` |
+| aws-c-sdkutils | `v1.0.0` |
+| aws-checksums | `v1.0.1` |
+| aws-lc | `v5.11.0` |
+| s2n | `v1.7.11` |
+
+S2N's untagged verification model is omitted because tests are disabled.
+Only this package builds core and CRT. Other services import the installed
+libraries. Static OpenSSL dependencies use upstream's
+`AWS_SDK_ADDITIONAL_LIBRARIES` option; consumers resolve `ZLIB::ZLIB` explicitly.

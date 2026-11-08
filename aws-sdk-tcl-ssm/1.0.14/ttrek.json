@@ -11,9 +11,13 @@
   "build": {
     "default": [
       {
-        "cmd": "fetch",
+        "cmd": "download",
         "url": "https://github.com/jerily/aws-sdk-tcl/archive/refs/tags/v1.0.14.tar.gz",
-        "archive": "aws-sdk-tcl-1.0.14.tar.gz"
+        "filename": "aws-sdk-tcl-1.0.14.tar.gz"
+      },
+      {
+        "cmd": "unpack",
+        "filename": "aws-sdk-tcl-1.0.14.tar.gz"
       },
       {
         "cmd": "cd"
