@@ -22,7 +22,7 @@
         "options": [
           { "name": "CMAKE_BUILD_TYPE", "value": "Release" },
           { "name": "TCL_LIBRARY_DIR", "value": "$INSTALL_DIR/lib" },
-          { "name": "TCL_INCLUDE_DIR", "value": "$INSTALL_DIR/include" },
+          { "name": "TCL_INCLUDE_PATH", "value": "$INSTALL_DIR/include" },
           { "name": "SNAPPY_DIR", "value": "$INSTALL_DIR" },
           { "name": "BUILD_SHARED_LIBS", "value": "OFF", "if": "+static" },
           { "name": "BUILD_TESTING", "value": "OFF" }
