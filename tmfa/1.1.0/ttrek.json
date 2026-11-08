@@ -36,7 +36,7 @@
             "value": "$INSTALL_DIR/lib"
           },
           {
-            "name": "TCL_INCLUDE_DIR",
+            "name": "TCL_INCLUDE_PATH",
             "value": "$INSTALL_DIR/include"
           },
           {

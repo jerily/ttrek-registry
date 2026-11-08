@@ -28,7 +28,7 @@
         "cmd": "cmake_config",
         "options": [
           {
-            "name": "TCL_INCLUDE_DIR",
+            "name": "TCL_INCLUDE_PATH",
             "value": "$INSTALL_DIR/include"
           },
           {
