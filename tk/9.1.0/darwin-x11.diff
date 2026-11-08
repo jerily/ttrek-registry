@@ -1,0 +1,36 @@
+--- a/unix/configure.ac
++++ b/unix/configure.ac
+@@ -259,6 +259,15 @@
+     #	autoconf macro will return an include directory that contains
+     #	no include files, so double-check its result just to be safe.
+     #--------------------------------------------------------------------
++
++    # XQuartz libraries may be outside the default linker search path.
++    case $system in
++        Darwin-*)
++            if tk_x11_libs=`pkg-config --libs x11 2>/dev/null`; then
++                LDFLAGS="$LDFLAGS $tk_x11_libs"
++            fi
++            ;;
++    esac
+ 
+     SC_PATH_X
+     TK_WINDOWINGSYSTEM=X11
+--- a/unix/configure
++++ b/unix/configure
+@@ -7965,6 +7965,15 @@
+     #	no include files, so double-check its result just to be safe.
+     #--------------------------------------------------------------------
+ 
++    # XQuartz libraries may be outside the default linker search path.
++    case $system in
++        Darwin-*)
++            if tk_x11_libs=`pkg-config --libs x11 2>/dev/null`; then
++                LDFLAGS="$LDFLAGS $tk_x11_libs"
++            fi
++            ;;
++    esac
++
+ 
+     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for X" >&5
+ printf %s "checking for X... " >&6; }

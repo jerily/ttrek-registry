@@ -17,6 +17,12 @@ disabled.
 Tk 8.6 uses Xft when its development files are available and otherwise falls
 back to classic X11 fonts.
 
+On macOS, both recipes add `pkg-config --libs x11` to `LDFLAGS` before
+configuration checks for X11, preserving existing linker flags. This supplies
+the library search path when X11 is installed outside the default paths.
+Ensure `pkg-config` can find `x11.pc` (set `PKG_CONFIG_PATH` if needed).
+If pkg-config or the metadata is unavailable, Tk uses its usual X11 discovery.
+
 The examples need a graphical desktop with an X display (`DISPLAY` set);
 Wayland desktops can use XWayland.
 
