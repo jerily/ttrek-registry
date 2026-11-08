@@ -5,7 +5,7 @@
 	"scripts":	{
 	},
 	"dependencies":	{
-		"aws-sdk-tcl": "^1.0.10",
+		"aws-sdk-tcl-dynamodb": "^1.0.14",
 		"tsession": "^1.0.3"
 	},
 	"devDependencies":	{

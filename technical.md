@@ -20,16 +20,22 @@ include `download`, `unpack`, `cd`, `configure`, `cmake_config`, `make`, and
 `make_install`. Build steps can refer to `$SOURCE_DIR` and `$INSTALL_DIR`.
 Start from a [similar recipe](tjson/1.0.26/ttrek.json).
 
-With a ttrek build supporting `fetch`, combine downloading and unpacking:
+`download` accepts an optional `filename` relative to the download directory.
+`unpack` accepts the same `filename` and an optional `destination` relative to
+the package source directory. Both default to the package's main archive/source.
 
 ```json
-{"cmd": "fetch", "url": "https://example.com/library-1.0.tar.gz"}
+[
+  {"cmd": "download", "url": "https://example.com/crt-v1.0.tar.gz", "filename": "crt-v1.0.tar.gz"},
+  {"cmd": "unpack", "filename": "crt-v1.0.tar.gz", "destination": "crt/library"}
+]
 ```
 
-For nested sources, add `"destination": "crt/library"` (relative to
-`$SOURCE_DIR`) and optionally `"archive": "library-1.0.tar.gz"` (a filename
-under `$DOWNLOAD_DIR`). These literal paths leave the build environment
-unchanged. Older clients reject `fetch`; update ttrek before using such recipes.
+Paths are literal; absolute paths and `..` components are rejected. Extraction
+strips the archive's top-level directory. Neither operation changes build
+environment variables. `cmake_config.source` can select another CMake project
+path, including `$DOWNLOAD_DIR` or `$SOURCE_DIR` expressions.
+
 
 A step or option can be conditional. For example, this CMake option applies
 when the `+static` flag is enabled:

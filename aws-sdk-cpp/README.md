@@ -1,33 +1,29 @@
 # AWS service packages
 
-Install only the service bindings or C++ libraries you need:
-
 ```sh
 ttrek install aws-sdk-tcl-s3 aws-sdk-tcl-dynamodb
 ttrek install aws-sdk-cpp-s3
 ```
 
-Tcl service packages are available for `s3`, `dynamodb`, `lambda`, `sqs`, `iam`,
-`ssm`, and `kms`. C++ packages also include `sts` and `transfer`. Tcl package
-names and APIs are unchanged, such as `package require awss3`.
+Tcl services: `s3`, `dynamodb`, `lambda`, `sqs`, `iam`, `ssm`, and `kms`.
+C++ packages also provide `sts` and `transfer`. Tcl names and APIs are unchanged,
+such as `package require awss3`. All Tcl extensions use Tcl stubs.
 
-Each Tcl service depends on its C++ service. Each C++ service depends on the
-exact same version of `aws-sdk-cpp-core`; transfer also requires S3. The core
-alone owns CRT libraries, core headers, and shared AWSSDK CMake metadata.
-Service packages install their own libraries, headers, and CMake metadata.
-Both shared and `-static` C++ builds are supported; Tcl modules remain shared
-extensions using Tcl stubs.
+Each C++ service requires the exact matching `aws-sdk-cpp-core`; transfer also
+requires S3. Core owns CRT libraries, core headers, and AWSSDK CMake metadata.
+A small shared CMake project imports the installed dependencies and adds only
+the selected upstream service directory. It neither builds nor installs core.
+SDK sources are not patched. Shared and static C++ builds are supported.
 
-`aws-sdk-cpp@1.11.924` and `aws-sdk-tcl@1.0.14` are umbrella packages preserving
-the previous complete service set. Use a ttrek build containing `fetch` and
-metapackage migration support. Upgrade existing umbrella packages before
-mixing in individual services; older pinned monolithic releases must not be
-installed alongside the split packages because they own the same paths.
+`aws-sdk-cpp@1.11.924` and `aws-sdk-tcl@1.0.14` install the complete service set
+through dependencies. Use the updated ttrek download/unpack options and
+metapackage migration support when moving from a bundled installation.
 
-All sources use tarballs. `fetch` downloads and extracts directly into a source
-subdirectory without changing build environment variables. The core recipe
-pins all recursive submodules to the commits in the SDK release, including
-S2N's nested verification model. When updating SDK versions, update these
-gitlinks and all exact-version service dependencies together. The identical
-`service-packages.diff` patches keep upstream compilation and exports while
-reusing installed dependencies and assigning shared metadata to the core.
+The SDK and its CRT dependencies are downloaded from matching release tags.
+The untagged S2N verification model is test-only and is omitted with tests off.
+Update release tags and exact service dependencies together.
+
+The upstream static core exports `ZLIB::ZLIB`; C++ consumers should call
+`find_package(ZLIB REQUIRED)` before `find_package(AWSSDK ... COMPONENTS ...)`.
+The Tcl build does this automatically. Static OpenSSL link dependencies are
+supplied through upstream's `AWS_SDK_ADDITIONAL_LIBRARIES` CMake option.

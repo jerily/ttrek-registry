@@ -10,24 +10,33 @@
   "build": {
     "default": [
       {
-        "cmd": "fetch",
+        "cmd": "download",
         "url": "https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.924.tar.gz",
-        "archive": "aws-sdk-cpp-1.11.924.tar.gz"
+        "filename": "aws-sdk-cpp-1.11.924.tar.gz"
       },
       {
-        "cmd": "patch",
-        "filename": "service-packages.diff",
-        "p_num": "1"
+        "cmd": "unpack",
+        "filename": "aws-sdk-cpp-1.11.924.tar.gz"
+      },
+      {
+        "cmd": "download",
+        "url": "https://raw.githubusercontent.com/jerily/ttrek-registry/main/aws-sdk-cpp/1.11.924/service-build/CMakeLists.txt",
+        "filename": "aws-sdk-cpp-service-1.11.924/CMakeLists.txt"
       },
       {
         "cmd": "cd"
       },
       {
         "cmd": "cmake_config",
+        "source": "$DOWNLOAD_DIR/aws-sdk-cpp-service-1.11.924",
         "options": [
           {
-            "name": "BUILD_SHARED_LIBS",
-            "value": "ON"
+            "name": "AWS_SDK_SOURCE_DIR",
+            "value": "$SOURCE_DIR"
+          },
+          {
+            "name": "AWS_SDK_SERVICE",
+            "value": "sqs"
           },
           {
             "name": "CMAKE_BUILD_TYPE",
@@ -38,20 +47,8 @@
             "value": "$INSTALL_DIR/lib/cmake/aws-c-common/modules"
           },
           {
-            "name": "BUILD_ONLY",
-            "value": "sqs"
-          },
-          {
-            "name": "ENABLE_TESTING",
-            "value": "OFF"
-          },
-          {
-            "name": "AUTORUN_UNIT_TESTS",
-            "value": "OFF"
-          },
-          {
-            "name": "ENFORCE_SUBMODULE_VERSIONS",
-            "value": "OFF"
+            "name": "BUILD_SHARED_LIBS",
+            "value": "ON"
           },
           {
             "name": "BUILD_SHARED_LIBS",
@@ -61,14 +58,6 @@
           {
             "name": "CMAKE_POSITION_INDEPENDENT_CODE",
             "value": "ON"
-          },
-          {
-            "name": "BUILD_DEPS",
-            "value": "OFF"
-          },
-          {
-            "name": "TTREK_BUILD_SERVICE",
-            "value": "sqs"
           }
         ]
       },
