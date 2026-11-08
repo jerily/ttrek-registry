@@ -20,6 +20,17 @@ include `download`, `unpack`, `cd`, `configure`, `cmake_config`, `make`, and
 `make_install`. Build steps can refer to `$SOURCE_DIR` and `$INSTALL_DIR`.
 Start from a [similar recipe](tjson/1.0.26/ttrek.json).
 
+With a ttrek build supporting `fetch`, combine downloading and unpacking:
+
+```json
+{"cmd": "fetch", "url": "https://example.com/library-1.0.tar.gz"}
+```
+
+For nested sources, add `"destination": "crt/library"` (relative to
+`$SOURCE_DIR`) and optionally `"archive": "library-1.0.tar.gz"` (a filename
+under `$DOWNLOAD_DIR`). These literal paths leave the build environment
+unchanged. Older clients reject `fetch`; update ttrek before using such recipes.
+
 A step or option can be conditional. For example, this CMake option applies
 when the `+static` flag is enabled:
 
