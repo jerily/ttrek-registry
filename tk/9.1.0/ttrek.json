@@ -30,6 +30,11 @@
         "cmd": "cd"
       },
       {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "value": "-Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
         "cmd": "configure",
         "path": "$SOURCE_DIR/unix/configure",
         "options": [
