@@ -1,0 +1,86 @@
+{
+  "name": "aws-sdk-cpp-s3",
+  "version": "1.11.924",
+  "description": "AWS SDK for C++ s3 client library.",
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk-cpp-core": "1.11.924"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "fetch",
+        "url": "https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.924.tar.gz",
+        "archive": "aws-sdk-cpp-1.11.924.tar.gz"
+      },
+      {
+        "cmd": "patch",
+        "filename": "service-packages.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "ON"
+          },
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_MODULE_PATH",
+            "value": "$INSTALL_DIR/lib/cmake/aws-c-common/modules"
+          },
+          {
+            "name": "BUILD_ONLY",
+            "value": "s3"
+          },
+          {
+            "name": "ENABLE_TESTING",
+            "value": "OFF"
+          },
+          {
+            "name": "AUTORUN_UNIT_TESTS",
+            "value": "OFF"
+          },
+          {
+            "name": "ENFORCE_SUBMODULE_VERSIONS",
+            "value": "OFF"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_DEPS",
+            "value": "OFF"
+          },
+          {
+            "name": "TTREK_BUILD_SERVICE",
+            "value": "s3"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
