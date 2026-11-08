@@ -1,0 +1,61 @@
+{
+  "name": "aws-sdk-tcl-iam",
+  "version": "1.0.15",
+  "description": "AWS iam client for Tcl 8.6 and 9.x.",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.0",
+    "aws-sdk-cpp-iam": "1.11.924"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/aws-sdk-tcl/archive/refs/tags/v1.0.15.tar.gz",
+        "filename": "aws-sdk-tcl-1.0.15.tar.gz"
+      },
+      {
+        "cmd": "unpack",
+        "filename": "aws-sdk-tcl-1.0.15.tar.gz"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "TCL_INCLUDE_PATH",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "AWS_SDK_CPP_DIR",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "AWS_SDK_TCL_SERVICES",
+            "value": "iam"
+          },
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
