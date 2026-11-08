@@ -1,0 +1,35 @@
+{
+  "name": "snappy-tcl",
+  "description": "Snappy compression and decompression for Tcl 8.6 and 9.x using Tcl stubs.",
+  "version": "1.0.6",
+  "scripts": {
+    "demo": { "file": "demo.sh" },
+    "demo-binary": { "file": "demo-binary.sh" },
+    "demo-file": { "file": "demo-file.sh" }
+  },
+  "dependencies": {
+    "snappy": "^1.3.1",
+    "tcl": ">=8.6.14"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      { "cmd": "download", "url": "https://github.com/jerily/snappy-tcl/releases/download/v1.0.6/snappy-tcl-1.0.6.tar.gz" },
+      { "cmd": "unpack" },
+      { "cmd": "cd" },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          { "name": "CMAKE_BUILD_TYPE", "value": "Release" },
+          { "name": "TCL_LIBRARY_DIR", "value": "$INSTALL_DIR/lib" },
+          { "name": "TCL_INCLUDE_PATH", "value": "$INSTALL_DIR/include" },
+          { "name": "SNAPPY_DIR", "value": "$INSTALL_DIR" },
+          { "name": "BUILD_SHARED_LIBS", "value": "OFF", "if": "+static" },
+          { "name": "BUILD_TESTING", "value": "OFF" }
+        ]
+      },
+      { "cmd": "cmake_make", "config": "Release", "parallel": true },
+      { "cmd": "cmake_install", "config": "Release" }
+    ]
+  }
+}

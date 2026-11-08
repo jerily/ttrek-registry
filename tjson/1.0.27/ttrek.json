@@ -1,0 +1,28 @@
+{
+	"name":	"tjson",
+	"description": "JSON parsing, generation, and JSONPath queries for Tcl.",
+	"version":	"1.0.27",
+	"scripts":	{
+	},
+	"dependencies":	{
+		"tcl": ">=8.6.14"
+	},
+	"devDependencies":	{
+	},
+	"build": {
+		"default": [
+			{ "cmd": "download", "url": "https://github.com/jerily/tjson/archive/refs/tags/v1.0.27.tar.gz" },
+			{ "cmd": "unpack" },
+			{ "cmd": "cd" },
+			{ "cmd": "cmake_config",
+				"options": [
+					{"name": "TCL_LIBRARY_DIR", "value": "$INSTALL_DIR/lib"},
+					{"name": "TCL_INCLUDE_PATH", "value": "$INSTALL_DIR/include"},
+					{"name": "BUILD_SHARED_LIBS", "value": "OFF", "if": "+static"}
+				]
+			},
+			{ "cmd": "make", "parallel": true },
+			{ "cmd": "make_install" }
+		]
+	}
+}
