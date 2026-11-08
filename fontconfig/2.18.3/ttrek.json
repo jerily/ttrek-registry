@@ -19,6 +19,11 @@
         "cmd": "unpack"
       },
       {
+        "cmd": "patch",
+        "filename": "darwin-xlocale.diff",
+        "p_num": "1"
+      },
+      {
         "cmd": "cd"
       },
       {
