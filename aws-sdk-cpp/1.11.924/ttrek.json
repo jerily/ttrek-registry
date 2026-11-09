@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp",
   "version": "1.11.924",
   "description": "C++ client libraries for AWS services.",
+  "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {
     "aws-sdk-cpp-s3": "1.11.924",

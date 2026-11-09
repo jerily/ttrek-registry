@@ -1,6 +1,7 @@
 {
 	"name":	"a",
 	"description": "Example package A for dependency resolution tests.",
+	"url": "https://github.com/jerily/ttrek-registry/tree/main/a",
 	"version":	"4.0.0",
 	"scripts":	{
 	},

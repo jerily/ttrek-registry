@@ -1,6 +1,7 @@
 {
 	"name":	"treqmon",
 	"description": "HTTP request monitoring and statistics for Tcl web applications.",
+	"url": "https://github.com/jerily/treqmon",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

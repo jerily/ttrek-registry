@@ -1,6 +1,7 @@
 {
   "name": "treqmon",
   "description": "HTTP request monitoring with configurable Jinja layouts and tpathexp routes.",
+  "url": "https://github.com/jerily/treqmon",
   "version": "2.1.0",
   "scripts": {},
   "dependencies": {

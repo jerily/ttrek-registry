@@ -1,6 +1,7 @@
 {
   "name": "uap-tcl",
   "description": "User-agent parsing with browser, OS, and device details for Tcl.",
+  "url": "https://github.com/jerily/uap-tcl",
   "version": "1.1.0",
   "scripts": {
     "demo": {

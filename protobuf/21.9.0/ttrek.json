@@ -1,6 +1,7 @@
 {
 	"name": "protobuf",
 	"description": "Protocol Buffers compiler and serialization libraries.",
+	"url": "https://github.com/protocolbuffers/protobuf",
 	"version": "21.9.0",
 	"scripts": {
 	},

@@ -1,6 +1,7 @@
 {
 	"name":	"tink-tcl",
 	"description": "Tcl bindings for Tink encryption, signatures, and key management.",
+	"url": "https://github.com/jerily/tink-tcl",
 	"version":	"20240704.0.1",
 	"scripts":	{
 	},

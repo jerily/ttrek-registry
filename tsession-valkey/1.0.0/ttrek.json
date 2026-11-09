@@ -1,6 +1,7 @@
 {
 	"name":	"tsession-valkey",
 	"description": "Valkey session storage backend for Tcl web applications.",
+	"url": "https://github.com/jerily/tsession-valkey",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

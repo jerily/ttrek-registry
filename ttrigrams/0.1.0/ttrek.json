@@ -1,6 +1,7 @@
 {
   "name": "ttrigrams",
   "description": "Trigram substring search with typo suggestions for C and Tcl.",
+  "url": "https://github.com/jerily/ttrigrams",
   "version": "0.1.0",
   "scripts": {
     "demo": {

@@ -1,6 +1,7 @@
 {
 	"name":	"dropdown",
 	"description": "Example dropdown package for dependency resolution tests.",
+	"url": "https://github.com/jerily/ttrek-registry/tree/main/dropdown",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

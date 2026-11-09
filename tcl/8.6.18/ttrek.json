@@ -1,6 +1,7 @@
 {
   "name": "tcl",
   "description": "Tcl scripting language interpreter and development libraries.",
+  "url": "https://github.com/tcltk/tcl",
   "version": "8.6.18",
   "scripts": {},
   "dependencies": {

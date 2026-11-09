@@ -1,6 +1,7 @@
 {
 	"name":	"tjson",
 	"description": "JSON parsing, generation, and JSONPath queries for Tcl.",
+	"url": "https://github.com/jerily/tjson",
 	"version":	"1.0.25",
 	"scripts":	{
 	},

@@ -1,6 +1,7 @@
 {
   "name": "libgit2",
   "description": "C library for working with Git repositories.",
+  "url": "https://github.com/libgit2/libgit2",
   "version": "1.9.7",
   "scripts": {},
   "dependencies": {
