@@ -1,6 +1,7 @@
 {
   "name": "thread-naviserver",
   "description": "Tcl Thread extension built for NaviServer integration.",
+  "url": "https://github.com/tcltk/thread",
   "version": "2.8.13",
   "scripts": {},
   "dependencies": {

@@ -1,6 +1,7 @@
 {
 	"name":	"menu",
 	"description": "Example menu package for dependency resolution and USE flag tests.",
+	"url": "https://github.com/jerily/ttrek-registry/tree/main/menu",
 	"version":	"1.0.0",
 	"scripts":	{
 	},

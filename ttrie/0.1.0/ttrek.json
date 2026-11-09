@@ -1,6 +1,7 @@
 {
   "name": "ttrie",
   "description": "String trie with exact lookup and edit-distance search for C and Tcl.",
+  "url": "https://github.com/jerily/ttrie",
   "version": "0.1.0",
   "scripts": {},
   "dependencies": {

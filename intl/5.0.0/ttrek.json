@@ -1,6 +1,7 @@
 {
 	"name":	"intl",
 	"description": "Example internationalization package for dependency resolution tests.",
+	"url": "https://github.com/jerily/ttrek-registry/tree/main/intl",
 	"version":	"5.0.0",
 	"scripts":	{
 	},

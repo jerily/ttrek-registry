@@ -1,6 +1,7 @@
 {
   "name": "postgresql",
   "description": "Relational database server with SQL and extensibility support.",
+  "url": "https://www.postgresql.org/",
   "version": "16.15.0",
   "scripts": {},
   "dependencies": {

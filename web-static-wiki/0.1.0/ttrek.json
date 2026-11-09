@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "description": "Read-only Markdown wiki served from a directory with Jinja templates.",
+  "url": "https://github.com/jerily/web-static-wiki",
   "build": {
     "default": [
       {

@@ -1,6 +1,7 @@
 {
 	"name":	"tsession-dynamodb",
 	"description": "DynamoDB session storage backend for Tcl web applications.",
+	"url": "https://github.com/jerily/tsession-dynamodb",
 	"version":	"1.0.0",
 	"scripts":	{
 	},
