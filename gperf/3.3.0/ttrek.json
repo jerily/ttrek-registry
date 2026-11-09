@@ -1,6 +1,7 @@
 {
   "name": "gperf",
   "description": "Generator of perfect hash functions for sets of keywords.",
+  "url": "https://www.gnu.org/software/gperf/",
   "version": "3.3.0",
   "scripts": {},
   "dependencies": {},

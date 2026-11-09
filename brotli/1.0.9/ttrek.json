@@ -1,6 +1,7 @@
 {
 	"name":	"brotli",
 	"description": "Brotli compression and decompression library and command-line tools.",
+	"url": "https://github.com/google/brotli",
 	"version":	"1.0.9",
 	"scripts":	{
 	},

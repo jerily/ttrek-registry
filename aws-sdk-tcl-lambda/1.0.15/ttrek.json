@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl-lambda",
   "version": "1.0.15",
   "description": "AWS lambda client for Tcl 8.6 and 9.x.",
+  "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {
     "tcl": ">=8.6.0",

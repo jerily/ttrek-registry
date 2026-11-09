@@ -1,6 +1,7 @@
 {
 	"name": "tink-cc",
 	"description": "C++ cryptographic library for encryption, signatures, and key management.",
+	"url": "https://github.com/tink-crypto/tink-cc",
 	"version": "2.1.1",
 	"scripts": {
 	},

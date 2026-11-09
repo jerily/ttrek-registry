@@ -1,6 +1,7 @@
 {
   "name": "valkey-tcl",
   "description": "Tcl client for Valkey and Redis-compatible servers.",
+  "url": "https://github.com/jerily/valkey-tcl",
   "version": "1.0.3",
   "scripts": {},
   "dependencies": {

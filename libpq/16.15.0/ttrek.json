@@ -1,6 +1,7 @@
 {
   "name": "libpq",
   "description": "PostgreSQL client library for C applications.",
+  "url": "https://www.postgresql.org/",
   "version": "16.15.0",
   "scripts": {},
   "dependencies": {

@@ -1,6 +1,7 @@
 {
 	"name":	"example-bt-b",
 	"description": "Example package B for dependency solver backtracking tests.",
+	"url": "https://github.com/jerily/ttrek-registry/tree/main/example-bt-b",
 	"version":	"7.0.0",
 	"scripts":	{
 	},

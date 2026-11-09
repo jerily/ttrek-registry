@@ -1,6 +1,7 @@
 {
   "name": "thread",
   "description": "Thread creation and communication for Tcl interpreters.",
+  "url": "https://github.com/tcltk/thread",
   "version": "3.0.7",
   "scripts": {},
   "dependencies": {

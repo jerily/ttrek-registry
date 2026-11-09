@@ -2,8 +2,10 @@
 
 Add each version in its own `<package>/<version>/` directory, keeping existing
 versions available. Put `ttrek.json`, patches, and example scripts together.
-Use a short, single-line `description` and pin source downloads or Git checkouts
-to a release or commit.
+Use a short, single-line `description` and a top-level `url` pointing to the
+project homepage or source repository (not a release archive). Pin source
+downloads or Git checkouts to a release or commit. Dependency-test fixtures
+link to their directory in this registry.
 
 `dependencies` maps package names to version constraints, for example:
 

@@ -1,6 +1,7 @@
 {
   "name": "cmark-gfm-tcl",
   "description": "Tcl and C/C++ bindings for GitHub Flavored Markdown rendering and CommonMark normalization.",
+  "url": "https://github.com/jerily/cmark-gfm-tcl",
   "version": "0.1.0",
   "scripts": {},
   "dependencies": {

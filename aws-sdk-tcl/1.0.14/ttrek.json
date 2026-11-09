@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl",
   "version": "1.0.14",
   "description": "All AWS service clients for Tcl 8.6 and 9.x.",
+  "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {
     "aws-sdk-tcl-s3": "1.0.14",

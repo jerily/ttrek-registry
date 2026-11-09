@@ -1,6 +1,7 @@
 {
 	"name":	"tdbcodbc",
 	"description": "ODBC database driver for Tcl Database Connectivity.",
+	"url": "https://github.com/tcltk/tdbcodbc",
 	"version":	"1.1.8",
 	"scripts":	{
 	},

@@ -1,6 +1,7 @@
 {
   "name": "uap-core",
   "description": "Shared user-agent patterns and test data for browser, OS, and device detection.",
+  "url": "https://github.com/ua-parser/uap-core",
   "version": "2026.8.24",
   "scripts": {
     "demo": {

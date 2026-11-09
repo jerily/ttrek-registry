@@ -1,6 +1,7 @@
 {
 	"name":	"tsession",
 	"description": "Session management middleware for Tcl web applications.",
+	"url": "https://github.com/jerily/tsession",
 	"version":	"1.0.3",
 	"scripts":	{
 	},

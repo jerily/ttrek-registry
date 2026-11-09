@@ -1,6 +1,7 @@
 {
   "name": "tk",
   "description": "Cross-platform graphical user interface toolkit for Tcl.",
+  "url": "https://github.com/tcltk/tk",
   "version": "9.1.0",
   "scripts": {
     "demo-widgets": {

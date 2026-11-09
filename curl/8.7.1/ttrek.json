@@ -1,6 +1,7 @@
 {
 	"name":	"curl",
 	"description": "Command-line tool and C library for HTTP and other network transfers.",
+	"url": "https://curl.se/",
 	"version":	"8.7.1",
 	"scripts":	{
 	},

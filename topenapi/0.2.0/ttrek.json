@@ -1,6 +1,7 @@
 {
   "name": "topenapi",
   "description": "OpenAPI validation and typed Tcl variable binding, with a C API and native twebserver adapter.",
+  "url": "https://github.com/jerily/topenapi",
   "version": "0.2.0",
   "scripts": {
     "demo": {
