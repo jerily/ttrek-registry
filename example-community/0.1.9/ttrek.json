@@ -1,6 +1,6 @@
 {
   "name": "example-community",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "start": {
       "file": "start.sh"
@@ -22,7 +22,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/example-community/releases/download/v0.1.8/example-community-0.1.8.tar.gz"
+        "url": "https://github.com/jerily/example-community/releases/download/v0.1.9/example-community-0.1.9.tar.gz"
       },
       {
         "cmd": "unpack"
