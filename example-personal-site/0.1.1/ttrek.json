@@ -1,0 +1,50 @@
+{
+  "name": "example-personal-site",
+  "version": "0.1.1",
+  "scripts": {
+    "start": {
+      "file": "start.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "twebserver": "^1.47.56",
+    "web-wiki": "=0.1.0",
+    "web-blog": "=0.1.0",
+    "tpersist": "^0.1.1",
+    "tpathexp": "^1.1.0",
+    "jinja2-tcl": "^0.1.1",
+    "tjson": "^1.0.27",
+    "tdbcsqlite3": ">=1.1.8"
+  },
+  "devDependencies": {},
+  "description": "Local personal-site example using twebserver, web-wiki, web-blog, and SQLite.",
+  "url": "https://github.com/jerily/example-personal-site",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/example-personal-site/releases/download/v0.1.1/example-personal-site-0.1.1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
