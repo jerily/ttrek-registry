@@ -1,24 +1,21 @@
 {
-  "name": "web-wiki",
-  "version": "0.1.1",
+  "name": "web-forum",
+  "version": "0.1.6",
   "scripts": {},
   "dependencies": {
-    "tcl": ">=8.6.0,<10.0.0",
-    "tpersist": "^0.1.0",
-    "tpathexp": "^1.1.0",
+    "tcl": ">=9.1.0,<10.0.0",
+    "web-user": "=0.1.5",
     "cmark-gfm-tcl": "^0.1.0",
-    "tdbcsqlite3": ">=1.1.8",
-    "jinja2-tcl": "^0.1.0",
-    "tjson": "^1.0.26"
+    "topenapi": "^0.2.0"
   },
   "devDependencies": {},
-  "description": "Editable Markdown wiki for Tcl with SQLite persistence.",
-  "url": "https://github.com/jerily/web-wiki",
+  "description": "Markdown discussions with a visual editor and authenticated posting.",
+  "url": "https://github.com/jerily/web-forum",
   "build": {
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/web-wiki/releases/download/v0.1.1/web-wiki-0.1.1.tar.gz"
+        "url": "https://github.com/jerily/web-forum/releases/download/v0.1.6/web-forum-0.1.6.tar.gz"
       },
       {
         "cmd": "unpack"
