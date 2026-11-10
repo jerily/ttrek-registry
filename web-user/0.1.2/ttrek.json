@@ -1,0 +1,52 @@
+{
+  "name": "web-user",
+  "version": "0.1.2",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "tpersist": "^0.1.1",
+    "tpathexp": "^1.1.0",
+    "jinja2-tcl": "^0.1.1",
+    "tjson": "^1.0.27",
+    "tink-tcl": "20240704.0.2",
+    "tmfa": "1.1.2",
+    "tqrcodegen": "^1.1.1",
+    "ksuid-tcl": "^1.0.5",
+    "tdbcsqlite3": ">=1.1.8",
+    "tdbcpostgres": ">=1.1.8",
+    "bcrypt-tcl": "2.0.1",
+    "twebserver": "^1.47.56",
+    "tsession": "1.0.4",
+    "topenapi": "^0.2.0"
+  },
+  "devDependencies": {},
+  "description": "Email/password accounts, recovery and authenticator MFA for Tcl sites.",
+  "url": "https://github.com/jerily/web-user",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/web-user/releases/download/v0.1.2/web-user-0.1.2.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
