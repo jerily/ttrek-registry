@@ -1,6 +1,6 @@
 {
-  "name": "web-blog",
-  "version": "0.1.1",
+  "name": "web-wiki",
+  "version": "0.1.2",
   "scripts": {},
   "dependencies": {
     "tcl": ">=8.6.0,<10.0.0",
@@ -12,13 +12,13 @@
     "tjson": "^1.0.26"
   },
   "devDependencies": {},
-  "description": "Editable Markdown blog for Tcl with SQLite persistence.",
-  "url": "https://github.com/jerily/web-blog",
+  "description": "Editable Markdown wiki for Tcl with SQLite persistence.",
+  "url": "https://github.com/jerily/web-wiki",
   "build": {
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/web-blog/releases/download/v0.1.1/web-blog-0.1.1.tar.gz"
+        "url": "https://github.com/jerily/web-wiki/releases/download/v0.1.2/web-wiki-0.1.2.tar.gz"
       },
       {
         "cmd": "unpack"
