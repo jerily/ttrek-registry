@@ -13,7 +13,8 @@
     "aws-sdk-cpp-transfer": "1.11.924",
     "aws-sdk-cpp-sts": "1.11.924",
     "aws-sdk-cpp-ssm": "1.11.924",
-    "aws-sdk-cpp-kms": "1.11.924"
+    "aws-sdk-cpp-kms": "1.11.924",
+    "aws-sdk-cpp-ses": "1.11.924"
   },
   "devDependencies": {},
   "build": {
