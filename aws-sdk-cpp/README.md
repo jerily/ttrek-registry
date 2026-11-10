@@ -34,6 +34,8 @@ supplied through upstream's `AWS_SDK_ADDITIONAL_LIBRARIES` CMake option.
 `aws-sdk-tcl-ses@1.0.16`, providing `package require awsses`. Select `ses` with
 `AWS_SDK_TCL_SERVICES`, or `email` with the upstream SDK's `BUILD_ONLY` option.
 This is the SES classic API; SESv2 is a separate upstream component.
+See the [SES package guide](../aws-sdk-tcl-ses/1.0.16/README.md) for installation
+and a send-email example.
 
 The Tcl 1.0.16 recipes use the `v1.0.16` source release. Existing Tcl 1.0.15
 recipes remain available unchanged.
