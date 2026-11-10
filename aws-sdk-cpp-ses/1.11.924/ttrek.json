@@ -1,0 +1,76 @@
+{
+  "name": "aws-sdk-cpp-ses",
+  "version": "1.11.924",
+  "description": "AWS SDK for C++ SES client (upstream email component).",
+  "url": "https://github.com/aws/aws-sdk-cpp",
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk-cpp-core": "1.11.924"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.924.tar.gz",
+        "filename": "aws-sdk-cpp-1.11.924.tar.gz"
+      },
+      {
+        "cmd": "unpack",
+        "filename": "aws-sdk-cpp-1.11.924.tar.gz"
+      },
+      {
+        "cmd": "download",
+        "url": "https://raw.githubusercontent.com/jerily/ttrek-registry/main/aws-sdk-cpp/1.11.924/service-build/CMakeLists.txt",
+        "filename": "aws-sdk-cpp-service-1.11.924/CMakeLists.txt"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "source": "$DOWNLOAD_DIR/aws-sdk-cpp-service-1.11.924",
+        "options": [
+          {
+            "name": "AWS_SDK_SOURCE_DIR",
+            "value": "$SOURCE_DIR"
+          },
+          {
+            "name": "AWS_SDK_SERVICE",
+            "value": "email"
+          },
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_MODULE_PATH",
+            "value": "$INSTALL_DIR/lib/cmake/aws-c-common/modules"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "ON"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
