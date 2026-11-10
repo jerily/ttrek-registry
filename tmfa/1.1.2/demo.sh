@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+for tcl_shell in "$PROJECT_INSTALL_DIR/bin/tclsh" "$PROJECT_INSTALL_DIR"/bin/tclsh9.* "$PROJECT_INSTALL_DIR/bin/tclsh8.6"; do
+    if [ -x "$tcl_shell" ]; then break; fi
+done
+if [ ! -x "$tcl_shell" ]; then
+    echo "No Tcl shell found in $PROJECT_INSTALL_DIR/bin" >&2
+    exit 1
+fi
+exec "$tcl_shell" <<'TCL'
+try {
+    lappend auto_path [file join $::env(PROJECT_INSTALL_DIR) lib]
+    package require tmfa 1.1
+    set secret [tmfa::base32_encode "12345678901234567890"]
+    puts "HOTP: [tmfa::get_hotp $secret 0 6 SHA1]"
+    puts "TOTP: [tmfa::get_totp $secret 6 30 SHA1]"
+    puts "TOTP at 59 seconds: [tmfa::get_totp $secret 8 30 SHA1 59]"
+} on error {message options} {
+    puts stderr $message
+    exit 1
+}
+TCL
