@@ -1,6 +1,6 @@
 {
   "name": "web-user",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {},
   "dependencies": {
     "tcl": ">=9.1.0,<10.0.0",
@@ -26,7 +26,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/web-user/releases/download/v0.1.5/web-user-0.1.5.tar.gz"
+        "url": "https://github.com/jerily/web-user/releases/download/v0.1.6/web-user-0.1.6.tar.gz"
       },
       {
         "cmd": "unpack"
