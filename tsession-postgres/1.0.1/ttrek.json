@@ -1,10 +1,10 @@
 {
   "name": "tsession-postgres",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {},
   "dependencies": {
     "tcl": ">=8.6.14",
-    "tsession": "^1.1.0",
+    "tsession": "^2.0.0",
     "tpersist": "^0.1.2",
     "tdbcpostgres": ">=1.1.8"
   },
@@ -15,7 +15,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/tsession-postgres/releases/download/v1.0.0/tsession-postgres-1.0.0.tar.gz"
+        "url": "https://github.com/jerily/tsession-postgres/releases/download/v1.0.1/tsession-postgres-1.0.1.tar.gz"
       },
       {
         "cmd": "unpack"

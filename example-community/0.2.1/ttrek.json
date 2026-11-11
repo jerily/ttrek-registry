@@ -1,6 +1,6 @@
 {
-  "name": "example-personal-site",
-  "version": "0.1.1",
+  "name": "example-community",
+  "version": "0.2.1",
   "scripts": {
     "start": {
       "file": "start.sh"
@@ -8,23 +8,21 @@
   },
   "dependencies": {
     "tcl": ">=9.1.0,<10.0.0",
+    "web-user": "=0.2.1",
+    "web-forum": "=0.1.9",
     "twebserver": "^1.47.56",
-    "web-wiki": "=0.1.0",
-    "web-blog": "=0.1.0",
-    "tpersist": "^0.1.1",
-    "tpathexp": "^1.1.0",
-    "jinja2-tcl": "^0.1.1",
-    "tjson": "^1.0.27",
-    "tdbcsqlite3": ">=1.1.8"
+    "web-wiki": "=0.1.3",
+    "web-blog": "=0.1.3",
+    "tconfig": "1.0.0"
   },
   "devDependencies": {},
-  "description": "Local personal-site example using twebserver, web-wiki, web-blog, and SQLite.",
-  "url": "https://github.com/jerily/example-personal-site",
+  "description": "Community example mounting accounts, Markdown forum, wiki and blog.",
+  "url": "https://github.com/jerily/example-community",
   "build": {
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/example-personal-site/releases/download/v0.1.1/example-personal-site-0.1.1.tar.gz"
+        "url": "https://github.com/jerily/example-community/releases/download/v0.2.1/example-community-0.2.1.tar.gz"
       },
       {
         "cmd": "unpack"
