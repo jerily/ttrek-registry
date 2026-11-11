@@ -2,7 +2,7 @@
   "name": "tpersist",
   "description": "SQL query construction and database access through TDBC for Tcl.",
   "url": "https://github.com/jerily/tpersist",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "scripts": {},
   "dependencies": {
     "tcl": ">=8.6.14",
@@ -14,7 +14,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/tpersist/archive/refs/tags/v0.1.0.tar.gz"
+        "url": "https://github.com/jerily/tpersist/archive/refs/tags/v0.1.2.tar.gz"
       },
       {
         "cmd": "unpack"

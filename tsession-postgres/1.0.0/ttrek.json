@@ -1,0 +1,41 @@
+{
+  "name": "tsession-postgres",
+  "version": "1.0.0",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.14",
+    "tsession": "^1.1.0",
+    "tpersist": "^0.1.2",
+    "tdbcpostgres": ">=1.1.8"
+  },
+  "devDependencies": {},
+  "description": "PostgreSQL session persistence for tsession, with tenant isolation and shared transactions.",
+  "url": "https://github.com/jerily/tsession-postgres",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tsession-postgres/releases/download/v1.0.0/tsession-postgres-1.0.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
