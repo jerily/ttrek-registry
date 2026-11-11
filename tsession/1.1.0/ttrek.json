@@ -2,7 +2,7 @@
   "name": "tsession",
   "description": "Session management middleware for Tcl web applications.",
   "url": "https://github.com/jerily/tsession",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "scripts": {},
   "dependencies": {
     "tink-tcl": "^20240704.0.2",
@@ -15,7 +15,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/tsession/archive/refs/tags/v1.0.4.tar.gz"
+        "url": "https://github.com/jerily/tsession/archive/refs/tags/v1.1.0.tar.gz"
       },
       {
         "cmd": "unpack"
