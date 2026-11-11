@@ -1,0 +1,36 @@
+{
+  "name": "tsession-dynamodb",
+  "version": "2.0.0",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.14",
+    "aws-sdk-tcl-dynamodb": "^1.0.18",
+    "tsession": "^2.0.0"
+  },
+  "devDependencies": {},
+  "description": "Tenant-scoped DynamoDB sessions for tsession 2, with conditional writes and absolute expiry.",
+  "url": "https://github.com/jerily/tsession-dynamodb",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tsession-dynamodb/releases/download/v2.0.0/tsession-dynamodb-2.0.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
