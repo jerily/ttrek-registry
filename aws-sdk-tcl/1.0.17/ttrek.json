@@ -1,0 +1,22 @@
+{
+  "name": "aws-sdk-tcl",
+  "version": "1.0.17",
+  "description": "All AWS service clients for Tcl 8.6 and 9.x.",
+  "url": "https://github.com/jerily/aws-sdk-tcl",
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk-tcl-s3": "1.0.17",
+    "aws-sdk-tcl-dynamodb": "1.0.17",
+    "aws-sdk-tcl-lambda": "1.0.17",
+    "aws-sdk-tcl-sqs": "1.0.17",
+    "aws-sdk-tcl-iam": "1.0.17",
+    "aws-sdk-tcl-ssm": "1.0.17",
+    "aws-sdk-tcl-kms": "1.0.17",
+    "aws-sdk-cpp": "1.11.924",
+    "aws-sdk-tcl-ses": "1.0.17"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": []
+  }
+}
