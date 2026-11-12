@@ -9,6 +9,7 @@
   },
   "devDependencies": {},
   "description": "Tenant-scoped DynamoDB sessions for tsession 2, with conditional writes and absolute expiry.",
+  "tags": ["tcl", "web", "sessions", "dynamodb", "aws", "persistence"],
   "url": "https://github.com/jerily/tsession-dynamodb",
   "build": {
     "default": [

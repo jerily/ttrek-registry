@@ -1,6 +1,7 @@
 {
   "name": "libfreetype",
   "description": "Font loading and glyph rasterization library.",
+  "tags": ["fonts", "graphics", "text-rendering"],
   "url": "https://freetype.org/",
   "version": "2.15.0",
   "scripts": {},

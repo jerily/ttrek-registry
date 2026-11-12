@@ -1,6 +1,7 @@
 {
 	"name": "trequests",
 	"description": "HTTP and HTTPS client extension for Tcl using curl.",
+	"tags": ["tcl", "http", "https", "client", "networking"],
 	"url": "https://github.com/jerily/trequests",
 	"version": "1.0.0",
 	"scripts": {

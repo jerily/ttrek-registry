@@ -1,6 +1,7 @@
 {
 	"name":	"tjv",
 	"description": "JSON validation extension for Tcl.",
+	"tags": ["tcl", "json", "validation"],
 	"url": "https://github.com/jerily/tjv",
 	"version":	"1.0.0",
 	"scripts":	{

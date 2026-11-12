@@ -1,0 +1,548 @@
+{
+  "name": "tclutils",
+  "description": "Pure-Tcl text, data, document, archive, and utility modules.",
+  "url": "https://github.com/gregnix/tclutils",
+  "version": "0.69.0",
+  "tags": [
+    "tcl",
+    "utilities",
+    "text-processing",
+    "data-formats",
+    "pure-tcl"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "run-demo.sh"
+    },
+    "demo-agrep": {
+      "file": "run-demo.sh",
+      "args": [
+        "agrep"
+      ]
+    },
+    "demo-base32": {
+      "file": "run-demo.sh",
+      "args": [
+        "base32"
+      ]
+    },
+    "demo-base64": {
+      "file": "run-demo.sh",
+      "args": [
+        "base64"
+      ]
+    },
+    "demo-bin": {
+      "file": "run-demo.sh",
+      "args": [
+        "bin"
+      ]
+    },
+    "demo-cal": {
+      "file": "run-demo.sh",
+      "args": [
+        "cal"
+      ]
+    },
+    "demo-cat": {
+      "file": "run-demo.sh",
+      "args": [
+        "cat"
+      ]
+    },
+    "demo-cmp": {
+      "file": "run-demo.sh",
+      "args": [
+        "cmp"
+      ]
+    },
+    "demo-code": {
+      "file": "run-demo.sh",
+      "args": [
+        "code"
+      ]
+    },
+    "demo-comm": {
+      "file": "run-demo.sh",
+      "args": [
+        "comm"
+      ]
+    },
+    "demo-crc": {
+      "file": "run-demo.sh",
+      "args": [
+        "crc"
+      ]
+    },
+    "demo-csplit": {
+      "file": "run-demo.sh",
+      "args": [
+        "csplit"
+      ]
+    },
+    "demo-csv": {
+      "file": "run-demo.sh",
+      "args": [
+        "csv"
+      ]
+    },
+    "demo-cut": {
+      "file": "run-demo.sh",
+      "args": [
+        "cut"
+      ]
+    },
+    "demo-dhash": {
+      "file": "run-demo.sh",
+      "args": [
+        "dhash"
+      ]
+    },
+    "demo-diff": {
+      "file": "run-demo.sh",
+      "args": [
+        "diff"
+      ]
+    },
+    "demo-find": {
+      "file": "run-demo.sh",
+      "args": [
+        "find"
+      ]
+    },
+    "demo-fmt": {
+      "file": "run-demo.sh",
+      "args": [
+        "fmt"
+      ]
+    },
+    "demo-fold": {
+      "file": "run-demo.sh",
+      "args": [
+        "fold"
+      ]
+    },
+    "demo-fuzzy": {
+      "file": "run-demo.sh",
+      "args": [
+        "fuzzy"
+      ]
+    },
+    "demo-grep": {
+      "file": "run-demo.sh",
+      "args": [
+        "grep"
+      ]
+    },
+    "demo-head": {
+      "file": "run-demo.sh",
+      "args": [
+        "head"
+      ]
+    },
+    "demo-hexdump": {
+      "file": "run-demo.sh",
+      "args": [
+        "hexdump"
+      ]
+    },
+    "demo-hexedit": {
+      "file": "run-demo.sh",
+      "args": [
+        "hexedit"
+      ]
+    },
+    "demo-iconv": {
+      "file": "run-demo.sh",
+      "args": [
+        "iconv"
+      ]
+    },
+    "demo-join": {
+      "file": "run-demo.sh",
+      "args": [
+        "join"
+      ]
+    },
+    "demo-json": {
+      "file": "run-demo.sh",
+      "args": [
+        "json"
+      ]
+    },
+    "demo-md": {
+      "file": "run-demo.sh",
+      "args": [
+        "md"
+      ]
+    },
+    "demo-od": {
+      "file": "run-demo.sh",
+      "args": [
+        "od"
+      ]
+    },
+    "demo-odf": {
+      "file": "run-demo.sh",
+      "args": [
+        "odf"
+      ]
+    },
+    "demo-paste": {
+      "file": "run-demo.sh",
+      "args": [
+        "paste"
+      ]
+    },
+    "demo-patch": {
+      "file": "run-demo.sh",
+      "args": [
+        "patch"
+      ]
+    },
+    "demo-pdf": {
+      "file": "run-demo.sh",
+      "args": [
+        "pdf"
+      ]
+    },
+    "demo-sed": {
+      "file": "run-demo.sh",
+      "args": [
+        "sed"
+      ]
+    },
+    "demo-sort": {
+      "file": "run-demo.sh",
+      "args": [
+        "sort"
+      ]
+    },
+    "demo-split": {
+      "file": "run-demo.sh",
+      "args": [
+        "split"
+      ]
+    },
+    "demo-stat": {
+      "file": "run-demo.sh",
+      "args": [
+        "stat"
+      ]
+    },
+    "demo-strings": {
+      "file": "run-demo.sh",
+      "args": [
+        "strings"
+      ]
+    },
+    "demo-tail": {
+      "file": "run-demo.sh",
+      "args": [
+        "tail"
+      ]
+    },
+    "demo-task": {
+      "file": "run-demo.sh",
+      "args": [
+        "task"
+      ]
+    },
+    "demo-tee": {
+      "file": "run-demo.sh",
+      "args": [
+        "tee"
+      ]
+    },
+    "demo-tr": {
+      "file": "run-demo.sh",
+      "args": [
+        "tr"
+      ]
+    },
+    "demo-tuappinfo": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuappinfo"
+      ]
+    },
+    "demo-tubookmark": {
+      "file": "run-demo.sh",
+      "args": [
+        "tubookmark"
+      ]
+    },
+    "demo-tucolor": {
+      "file": "run-demo.sh",
+      "args": [
+        "tucolor"
+      ]
+    },
+    "demo-tudate": {
+      "file": "run-demo.sh",
+      "args": [
+        "tudate"
+      ]
+    },
+    "demo-tudict": {
+      "file": "run-demo.sh",
+      "args": [
+        "tudict"
+      ]
+    },
+    "demo-tudocx": {
+      "file": "run-demo.sh",
+      "args": [
+        "tudocx"
+      ]
+    },
+    "demo-tuevent": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuevent"
+      ]
+    },
+    "demo-tuholiday": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuholiday"
+      ]
+    },
+    "demo-tuical": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuical"
+      ]
+    },
+    "demo-tuimage": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuimage"
+      ]
+    },
+    "demo-tuini": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuini"
+      ]
+    },
+    "demo-tulayout": {
+      "file": "run-demo.sh",
+      "args": [
+        "tulayout"
+      ]
+    },
+    "demo-tuldif": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuldif"
+      ]
+    },
+    "demo-tulist": {
+      "file": "run-demo.sh",
+      "args": [
+        "tulist"
+      ]
+    },
+    "demo-tulog": {
+      "file": "run-demo.sh",
+      "args": [
+        "tulog"
+      ]
+    },
+    "demo-tumath": {
+      "file": "run-demo.sh",
+      "args": [
+        "tumath"
+      ]
+    },
+    "demo-tunotes": {
+      "file": "run-demo.sh",
+      "args": [
+        "tunotes"
+      ]
+    },
+    "demo-tunum": {
+      "file": "run-demo.sh",
+      "args": [
+        "tunum"
+      ]
+    },
+    "demo-tunumany": {
+      "file": "run-demo.sh",
+      "args": [
+        "tunumany"
+      ]
+    },
+    "demo-tupagespec": {
+      "file": "run-demo.sh",
+      "args": [
+        "tupagespec"
+      ]
+    },
+    "demo-tupng": {
+      "file": "run-demo.sh",
+      "args": [
+        "tupng"
+      ]
+    },
+    "demo-tupngdraw": {
+      "file": "run-demo.sh",
+      "args": [
+        "tupngdraw"
+      ]
+    },
+    "demo-tuprovider-zip": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuprovider-zip"
+      ]
+    },
+    "demo-tuprovider": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuprovider"
+      ]
+    },
+    "demo-turegistry": {
+      "file": "run-demo.sh",
+      "args": [
+        "turegistry"
+      ]
+    },
+    "demo-turrule": {
+      "file": "run-demo.sh",
+      "args": [
+        "turrule"
+      ]
+    },
+    "demo-tustr": {
+      "file": "run-demo.sh",
+      "args": [
+        "tustr"
+      ]
+    },
+    "demo-tusvg": {
+      "file": "run-demo.sh",
+      "args": [
+        "tusvg"
+      ]
+    },
+    "demo-tutable": {
+      "file": "run-demo.sh",
+      "args": [
+        "tutable"
+      ]
+    },
+    "demo-tuurl": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuurl"
+      ]
+    },
+    "demo-tuuuid": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuuuid"
+      ]
+    },
+    "demo-tuvalidate": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuvalidate"
+      ]
+    },
+    "demo-tuvcard": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuvcard"
+      ]
+    },
+    "demo-tuxlsx": {
+      "file": "run-demo.sh",
+      "args": [
+        "tuxlsx"
+      ]
+    },
+    "demo-uniq": {
+      "file": "run-demo.sh",
+      "args": [
+        "uniq"
+      ]
+    },
+    "demo-wc": {
+      "file": "run-demo.sh",
+      "args": [
+        "wc"
+      ]
+    },
+    "demo-xargs": {
+      "file": "run-demo.sh",
+      "args": [
+        "xargs"
+      ]
+    },
+    "demo-xml": {
+      "file": "run-demo.sh",
+      "args": [
+        "xml"
+      ]
+    },
+    "demo-xxhash": {
+      "file": "run-demo.sh",
+      "args": [
+        "xxhash"
+      ]
+    },
+    "demo-zip": {
+      "file": "run-demo.sh",
+      "args": [
+        "zip"
+      ]
+    },
+    "demo-zipfs": {
+      "file": "run-demo.sh",
+      "args": [
+        "zipfs"
+      ]
+    },
+    "check-package": {
+      "file": "check-package.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<10.0.0",
+    "tcllib": "^2.0.0",
+    "sqlite3": "^3.45.3"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/gregnix/tclutils/archive/9718efd68f9255752e940ca869262e9be85750c3.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "install.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "prefix",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

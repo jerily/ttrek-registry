@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp-sqs",
   "version": "1.11.924",
   "description": "AWS SDK for C++ sqs client library.",
+  "tags": ["cpp", "aws", "cloud", "sqs", "queues", "messaging"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {

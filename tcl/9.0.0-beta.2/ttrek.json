@@ -1,6 +1,7 @@
 {
 	"name":	"tcl",
 	"description": "Tcl scripting language interpreter and development libraries.",
+	"tags": ["tcl", "language", "interpreter", "runtime"],
 	"url": "https://github.com/tcltk/tcl",
 	"version":	"9.0.0-beta.2",
 	"scripts":	{

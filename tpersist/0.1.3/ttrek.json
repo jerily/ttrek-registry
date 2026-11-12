@@ -1,6 +1,7 @@
 {
   "name": "tpersist",
   "description": "SQL query construction and database access through TDBC for Tcl.",
+  "tags": ["tcl", "tdbc", "sql", "database", "persistence"],
   "url": "https://github.com/jerily/tpersist",
   "version": "0.1.3",
   "scripts": {},

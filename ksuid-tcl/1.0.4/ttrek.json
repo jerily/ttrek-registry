@@ -1,6 +1,7 @@
 {
   "name": "ksuid-tcl",
   "description": "Generation and parsing of sortable unique identifiers for Tcl.",
+  "tags": ["tcl", "identifiers", "ksuid", "sorting"],
   "url": "https://github.com/jerily/ksuid-tcl",
   "version": "1.0.4",
   "scripts": {

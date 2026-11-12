@@ -1,6 +1,7 @@
 {
   "name": "openacs",
   "description": "Tcl web application framework and collaboration platform.",
+  "tags": ["tcl", "naviserver", "web", "framework", "collaboration"],
   "url": "https://github.com/openacs/openacs-core",
   "version": "5.10.1",
   "scripts": {

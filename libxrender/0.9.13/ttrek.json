@@ -1,6 +1,7 @@
 {
   "name": "libxrender",
   "description": "Client library for the X11 Render extension.",
+  "tags": ["x11", "graphics", "rendering"],
   "url": "https://gitlab.freedesktop.org/xorg/lib/libxrender",
   "version": "0.9.13",
   "scripts": {},

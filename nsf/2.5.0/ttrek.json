@@ -1,6 +1,7 @@
 {
   "name": "nsf",
   "description": "Next Scripting Framework for object-oriented programming in Tcl.",
+  "tags": ["tcl", "object-oriented", "framework"],
   "url": "https://next-scripting.org/",
   "version": "2.5.0",
   "scripts": {},

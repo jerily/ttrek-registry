@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "description": "Read-only Markdown blog served from a directory with Jinja templates.",
+  "tags": ["tcl", "web", "blog", "markdown", "static-site"],
   "url": "https://github.com/jerily/web-static-blog",
   "build": {
     "default": [

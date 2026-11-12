@@ -19,6 +19,7 @@
   },
   "devDependencies": {},
   "description": "Local personal-site example using twebserver, web-wiki, web-blog, and SQLite.",
+  "tags": ["tcl", "example", "web", "website", "wiki", "blog", "sqlite"],
   "url": "https://github.com/jerily/example-personal-site",
   "build": {
     "default": [
