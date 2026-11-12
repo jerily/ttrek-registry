@@ -1,5 +1,6 @@
 {
   "name": "nssmtpd",
+  "license": "MPL-2.0",
   "description": "SMTP server module for NaviServer.",
   "tags": ["tcl", "naviserver", "smtp", "email", "server"],
   "url": "https://naviserver.sourceforge.io/",

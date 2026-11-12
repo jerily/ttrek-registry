@@ -1,5 +1,6 @@
 {
   "name": "snappy-tcl",
+  "license": "MIT",
   "description": "Snappy compression and decompression for Tcl 8.6 and 9.x using Tcl stubs.",
   "tags": ["tcl", "compression", "snappy"],
   "url": "https://github.com/jerily/snappy-tcl",

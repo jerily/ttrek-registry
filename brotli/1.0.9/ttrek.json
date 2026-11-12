@@ -1,5 +1,6 @@
 {
 	"name":	"brotli",
+	"license": "MIT",
 	"description": "Brotli compression and decompression library and command-line tools.",
 	"tags": ["compression", "brotli"],
 	"url": "https://github.com/google/brotli",

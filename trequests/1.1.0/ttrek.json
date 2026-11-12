@@ -1,5 +1,6 @@
 {
   "name": "trequests",
+  "license": "MIT",
   "description": "HTTP and HTTPS client extension for Tcl using curl.",
   "tags": ["tcl", "http", "https", "client", "networking"],
   "url": "https://github.com/jerily/trequests",

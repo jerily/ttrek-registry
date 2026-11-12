@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl",
+  "license": "MIT",
   "version": "1.0.14",
   "description": "All AWS service clients for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "sdk"],

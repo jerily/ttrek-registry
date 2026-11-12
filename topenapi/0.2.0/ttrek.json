@@ -1,5 +1,6 @@
 {
   "name": "topenapi",
+  "license": "MIT",
   "description": "OpenAPI validation and typed Tcl variable binding, with a C API and native twebserver adapter.",
   "tags": ["tcl", "openapi", "api", "validation", "web"],
   "url": "https://github.com/jerily/topenapi",

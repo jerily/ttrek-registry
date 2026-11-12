@@ -1,5 +1,6 @@
 {
   "name": "uap-core",
+  "license": "Apache-2.0",
   "description": "Shared user-agent patterns and test data for browser, OS, and device detection.",
   "tags": ["user-agent", "browser", "device", "detection", "data"],
   "url": "https://github.com/ua-parser/uap-core",

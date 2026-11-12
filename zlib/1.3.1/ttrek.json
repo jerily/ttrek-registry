@@ -1,5 +1,6 @@
 {
 	"name":	"zlib",
+	"license": "Zlib",
 	"description": "General-purpose compression library implementing the DEFLATE format.",
 	"tags": ["c", "compression", "deflate", "gzip"],
 	"url": "https://github.com/madler/zlib",

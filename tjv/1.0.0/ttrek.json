@@ -1,5 +1,6 @@
 {
 	"name":	"tjv",
+	"license": "MIT",
 	"description": "JSON validation extension for Tcl.",
 	"tags": ["tcl", "json", "validation"],
 	"url": "https://github.com/jerily/tjv",

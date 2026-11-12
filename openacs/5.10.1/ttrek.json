@@ -1,5 +1,6 @@
 {
   "name": "openacs",
+  "license": "GPL-2.0-or-later",
   "description": "Tcl web application framework and collaboration platform.",
   "tags": ["tcl", "naviserver", "web", "framework", "collaboration"],
   "url": "https://github.com/openacs/openacs-core",

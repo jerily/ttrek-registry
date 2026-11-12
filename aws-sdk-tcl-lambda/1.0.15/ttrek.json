@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl-lambda",
+  "license": "MIT",
   "version": "1.0.15",
   "description": "AWS lambda client for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "lambda", "serverless", "functions"],

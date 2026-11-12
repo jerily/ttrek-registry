@@ -1,5 +1,6 @@
 {
   "name": "tcllib",
+  "license": "TCL",
   "description": "Standard library of Tcl modules for common programming tasks.",
   "tags": ["tcl", "standard-library", "utilities", "pure-tcl"],
   "url": "https://github.com/tcltk/tcllib",

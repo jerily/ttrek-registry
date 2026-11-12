@@ -1,5 +1,6 @@
 {
 	"name":	"bcrypt-tcl",
+	"license": "MIT",
 	"description": "Password hashing and verification with bcrypt for Tcl.",
 	"tags": ["tcl", "security", "passwords", "hashing", "authentication"],
 	"url": "https://github.com/jerily/bcrypt-tcl",

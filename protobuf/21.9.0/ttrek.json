@@ -1,5 +1,6 @@
 {
 	"name": "protobuf",
+	"license": "BSD-3-Clause",
 	"description": "Protocol Buffers compiler and serialization libraries.",
 	"tags": ["protobuf", "serialization", "code-generation"],
 	"url": "https://github.com/protocolbuffers/protobuf",

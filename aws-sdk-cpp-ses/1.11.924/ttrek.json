@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-cpp-ses",
+  "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ SES client (upstream email component).",
   "tags": ["cpp", "aws", "cloud", "ses", "email"],

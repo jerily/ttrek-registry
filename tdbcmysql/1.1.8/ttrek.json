@@ -1,5 +1,6 @@
 {
 	"name":	"tdbcmysql",
+	"license": "TCL",
 	"description": "MySQL database driver for Tcl Database Connectivity.",
 	"tags": ["tcl", "tdbc", "mysql", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcmysql",

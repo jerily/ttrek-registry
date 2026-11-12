@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl-ses",
+  "license": "MIT",
   "version": "1.0.18",
   "description": "AWS SES client for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "ses", "email"],
