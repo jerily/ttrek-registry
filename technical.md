@@ -49,12 +49,17 @@ when the `+static` flag is enabled:
 Store named shell scripts as UTF-8 files beside the recipe:
 
 ```json
-"scripts": { "demo": { "file": "demo.sh" } }
+"scripts": {
+  "demo-csv": { "file": "run-demo.sh", "args": ["csv"] },
+  "demo-json": { "file": "run-demo.sh", "args": ["json"] }
+}
 ```
 
 File references must be plain filenames of regular files in that directory,
-not paths or symbolic links. Inline script strings are also supported. After
-installation, run a script with `ttrek run -package PACKAGE -script demo`.
+not paths or symbolic links. Optional `args` must be an array of strings;
+presets are passed literally before user arguments supplied after `--`.
+Inline script strings are also supported. After
+installation, run a script with `ttrek run -package PACKAGE -script demo-csv`.
 
 To check a recipe, run this from a project initialized with `ttrek init`, using
 the path to your registry checkout:

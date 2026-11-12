@@ -1,0 +1,43 @@
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,11 @@
++# Installation adapter for the pinned upstream snapshot (pure Tcl modules).
++prefix ?= /usr/local
++pkgdir = $(DESTDIR)$(prefix)/lib/tkutils-0.49.0
++
++.PHONY: install
++install:
++	mkdir -p "$(pkgdir)"
++	cp -R lib bin tools examples docs "$(pkgdir)/"
++	cp LICENSE README.md CHANGELOG.md "$(pkgdir)/"
++	cp ttrek-pkgIndex.tcl "$(pkgdir)/pkgIndex.tcl"
++	cp run-demo.tcl "$(pkgdir)/"
+--- /dev/null
++++ b/ttrek-pkgIndex.tcl
+@@ -0,0 +1,12 @@
++# Register the upstream .tm modules for ordinary package require / auto_path.
++# No module-path setup is needed by applications, including nested providers.
++apply {{dir} {
++    set tm [file join $dir lib tm]
++    foreach relative [glob -nocomplain -directory $tm -tails *.tm */*.tm */*/*.tm] {
++        if {[regexp {^(.*)-([0-9][0-9a-zA-Z.]*)\.tm$} $relative -> name version]} {
++            set name [string map {/ ::} $name]
++            package ifneeded $name $version \
++                [list source -encoding utf-8 [file join $tm $relative]]
++        }
++    }
++}} $dir
+--- /dev/null
++++ b/run-demo.tcl
+@@ -0,0 +1,11 @@
++# Run the upstream example with its normal argv and UTF-8 source encoding.
++set ::ttrek_example [lindex $argv 0]
++set argv [lrange $argv 1 end]
++set argc [llength $argv]
++set argv0 $::ttrek_example
++package require Tk 8.6-
++# Many upstream demos use vwait forever; closing the root must end the process.
++proc ::ttrek_demo_destroy {window} {if {$window eq "."} {exit 0}}
++bind . <Destroy> {::ttrek_demo_destroy %W}
++source -encoding utf-8 $::ttrek_example
++if {[winfo exists .]} { tkwait window . }

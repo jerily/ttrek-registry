@@ -1,0 +1,39 @@
+{
+  "name": "tklib",
+  "description": "Tcl/Tk library including Tablelist, Scrollutil, and other reusable GUI packages.",
+  "url": "https://core.tcl-lang.org/tklib/",
+  "version": "0.9.0",
+  "tags": [
+    "tcl",
+    "tk",
+    "gui",
+    "widgets"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "tk": ">=8.6.18,<10.0.0",
+    "tcllib": "^2.0.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/tcltk/tklib/archive/refs/tags/tklib-0.9.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "configure"
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-libraries"
+      }
+    ]
+  }
+}
