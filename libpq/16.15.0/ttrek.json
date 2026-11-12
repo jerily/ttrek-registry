@@ -1,5 +1,6 @@
 {
   "name": "libpq",
+  "license": "PostgreSQL",
   "description": "PostgreSQL client library for C applications.",
   "tags": ["c", "postgresql", "sql", "database", "client"],
   "url": "https://www.postgresql.org/",

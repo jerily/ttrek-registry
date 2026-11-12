@@ -1,5 +1,6 @@
 {
 	"name":	"tdbcodbc",
+	"license": "TCL",
 	"description": "ODBC database driver for Tcl Database Connectivity.",
 	"tags": ["tcl", "tdbc", "odbc", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcodbc",

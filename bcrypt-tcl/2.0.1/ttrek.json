@@ -1,5 +1,6 @@
 {
   "name": "bcrypt-tcl",
+  "license": "MIT",
   "version": "2.0.1",
   "description": "Bcrypt password hashing and verification for Tcl.",
   "tags": ["tcl", "security", "passwords", "hashing", "authentication"],

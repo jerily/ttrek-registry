@@ -7,6 +7,18 @@ project homepage or source repository (not a release archive). Pin source
 downloads or Git checkouts to a release or commit. Dependency-test fixtures
 link to their directory in this registry.
 
+Add a top-level `license` string using the upstream project's
+[SPDX identifier](https://spdx.org/licenses/), for example `"license": "MIT"`.
+Use SPDX expressions for alternatives or exceptions, such as
+`FTL OR GPL-2.0-or-later` or `GPL-2.0-only WITH GCC-exception-2.0`.
+Check the upstream license notice for the packaged version; this field describes
+the package's license, not the licenses of its dependencies.
+
+`LicenseRef-Proprietary` identifies the notice used by `example-community`,
+`web-forum`, and `web-user`: "Copyright (c) 2026 Jerily LTD. All rights reserved.
+Private software. Redistribution requires permission." These projects do not
+declare a license from the SPDX License List.
+
 Add a `tags` array with concise topics, formats, and relevant technologies,
 for example `"tags": ["tcl", "xml", "json", "parsing"]`. Prefer lowercase tags
 and consistent spelling across versions. Tags are optional; each tag must be a

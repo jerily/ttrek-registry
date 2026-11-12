@@ -1,5 +1,6 @@
 {
 	"name":	"tdbcpostgres",
+	"license": "TCL",
 	"description": "PostgreSQL database driver for Tcl Database Connectivity.",
 	"tags": ["tcl", "tdbc", "postgresql", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcpostgres",

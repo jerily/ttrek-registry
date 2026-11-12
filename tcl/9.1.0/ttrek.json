@@ -1,5 +1,6 @@
 {
   "name": "tcl",
+  "license": "TCL",
   "description": "Tcl scripting language interpreter and development libraries.",
   "tags": ["tcl", "language", "interpreter", "runtime"],
   "url": "https://github.com/tcltk/tcl",

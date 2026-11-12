@@ -1,5 +1,6 @@
 {
   "name": "thread-naviserver",
+  "license": "TCL",
   "description": "Tcl Thread extension built for NaviServer integration.",
   "tags": ["tcl", "naviserver", "threads", "concurrency"],
   "url": "https://github.com/tcltk/thread",

@@ -1,5 +1,6 @@
 {
   "name": "uap-tcl",
+  "license": "MIT",
   "description": "User-agent parsing with browser, OS, and device details for Tcl.",
   "tags": ["tcl", "user-agent", "browser", "device", "detection", "parsing"],
   "url": "https://github.com/jerily/uap-tcl",

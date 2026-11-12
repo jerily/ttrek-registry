@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl-sqs",
+  "license": "MIT",
   "version": "1.0.18",
   "description": "AWS sqs client for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "sqs", "queues", "messaging"],

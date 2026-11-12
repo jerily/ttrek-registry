@@ -1,5 +1,6 @@
 {
   "name": "jinja2-tcl",
+  "license": "MIT",
   "description": "Jinja-style template rendering for Tcl.",
   "tags": ["tcl", "templates", "jinja", "html", "web"],
   "url": "https://github.com/jerily/jinja2-tcl",

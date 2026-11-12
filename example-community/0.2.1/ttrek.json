@@ -1,5 +1,6 @@
 {
   "name": "example-community",
+  "license": "LicenseRef-Proprietary",
   "version": "0.2.1",
   "scripts": {
     "start": {

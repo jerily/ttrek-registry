@@ -1,5 +1,6 @@
 {
   "name": "postgresql",
+  "license": "PostgreSQL",
   "description": "Relational database server with SQL and extensibility support.",
   "tags": ["postgresql", "sql", "database", "server"],
   "url": "https://www.postgresql.org/",

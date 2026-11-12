@@ -1,5 +1,6 @@
 {
 	"name": "libvalkey",
+	"license": "BSD-3-Clause",
 	"description": "C client library for Valkey and Redis-compatible servers.",
 	"tags": ["c", "valkey", "redis", "database", "client"],
 	"url": "https://github.com/valkey-io/libvalkey",

@@ -1,5 +1,6 @@
 {
   "name": "cmark-gfm",
+  "license": "BSD-2-Clause AND MIT",
   "description": "GitHub Flavored Markdown parser with table, task-list and strikethrough extensions.",
   "tags": ["c", "markdown", "commonmark", "gfm", "parsing"],
   "url": "https://github.com/github/cmark-gfm",

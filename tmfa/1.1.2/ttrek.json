@@ -1,5 +1,6 @@
 {
   "name": "tmfa",
+  "license": "MIT",
   "description": "HOTP, TOTP, Base32 and authenticator provisioning URIs for Tcl.",
   "tags": ["tcl", "authentication", "mfa", "totp", "hotp", "security"],
   "url": "https://github.com/jerily/tmfa",

@@ -1,5 +1,6 @@
 {
   "name": "tqrcodegen",
+  "license": "MIT",
   "description": "Generate QR codes as SVG images from Tcl.",
   "tags": ["tcl", "qr-code", "svg", "graphics"],
   "url": "https://github.com/jerily/tqrcodegen",

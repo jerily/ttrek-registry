@@ -1,5 +1,6 @@
 {
   "name": "nsstats",
+  "license": "MPL-2.0",
   "description": "Server statistics and monitoring module for NaviServer.",
   "tags": ["tcl", "naviserver", "monitoring", "statistics"],
   "url": "https://naviserver.sourceforge.io/",

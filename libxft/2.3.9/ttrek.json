@@ -1,5 +1,6 @@
 {
   "name": "libxft",
+  "license": "HPND-sell-variant",
   "description": "X11 font rendering library using FreeType and Fontconfig.",
   "tags": ["x11", "fonts", "graphics", "text-rendering"],
   "url": "https://gitlab.freedesktop.org/xorg/lib/libxft",

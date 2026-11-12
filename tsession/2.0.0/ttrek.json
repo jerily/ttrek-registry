@@ -1,5 +1,6 @@
 {
   "name": "tsession",
+  "license": "MIT",
   "description": "Per-mount signed cookies and tenant-scoped SQL sessions for Tcl.",
   "tags": ["tcl", "web", "sessions", "cookies", "sql"],
   "url": "https://github.com/jerily/tsession",

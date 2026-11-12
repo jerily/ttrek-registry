@@ -1,5 +1,6 @@
 {
   "name": "libexpat",
+  "license": "MIT",
   "description": "Streaming XML parser library for C.",
   "tags": ["c", "xml", "parsing", "streaming"],
   "url": "https://github.com/libexpat/libexpat",

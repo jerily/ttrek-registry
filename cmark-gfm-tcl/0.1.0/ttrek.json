@@ -1,5 +1,6 @@
 {
   "name": "cmark-gfm-tcl",
+  "license": "MIT",
   "description": "Tcl and C/C++ bindings for GitHub Flavored Markdown rendering and CommonMark normalization.",
   "tags": ["tcl", "markdown", "commonmark", "gfm", "html"],
   "url": "https://github.com/jerily/cmark-gfm-tcl",

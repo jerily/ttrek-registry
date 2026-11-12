@@ -1,5 +1,6 @@
 {
 	"name":	"aws-sdk-tcl",
+	"license": "MIT",
 	"description": "AWS service clients for Tcl 8.6 and 9.x, linked with Tcl stubs.",
 	"tags": ["tcl", "aws", "cloud", "sdk"],
 	"url": "https://github.com/jerily/aws-sdk-tcl",

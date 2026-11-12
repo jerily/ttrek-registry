@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-cpp-transfer",
+  "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ transfer client library.",
   "tags": ["cpp", "aws", "cloud", "transfer", "storage", "file-transfer", "s3"],

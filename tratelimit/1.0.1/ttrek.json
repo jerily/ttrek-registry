@@ -1,5 +1,6 @@
 {
   "name": "tratelimit",
+  "license": "MIT",
   "description": "Request rate limiting middleware for Tcl web applications.",
   "tags": ["tcl", "http", "web", "middleware", "rate-limiting"],
   "url": "https://github.com/jerily/tratelimit",

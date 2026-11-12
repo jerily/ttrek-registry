@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-cpp-sqs",
+  "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ sqs client library.",
   "tags": ["cpp", "aws", "cloud", "sqs", "queues", "messaging"],

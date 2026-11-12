@@ -1,5 +1,6 @@
 {
   "name": "tk",
+  "license": "TCL",
   "description": "Cross-platform graphical user interface toolkit for Tcl.",
   "tags": ["tcl", "tk", "gui", "widgets"],
   "url": "https://github.com/tcltk/tk",

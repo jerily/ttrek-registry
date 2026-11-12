@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl-kms",
+  "license": "MIT",
   "version": "1.0.17",
   "description": "AWS kms client for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "kms", "encryption", "key-management"],

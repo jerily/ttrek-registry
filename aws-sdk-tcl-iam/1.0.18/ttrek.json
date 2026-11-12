@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-tcl-iam",
+  "license": "MIT",
   "version": "1.0.18",
   "description": "AWS iam client for Tcl 8.6 and 9.x.",
   "tags": ["tcl", "aws", "cloud", "iam", "identity", "access-management"],

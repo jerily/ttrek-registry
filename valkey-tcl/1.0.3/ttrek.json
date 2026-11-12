@@ -1,5 +1,6 @@
 {
   "name": "valkey-tcl",
+  "license": "MIT",
   "description": "Tcl client for Valkey and Redis-compatible servers.",
   "tags": ["tcl", "valkey", "redis", "database", "client"],
   "url": "https://github.com/jerily/valkey-tcl",

@@ -1,5 +1,6 @@
 {
   "name": "web-forum",
+  "license": "LicenseRef-Proprietary",
   "version": "0.1.9",
   "scripts": {},
   "dependencies": {

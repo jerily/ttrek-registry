@@ -1,5 +1,6 @@
 {
   "name": "tmfa",
+  "license": "MIT",
   "description": "HOTP, TOTP, and Base32 for Tcl using OpenSSL.",
   "tags": ["tcl", "authentication", "mfa", "totp", "hotp", "security"],
   "url": "https://github.com/jerily/tmfa",

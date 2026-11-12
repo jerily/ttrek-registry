@@ -1,5 +1,6 @@
 {
   "name": "nsf",
+  "license": "MIT",
   "description": "Next Scripting Framework for object-oriented programming in Tcl.",
   "tags": ["tcl", "object-oriented", "framework"],
   "url": "https://next-scripting.org/",

@@ -1,5 +1,6 @@
 {
   "name": "tpersist",
+  "license": "MIT",
   "description": "SQL query construction and database access through TDBC for Tcl.",
   "tags": ["tcl", "tdbc", "sql", "database", "persistence"],
   "url": "https://github.com/jerily/tpersist",

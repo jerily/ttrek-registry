@@ -1,5 +1,6 @@
 {
 	"name":	"sqlite3",
+	"license": "blessing",
 	"description": "Embedded SQL database engine with Tcl bindings.",
 	"tags": ["tcl", "sqlite", "sql", "database", "embedded"],
 	"url": "https://www.sqlite.org/",

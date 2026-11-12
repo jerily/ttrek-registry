@@ -1,5 +1,6 @@
 {
   "name": "nsdbpg",
+  "license": "MPL-2.0",
   "description": "PostgreSQL database driver for NaviServer.",
   "tags": ["tcl", "naviserver", "postgresql", "sql", "database"],
   "url": "https://naviserver.sourceforge.io/",

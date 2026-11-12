@@ -1,5 +1,6 @@
 {
   "name": "naviserver",
+  "license": "MPL-2.0",
   "description": "Multithreaded web application server with embedded Tcl.",
   "tags": ["tcl", "web", "http", "server", "concurrency"],
   "url": "https://naviserver.sourceforge.io/",

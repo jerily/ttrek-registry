@@ -1,5 +1,6 @@
 {
   "name": "aws-sdk-cpp-core",
+  "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ core and pinned common runtime libraries.",
   "tags": ["cpp", "aws", "cloud", "sdk", "runtime"],

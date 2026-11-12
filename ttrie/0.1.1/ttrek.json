@@ -1,5 +1,6 @@
 {
   "name": "ttrie",
+  "license": "MIT",
   "description": "String trie with exact lookup and edit-distance search for C and Tcl.",
   "tags": ["tcl", "c", "search", "trie", "fuzzy-search"],
   "url": "https://github.com/jerily/ttrie",
