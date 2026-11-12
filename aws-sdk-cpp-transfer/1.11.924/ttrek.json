@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp-transfer",
   "version": "1.11.924",
   "description": "AWS SDK for C++ transfer client library.",
+  "tags": ["cpp", "aws", "cloud", "transfer", "storage", "file-transfer", "s3"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {

@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl-ssm",
   "version": "1.0.16",
   "description": "AWS ssm client for Tcl 8.6 and 9.x.",
+  "tags": ["tcl", "aws", "cloud", "ssm", "configuration", "parameter-store"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {

@@ -1,6 +1,7 @@
 {
   "name": "nssmtpd",
   "description": "SMTP server module for NaviServer.",
+  "tags": ["tcl", "naviserver", "smtp", "email", "server"],
   "url": "https://naviserver.sourceforge.io/",
   "version": "5.1.1",
   "scripts": {},

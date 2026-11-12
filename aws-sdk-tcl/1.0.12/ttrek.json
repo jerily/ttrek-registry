@@ -1,6 +1,7 @@
 {
 	"name":	"aws-sdk-tcl",
 	"description": "Tcl bindings for AWS service clients.",
+	"tags": ["tcl", "aws", "cloud", "sdk"],
 	"url": "https://github.com/jerily/aws-sdk-tcl",
 	"version":	"1.0.12",
 	"scripts":	{

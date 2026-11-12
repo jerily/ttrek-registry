@@ -2,6 +2,7 @@
   "name": "bcrypt-tcl",
   "version": "2.0.1",
   "description": "Bcrypt password hashing and verification for Tcl.",
+  "tags": ["tcl", "security", "passwords", "hashing", "authentication"],
   "scripts": {},
   "dependencies": {
     "tcl": ">=8.6.14,<10.0.0",

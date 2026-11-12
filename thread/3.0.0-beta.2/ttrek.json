@@ -1,6 +1,7 @@
 {
 	"name":	"thread",
 	"description": "Thread creation and communication for Tcl interpreters.",
+	"tags": ["tcl", "threads", "concurrency"],
 	"url": "https://github.com/tcltk/thread",
 	"version":	"3.0.0-beta.2",
 	"scripts":	{

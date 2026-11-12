@@ -1,6 +1,7 @@
 {
 	"name":	"tratelimit",
 	"description": "Request rate limiting middleware for Tcl web applications.",
+	"tags": ["tcl", "http", "web", "middleware", "rate-limiting"],
 	"url": "https://github.com/jerily/tratelimit",
 	"version":	"1.0.0",
 	"scripts":	{

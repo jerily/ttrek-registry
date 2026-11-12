@@ -7,6 +7,11 @@ project homepage or source repository (not a release archive). Pin source
 downloads or Git checkouts to a release or commit. Dependency-test fixtures
 link to their directory in this registry.
 
+Add a `tags` array with concise topics, formats, and relevant technologies,
+for example `"tags": ["tcl", "xml", "json", "parsing"]`. Prefer lowercase tags
+and consistent spelling across versions. Tags are optional; each tag must be a
+nonempty, single-line string of at most 255 UTF-8 bytes.
+
 `dependencies` maps package names to version constraints, for example:
 
 ```json

@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp-lambda",
   "version": "1.11.924",
   "description": "AWS SDK for C++ lambda client library.",
+  "tags": ["cpp", "aws", "cloud", "lambda", "serverless", "functions"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {

@@ -10,6 +10,7 @@
   },
   "devDependencies": {},
   "description": "SQLite session persistence for tsession, with tenant isolation and shared transactions.",
+  "tags": ["tcl", "web", "sessions", "sqlite", "sql", "persistence"],
   "url": "https://github.com/jerily/tsession-sqlite",
   "build": {
     "default": [

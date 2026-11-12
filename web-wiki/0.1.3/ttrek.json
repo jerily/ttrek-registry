@@ -13,6 +13,7 @@
   },
   "devDependencies": {},
   "description": "Editable Markdown wiki for Tcl with SQLite persistence.",
+  "tags": ["tcl", "web", "wiki", "markdown", "sqlite"],
   "url": "https://github.com/jerily/web-wiki",
   "build": {
     "default": [

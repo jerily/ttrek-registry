@@ -1,6 +1,7 @@
 {
   "name": "openssl",
   "description": "TLS protocol implementation and cryptographic library and tools.",
+  "tags": ["tls", "ssl", "cryptography", "security"],
   "url": "https://github.com/openssl/openssl",
   "version": "3.5.9",
   "scripts": {},

@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl-dynamodb",
   "version": "1.0.15",
   "description": "AWS dynamodb client for Tcl 8.6 and 9.x.",
+  "tags": ["tcl", "aws", "cloud", "dynamodb", "database", "nosql"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {
