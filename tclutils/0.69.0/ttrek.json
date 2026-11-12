@@ -1,5 +1,6 @@
 {
   "name": "tclutils",
+  "license": "MIT",
   "description": "Pure-Tcl text, data, document, archive, and utility modules.",
   "url": "https://github.com/gregnix/tclutils",
   "version": "0.69.0",

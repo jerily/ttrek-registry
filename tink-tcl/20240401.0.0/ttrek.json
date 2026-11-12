@@ -1,5 +1,6 @@
 {
 	"name":	"tink-tcl",
+	"license": "MIT",
 	"description": "Tcl bindings for Tink encryption, signatures, and key management.",
 	"tags": ["tcl", "cryptography", "encryption", "signatures", "security"],
 	"url": "https://github.com/jerily/tink-tcl",

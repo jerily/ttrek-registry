@@ -1,5 +1,6 @@
 {
 	"name":	"treqmon",
+	"license": "MIT",
 	"description": "HTTP request monitoring and statistics for Tcl web applications.",
 	"tags": ["tcl", "http", "web", "monitoring", "middleware"],
 	"url": "https://github.com/jerily/treqmon",

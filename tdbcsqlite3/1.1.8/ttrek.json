@@ -1,5 +1,6 @@
 {
 	"name":	"tdbcsqlite3",
+	"license": "TCL",
 	"description": "SQLite database driver for Tcl Database Connectivity.",
 	"tags": ["tcl", "tdbc", "sqlite", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcsqlite3",

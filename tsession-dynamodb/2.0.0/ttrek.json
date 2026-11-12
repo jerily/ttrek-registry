@@ -1,5 +1,6 @@
 {
   "name": "tsession-dynamodb",
+  "license": "MIT",
   "version": "2.0.0",
   "scripts": {},
   "dependencies": {

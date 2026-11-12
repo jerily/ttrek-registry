@@ -1,5 +1,6 @@
 {
 	"name":	"thread",
+	"license": "TCL",
 	"description": "Thread creation and communication for Tcl interpreters.",
 	"tags": ["tcl", "threads", "concurrency"],
 	"url": "https://github.com/tcltk/thread",

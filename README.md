@@ -24,6 +24,7 @@ Each recipe lives at `<package>/<version>/ttrek.json`. The main fields are:
 | --- | --- |
 | `name`, `version` | Package name and version, matching the directory path. |
 | `description` | A short description shown in search results. |
+| `license` | SPDX license identifier or expression for the upstream package. |
 | `dependencies` | Package names mapped to version constraints. |
 | `build.default` | Ordered build steps: fetch source, configure, compile, install. |
 | `scripts` | Optional named commands, such as demos, to run after installation. |

@@ -1,5 +1,6 @@
 {
   "name": "fontconfig",
+  "license": "HPND-sell-variant",
   "description": "Font discovery, configuration, and matching library.",
   "tags": ["fonts", "graphics", "text-rendering"],
   "url": "https://gitlab.freedesktop.org/fontconfig/fontconfig",

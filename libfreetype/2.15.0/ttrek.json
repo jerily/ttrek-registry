@@ -1,5 +1,6 @@
 {
   "name": "libfreetype",
+  "license": "FTL OR GPL-2.0-or-later",
   "description": "Font loading and glyph rasterization library.",
   "tags": ["fonts", "graphics", "text-rendering"],
   "url": "https://freetype.org/",

@@ -1,5 +1,6 @@
 {
 	"name": "abseil-cpp",
+	"license": "Apache-2.0",
 	"description": "C++ utility libraries for strings, containers, time, and synchronization.",
 	"tags": ["cpp", "utilities", "containers", "strings"],
 	"url": "https://github.com/abseil/abseil-cpp",

@@ -1,5 +1,6 @@
 {
   "name": "gperf",
+  "license": "GPL-3.0-or-later",
   "description": "Generator of perfect hash functions for sets of keywords.",
   "tags": ["code-generation", "hashing", "build-tools"],
   "url": "https://www.gnu.org/software/gperf/",

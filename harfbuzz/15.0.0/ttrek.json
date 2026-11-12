@@ -1,5 +1,6 @@
 {
   "name": "harfbuzz",
+  "license": "MIT-Modern-Variant",
   "description": "Text shaping library for converting Unicode text into positioned glyphs.",
   "tags": ["fonts", "unicode", "text-shaping", "graphics"],
   "url": "https://github.com/harfbuzz/harfbuzz",

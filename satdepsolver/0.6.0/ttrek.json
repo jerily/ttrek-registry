@@ -1,5 +1,6 @@
 {
   "name": "satdepsolver",
+  "license": "BSD-3-Clause",
   "description": "C++ dependency solver for package versions and constraints.",
   "tags": ["cpp", "dependencies", "package-management", "sat", "solver"],
   "url": "https://github.com/jerily/satdepsolver-cpp",

@@ -1,5 +1,6 @@
 {
   "name": "snappy",
+  "license": "BSD-3-Clause",
   "description": "Fast compression and decompression library for C and C++.",
   "tags": ["cpp", "compression", "snappy"],
   "url": "https://github.com/google/snappy",

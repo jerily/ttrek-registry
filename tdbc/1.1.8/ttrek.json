@@ -1,5 +1,6 @@
 {
 	"name":	"tdbc",
+	"license": "TCL",
 	"description": "Common Tcl interface for SQL database connections and queries.",
 	"tags": ["tcl", "tdbc", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbc",

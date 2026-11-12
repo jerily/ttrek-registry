@@ -1,5 +1,6 @@
 {
   "name": "treqmon",
+  "license": "MIT",
   "description": "HTTP request monitoring with configurable Jinja layouts and tpathexp routes.",
   "tags": ["tcl", "http", "web", "monitoring", "middleware"],
   "url": "https://github.com/jerily/treqmon",

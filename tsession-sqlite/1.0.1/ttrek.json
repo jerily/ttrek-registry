@@ -1,5 +1,6 @@
 {
   "name": "tsession-sqlite",
+  "license": "MIT",
   "version": "1.0.1",
   "scripts": {},
   "dependencies": {

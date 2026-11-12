@@ -1,5 +1,6 @@
 {
   "name": "tkutils",
+  "license": "MIT",
   "description": "Tcl/Tk widgets for data editors, tables, forms, calendars, and desktop tools.",
   "url": "https://github.com/gregnix/tkutils",
   "version": "0.49.0",
