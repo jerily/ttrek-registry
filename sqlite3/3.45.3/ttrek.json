@@ -1,6 +1,7 @@
 {
 	"name":	"sqlite3",
 	"description": "Embedded SQL database engine with Tcl bindings.",
+	"tags": ["tcl", "sqlite", "sql", "database", "embedded"],
 	"url": "https://www.sqlite.org/",
 	"version":	"3.45.3",
 	"scripts":	{

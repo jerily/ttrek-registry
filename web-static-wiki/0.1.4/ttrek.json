@@ -14,6 +14,7 @@
   },
   "devDependencies": {},
   "description": "Read-only Markdown wiki with directory or SQL storage and explicit synchronization.",
+  "tags": ["tcl", "web", "wiki", "markdown", "static-site"],
   "url": "https://github.com/jerily/web-static-wiki",
   "build": {
     "default": [

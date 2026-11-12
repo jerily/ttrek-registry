@@ -1,6 +1,7 @@
 {
 	"name":	"tconfig",
 	"description": "Encrypted configuration storage with AWS KMS and SSM integration for Tcl.",
+	"tags": ["tcl", "configuration", "encryption", "aws", "kms", "ssm"],
 	"url": "https://github.com/jerily/tconfig",
 	"version":	"1.0.0",
 	"scripts":	{

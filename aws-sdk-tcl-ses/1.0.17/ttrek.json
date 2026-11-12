@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl-ses",
   "version": "1.0.17",
   "description": "AWS SES client for Tcl 8.6 and 9.x.",
+  "tags": ["tcl", "aws", "cloud", "ses", "email"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {

@@ -1,6 +1,7 @@
 {
   "name": "nsdbpg",
   "description": "PostgreSQL database driver for NaviServer.",
+  "tags": ["tcl", "naviserver", "postgresql", "sql", "database"],
   "url": "https://naviserver.sourceforge.io/",
   "version": "5.1.1",
   "scripts": {},

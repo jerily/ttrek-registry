@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp-core",
   "version": "1.11.924",
   "description": "AWS SDK for C++ core and pinned common runtime libraries.",
+  "tags": ["cpp", "aws", "cloud", "sdk", "runtime"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {

@@ -1,6 +1,7 @@
 {
   "name": "tdom",
   "description": "XML and HTML parsing, DOM manipulation, and XPath support for Tcl.",
+  "tags": ["tcl", "xml", "html", "json", "dom", "xpath", "parsing"],
   "url": "https://tdom.org/",
   "version": "0.9.6",
   "scripts": {},

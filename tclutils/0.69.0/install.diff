@@ -1,0 +1,49 @@
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,11 @@
++# Installation adapter for the pinned upstream snapshot (pure Tcl modules).
++prefix ?= /usr/local
++pkgdir = $(DESTDIR)$(prefix)/lib/tclutils-0.69.0
++
++.PHONY: install
++install:
++	mkdir -p "$(pkgdir)"
++	cp -R lib bin tools examples docs "$(pkgdir)/"
++	cp LICENSE README.md CHANGELOG.md "$(pkgdir)/"
++	cp ttrek-pkgIndex.tcl "$(pkgdir)/pkgIndex.tcl"
++	cp run-demo.tcl "$(pkgdir)/"
+--- /dev/null
++++ b/ttrek-pkgIndex.tcl
+@@ -0,0 +1,12 @@
++# Register the upstream .tm modules for ordinary package require / auto_path.
++# No module-path setup is needed by applications, including nested providers.
++apply {{dir} {
++    set tm [file join $dir lib tm]
++    foreach relative [glob -nocomplain -directory $tm -tails *.tm */*.tm */*/*.tm] {
++        if {[regexp {^(.*)-([0-9][0-9a-zA-Z.]*)\.tm$} $relative -> name version]} {
++            set name [string map {/ ::} $name]
++            package ifneeded $name $version \
++                [list source -encoding utf-8 [file join $tm $relative]]
++        }
++    }
++}} $dir
+--- /dev/null
++++ b/run-demo.tcl
+@@ -0,0 +1,6 @@
++# Run the upstream example with its normal argv and UTF-8 source encoding.
++set ::ttrek_example [lindex $argv 0]
++set argv [lrange $argv 1 end]
++set argc [llength $argv]
++set argv0 $::ttrek_example
++source -encoding utf-8 $::ttrek_example
+--- a/examples/demo-task.tcl
++++ b/examples/demo-task.tcl
+@@ -5,7 +5,7 @@
+ #                                       a Cancel button that runs finally
+ source [file join [file dirname [file normalize [info script]]] bootstrap.tcl]
+ package require tclutils::tutask
+-namespace import ::tclutils::tutask::*
++namespace import -force ::tclutils::tutask::*
+ 
+ # --- console part ------------------------------------------------------------
+ 

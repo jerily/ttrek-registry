@@ -1,6 +1,7 @@
 {
   "name": "libexpat",
   "description": "Streaming XML parser library for C.",
+  "tags": ["c", "xml", "parsing", "streaming"],
   "url": "https://github.com/libexpat/libexpat",
   "version": "2.10.0",
   "scripts": {},

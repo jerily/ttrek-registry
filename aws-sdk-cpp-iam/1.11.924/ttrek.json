@@ -2,6 +2,7 @@
   "name": "aws-sdk-cpp-iam",
   "version": "1.11.924",
   "description": "AWS SDK for C++ iam client library.",
+  "tags": ["cpp", "aws", "cloud", "iam", "identity", "access-management"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},
   "dependencies": {

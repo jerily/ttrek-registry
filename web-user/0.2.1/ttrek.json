@@ -24,6 +24,7 @@
   },
   "devDependencies": {},
   "description": "Email/password accounts, recovery and authenticator MFA for Tcl sites.",
+  "tags": ["tcl", "web", "authentication", "accounts", "mfa"],
   "url": "https://github.com/jerily/web-user",
   "build": {
     "default": [

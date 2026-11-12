@@ -1,6 +1,7 @@
 {
 	"name": "abseil-cpp",
 	"description": "C++ utility libraries for strings, containers, time, and synchronization.",
+	"tags": ["cpp", "utilities", "containers", "strings"],
 	"url": "https://github.com/abseil/abseil-cpp",
 	"version": "20230802.1.0",
 	"scripts": {

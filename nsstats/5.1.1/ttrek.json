@@ -1,6 +1,7 @@
 {
   "name": "nsstats",
   "description": "Server statistics and monitoring module for NaviServer.",
+  "tags": ["tcl", "naviserver", "monitoring", "statistics"],
   "url": "https://naviserver.sourceforge.io/",
   "version": "5.1.1",
   "scripts": {},

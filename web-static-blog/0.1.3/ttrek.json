@@ -14,6 +14,7 @@
   },
   "devDependencies": {},
   "description": "Read-only Markdown blog with directory or SQL storage and explicit synchronization.",
+  "tags": ["tcl", "web", "blog", "markdown", "static-site"],
   "url": "https://github.com/jerily/web-static-blog",
   "build": {
     "default": [

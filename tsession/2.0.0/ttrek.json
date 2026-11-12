@@ -1,6 +1,7 @@
 {
   "name": "tsession",
   "description": "Per-mount signed cookies and tenant-scoped SQL sessions for Tcl.",
+  "tags": ["tcl", "web", "sessions", "cookies", "sql"],
   "url": "https://github.com/jerily/tsession",
   "version": "2.0.0",
   "scripts": {},

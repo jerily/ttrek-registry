@@ -17,6 +17,7 @@
   },
   "devDependencies": {},
   "description": "Community example mounting accounts, Markdown forum, wiki and blog.",
+  "tags": ["tcl", "example", "web", "community", "forum", "wiki", "blog"],
   "url": "https://github.com/jerily/example-community",
   "build": {
     "default": [

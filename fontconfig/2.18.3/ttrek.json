@@ -1,6 +1,7 @@
 {
   "name": "fontconfig",
   "description": "Font discovery, configuration, and matching library.",
+  "tags": ["fonts", "graphics", "text-rendering"],
   "url": "https://gitlab.freedesktop.org/fontconfig/fontconfig",
   "version": "2.18.3",
   "scripts": {},

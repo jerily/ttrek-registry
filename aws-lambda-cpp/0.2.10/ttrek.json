@@ -1,6 +1,7 @@
 {
 	"name":	"aws-lambda-cpp",
 	"description": "C++ runtime for AWS Lambda functions.",
+	"tags": ["cpp", "aws", "lambda", "serverless", "runtime"],
 	"url": "https://github.com/awslabs/aws-lambda-cpp",
 	"version":	"0.2.10",
 	"scripts":	{

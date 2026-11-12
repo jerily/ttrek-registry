@@ -1,6 +1,7 @@
 {
 	"name":	"bcrypt-tcl",
 	"description": "Password hashing and verification with bcrypt for Tcl.",
+	"tags": ["tcl", "security", "passwords", "hashing", "authentication"],
 	"url": "https://github.com/jerily/bcrypt-tcl",
 	"version":	"2.0.0",
 	"scripts":	{

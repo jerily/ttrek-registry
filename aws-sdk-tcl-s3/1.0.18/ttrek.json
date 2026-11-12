@@ -2,6 +2,7 @@
   "name": "aws-sdk-tcl-s3",
   "version": "1.0.18",
   "description": "AWS s3 client for Tcl 8.6 and 9.x.",
+  "tags": ["tcl", "aws", "cloud", "s3", "storage", "object-storage"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},
   "dependencies": {

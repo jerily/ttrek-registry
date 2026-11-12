@@ -1,6 +1,7 @@
 {
   "name": "tpathexp",
   "description": "URL path matching and HTTP routing for C and Tcl.",
+  "tags": ["tcl", "c", "http", "routing", "web"],
   "url": "https://github.com/jerily/tpathexp",
   "version": "1.1.0",
   "scripts": {},
