@@ -20,7 +20,8 @@
       },
       {
         "cmd": "unpack",
-        "filename": "aws-sdk-cpp-1.11.924.tar.gz"
+        "filename": "aws-sdk-cpp-1.11.924.tar.gz",
+        "shared": "aws-sdk-cpp-1.11.924"
       },
       {
         "cmd": "download",

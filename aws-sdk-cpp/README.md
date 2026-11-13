@@ -16,6 +16,12 @@ A small shared CMake project imports the installed dependencies and adds only
 the selected upstream service directory. It neither builds nor installs core.
 SDK sources are not patched. Shared and static C++ builds are supported.
 
+The 1.11.924 service recipes opt into `unpack.shared` with the key
+`aws-sdk-cpp-1.11.924`. With shared-source support in ttrek, all services reuse
+one read-only SDK extraction under `ttrek-venv/build/shared-source`, keyed by
+the archive's SHA-256. Each service retains its own build and log directories.
+Core keeps a private SDK tree because it unpacks CRT dependencies into it.
+
 `aws-sdk-cpp@1.11.924` and `aws-sdk-tcl@1.0.16` install the complete service set
 through dependencies. Use the updated ttrek download/unpack options and
 metapackage migration support when moving from a bundled installation.
