@@ -10,6 +10,10 @@ those two version checks to use the Tcl version against which it was compiled.
 Explicit Tcl header and GD configuration paths keep builds within the selected
 installation prefix. Build a separate extension for each Tcl major version.
 
+On macOS, the shared extension uses `@loader_path/..` to find GD's libraries
+in the parent `lib` directory. Rebuild an existing installation after updating
+the recipe with `ttrek install -y -force tclgd`.
+
 From an initialized project using this registry:
 
 ```sh
