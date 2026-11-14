@@ -1,0 +1,47 @@
+{
+  "name": "web-static-wiki",
+  "license": "MIT",
+  "version": "0.1.7",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.0,<10.0.0",
+    "tpathexp": "^1.1.0",
+    "cmark-gfm-tcl": "^0.1.0",
+    "jinja2-tcl": "^0.1.0",
+    "tjson": "^1.0.26",
+    "aws-sdk-tcl-s3": "^1.0.17",
+    "tpersist": "^0.1.4",
+    "twebserver": "^1.47.55"
+  },
+  "devDependencies": {},
+  "description": "Read-only Markdown wiki with directory or SQL storage and explicit synchronization.",
+  "tags": ["tcl", "web", "wiki", "markdown", "static-site"],
+  "url": "https://github.com/jerily/web-static-wiki",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/web-static-wiki/archive/refs/tags/v0.1.7.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
