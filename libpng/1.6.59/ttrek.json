@@ -1,0 +1,86 @@
+{
+  "name": "libpng",
+  "license": "libpng-2.0",
+  "description": "PNG image encoding and decoding library.",
+  "tags": [
+    "c",
+    "graphics",
+    "images",
+    "png"
+  ],
+  "url": "https://github.com/pnggroup/libpng",
+  "version": "1.6.59",
+  "scripts": {},
+  "dependencies": {
+    "zlib": "^1.3.2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/pnggroup/libpng/archive/refs/tags/v1.6.59.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "ZLIB_ROOT",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "PNG_SHARED",
+            "value": "ON"
+          },
+          {
+            "name": "PNG_SHARED",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "PNG_STATIC",
+            "value": "OFF"
+          },
+          {
+            "name": "PNG_STATIC",
+            "value": "ON",
+            "if": "+static"
+          },
+          {
+            "name": "PNG_TESTS",
+            "value": "OFF"
+          },
+          {
+            "name": "PNG_TOOLS",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install"
+      }
+    ]
+  }
+}
