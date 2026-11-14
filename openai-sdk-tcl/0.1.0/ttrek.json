@@ -1,0 +1,48 @@
+{
+  "_copyright": "/**\n * Copyright Jerily LTD. All Rights Reserved.\n * SPDX-FileCopyrightText: 2026 Neofytos Dimitriou (neo@jerily.cy)\n * SPDX-License-Identifier: MIT.\n */",
+  "name": "openai-sdk-tcl",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Tcl client for OpenAI Responses and Chat Completions with SSE streaming.",
+  "url": "https://github.com/jerily/openai-sdk-tcl",
+  "tags": [
+    "tcl",
+    "openai",
+    "ai",
+    "http",
+    "streaming"
+  ],
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "tcl": ">=8.6.14",
+    "trequests": "^1.2.0",
+    "tjson": "^1.0.27"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/openai-sdk-tcl/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
