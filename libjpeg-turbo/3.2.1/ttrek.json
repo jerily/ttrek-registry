@@ -1,0 +1,84 @@
+{
+  "name": "libjpeg-turbo",
+  "license": "IJG AND BSD-3-Clause",
+  "description": "JPEG image encoding and decoding library with SIMD acceleration.",
+  "tags": [
+    "c",
+    "graphics",
+    "images",
+    "jpeg"
+  ],
+  "url": "https://libjpeg-turbo.org/",
+  "version": "3.2.1",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.1/libjpeg-turbo-3.2.1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_SHARED",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_SHARED",
+            "value": "OFF",
+            "if": "+static"
+          },
+          {
+            "name": "ENABLE_STATIC",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_STATIC",
+            "value": "ON",
+            "if": "+static"
+          },
+          {
+            "name": "WITH_TURBOJPEG",
+            "value": "OFF"
+          },
+          {
+            "name": "WITH_TOOLS",
+            "value": "OFF"
+          },
+          {
+            "name": "WITH_TESTS",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install"
+      }
+    ]
+  }
+}
