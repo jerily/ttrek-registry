@@ -12,7 +12,36 @@
     "streaming"
   ],
   "scripts": {
-    "test": "make test"
+    "example-responses": {
+      "file": "run-example.sh",
+      "args": [
+        "responses"
+      ]
+    },
+    "example-chat-completions": {
+      "file": "run-example.sh",
+      "args": [
+        "chat-completions"
+      ]
+    },
+    "example-stream-responses": {
+      "file": "run-example.sh",
+      "args": [
+        "stream-responses"
+      ]
+    },
+    "example-stream-chat-completions": {
+      "file": "run-example.sh",
+      "args": [
+        "stream-chat-completions"
+      ]
+    },
+    "example-async-responses": {
+      "file": "run-example.sh",
+      "args": [
+        "async-responses"
+      ]
+    }
   },
   "dependencies": {
     "tcl": ">=8.6.14",
