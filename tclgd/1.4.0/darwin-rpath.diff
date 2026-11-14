@@ -1,0 +1,12 @@
+--- a/tclconfig/tcl.m4
++++ b/tclconfig/tcl.m4
+@@ -1697,7 +1697,8 @@
+ 		    fat_32_64=yes])
+ 	    ])
+ 	    # TEA specific: use LDFLAGS_DEFAULT instead of LDFLAGS
+-	    SHLIB_LD='${CC} -dynamiclib ${CFLAGS} ${LDFLAGS_DEFAULT}'
++	    # The extension is installed one directory below GD's libraries.
++	    SHLIB_LD='${CC} -dynamiclib ${CFLAGS} ${LDFLAGS_DEFAULT} -Wl,-rpath,@loader_path/..'
+ 	    AC_CACHE_CHECK([if ld accepts -single_module flag], tcl_cv_ld_single_module, [
+ 		hold_ldflags=$LDFLAGS
+ 		LDFLAGS="$LDFLAGS -dynamiclib -Wl,-single_module"
