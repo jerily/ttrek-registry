@@ -6,7 +6,7 @@
   "dependencies": {
     "tcl": ">=8.6.14",
     "tsession": "^2.0.0",
-    "tpersist": "^0.1.2",
+    "tpersist": "^0.1.4",
     "tdbcpostgres": ">=1.1.8"
   },
   "devDependencies": {},

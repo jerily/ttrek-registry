@@ -1,0 +1,51 @@
+{
+  "name": "example-community",
+  "license": "LicenseRef-Proprietary",
+  "version": "0.2.3",
+  "scripts": {
+    "start": {
+      "file": "start.sh"
+    }
+  },
+  "dependencies": {
+    "tpersist": "^0.1.4",
+    "tcl": ">=9.1.0,<10.0.0",
+    "web-user": "=0.2.3",
+    "web-forum": "=0.1.11",
+    "twebserver": "^1.47.56",
+    "web-wiki": "=0.1.4",
+    "web-blog": "=0.1.4",
+    "tconfig": "1.0.0"
+  },
+  "devDependencies": {},
+  "description": "Community example mounting accounts, Markdown forum, wiki and blog.",
+  "tags": ["tcl", "example", "web", "community", "forum", "wiki", "blog"],
+  "url": "https://github.com/jerily/example-community",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/example-community/releases/download/v0.2.3/example-community-0.2.3.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}

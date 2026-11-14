@@ -8,6 +8,7 @@
     }
   },
   "dependencies": {
+    "tpersist": "^0.1.4",
     "tcl": ">=9.1.0,<10.0.0",
     "web-user": "=0.2.1",
     "web-forum": "=0.1.9",
