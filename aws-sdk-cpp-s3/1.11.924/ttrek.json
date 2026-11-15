@@ -3,6 +3,7 @@
   "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ s3 client library.",
+  "languages": ["C++"],
   "tags": ["cpp", "aws", "cloud", "s3", "storage", "object-storage"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},

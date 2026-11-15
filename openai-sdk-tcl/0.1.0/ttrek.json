@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "Tcl client for OpenAI Responses and Chat Completions with SSE streaming.",
+  "languages": ["TCL"],
   "url": "https://github.com/jerily/openai-sdk-tcl",
   "tags": [
     "tcl",

@@ -2,6 +2,7 @@
   "name": "libpng",
   "license": "libpng-2.0",
   "description": "PNG image encoding and decoding library.",
+  "languages": ["C"],
   "tags": [
     "c",
     "graphics",

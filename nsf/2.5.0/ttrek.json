@@ -2,6 +2,7 @@
   "name": "nsf",
   "license": "MIT",
   "description": "Next Scripting Framework for object-oriented programming in Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "object-oriented", "framework"],
   "url": "https://next-scripting.org/",
   "version": "2.5.0",

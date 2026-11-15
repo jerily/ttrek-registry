@@ -2,6 +2,7 @@
 	"name":	"brotli",
 	"license": "MIT",
 	"description": "Brotli compression and decompression library and command-line tools.",
+	"languages": ["C"],
 	"tags": ["compression", "brotli"],
 	"url": "https://github.com/google/brotli",
 	"version":	"1.0.9",

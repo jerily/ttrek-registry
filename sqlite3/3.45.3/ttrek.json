@@ -2,6 +2,7 @@
 	"name":	"sqlite3",
 	"license": "blessing",
 	"description": "Embedded SQL database engine with Tcl bindings.",
+	"languages": ["C", "TCL"],
 	"tags": ["tcl", "sqlite", "sql", "database", "embedded"],
 	"url": "https://www.sqlite.org/",
 	"version":	"3.45.3",

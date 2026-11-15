@@ -26,6 +26,7 @@
   },
   "devDependencies": {},
   "description": "Accounts, recovery, MFA, and configured groups and permissions for Tcl sites.",
+  "languages": ["TCL"],
   "tags": [
     "tcl",
     "web",

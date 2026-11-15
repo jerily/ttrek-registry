@@ -3,6 +3,7 @@
   "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "C++ client libraries for AWS services.",
+  "languages": ["C++"],
   "tags": ["cpp", "aws", "cloud", "sdk"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},

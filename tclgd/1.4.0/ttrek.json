@@ -2,6 +2,7 @@
   "name": "tclgd",
   "license": "BSD-3-Clause AND TCL",
   "description": "Tcl bindings for GD image drawing, manipulation, and encoding.",
+  "languages": ["C", "TCL"],
   "tags": [
     "tcl",
     "graphics",

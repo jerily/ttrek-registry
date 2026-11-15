@@ -21,6 +21,7 @@
   },
   "devDependencies": {},
   "description": "Community site with accounts, editorial permissions, moderated discussions, wiki, and blog.",
+  "languages": ["TCL"],
   "tags": [
     "tcl",
     "example",
