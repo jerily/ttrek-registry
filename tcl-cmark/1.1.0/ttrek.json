@@ -2,6 +2,7 @@
   "name": "tcl-cmark",
   "license": "BSD-3-Clause",
   "description": "Tcl bindings for CommonMark and GitHub Flavored Markdown rendering with cmark-gfm.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "markdown", "commonmark", "gfm", "html"],
   "url": "https://github.com/apnadkarni/tcl-cmark",
   "version": "1.1.0",

@@ -2,6 +2,7 @@
   "name": "twebserver",
   "license": "MIT",
   "description": "Multithreaded HTTP and HTTPS web server extension for Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "http", "https", "web", "server", "threads"],
   "url": "https://github.com/jerily/twebserver",
   "version": "1.47.58",

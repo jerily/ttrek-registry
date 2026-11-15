@@ -15,6 +15,7 @@
   },
   "devDependencies": {},
   "description": "Read-only Markdown blog with directory or SQL storage and explicit synchronization.",
+  "languages": ["TCL"],
   "tags": [
     "tcl",
     "web",

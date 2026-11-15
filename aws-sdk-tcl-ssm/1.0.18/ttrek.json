@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "1.0.18",
   "description": "AWS ssm client for Tcl 8.6 and 9.x.",
+  "languages": ["C++", "TCL"],
   "tags": ["tcl", "aws", "cloud", "ssm", "configuration", "parameter-store"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},

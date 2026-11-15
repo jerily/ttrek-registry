@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "license": "MIT",
   "description": "HTTP and HTTPS client for Tcl using curl, with asynchronous body streaming.",
+  "languages": ["C", "TCL"],
   "url": "https://github.com/jerily/trequests",
   "tags": [
     "tcl",

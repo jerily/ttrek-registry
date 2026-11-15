@@ -2,6 +2,7 @@
   "name": "tcllib",
   "license": "TCL",
   "description": "Standard library of Tcl modules for common programming tasks.",
+  "languages": ["TCL"],
   "tags": ["tcl", "standard-library", "utilities", "pure-tcl"],
   "url": "https://github.com/tcltk/tcllib",
   "version": "2.0.0",

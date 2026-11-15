@@ -2,6 +2,7 @@
   "name": "libpq",
   "license": "PostgreSQL",
   "description": "PostgreSQL client library for C applications.",
+  "languages": ["C"],
   "tags": ["c", "postgresql", "sql", "database", "client"],
   "url": "https://www.postgresql.org/",
   "version": "16.15.0",

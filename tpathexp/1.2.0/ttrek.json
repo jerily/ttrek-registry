@@ -2,6 +2,7 @@
   "name": "tpathexp",
   "license": "MIT",
   "description": "URL path matching and HTTP routing for C and Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "c", "http", "routing", "web"],
   "url": "https://github.com/jerily/tpathexp",
   "version": "1.2.0",

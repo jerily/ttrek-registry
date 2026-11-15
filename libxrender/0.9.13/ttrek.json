@@ -2,6 +2,7 @@
   "name": "libxrender",
   "license": "HPND-sell-variant",
   "description": "Client library for the X11 Render extension.",
+  "languages": ["C"],
   "tags": ["x11", "graphics", "rendering"],
   "url": "https://gitlab.freedesktop.org/xorg/lib/libxrender",
   "version": "0.9.13",
