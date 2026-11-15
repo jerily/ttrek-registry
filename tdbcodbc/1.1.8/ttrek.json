@@ -2,6 +2,7 @@
 	"name":	"tdbcodbc",
 	"license": "TCL",
 	"description": "ODBC database driver for Tcl Database Connectivity.",
+	"languages": ["C", "TCL"],
 	"tags": ["tcl", "tdbc", "odbc", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcodbc",
 	"version":	"1.1.8",

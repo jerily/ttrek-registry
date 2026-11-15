@@ -2,6 +2,7 @@
   "name": "gperf",
   "license": "GPL-3.0-or-later",
   "description": "Generator of perfect hash functions for sets of keywords.",
+  "languages": ["C", "C++"],
   "tags": ["code-generation", "hashing", "build-tools"],
   "url": "https://www.gnu.org/software/gperf/",
   "version": "3.3.0",

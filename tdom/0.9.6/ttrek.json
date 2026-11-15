@@ -2,6 +2,7 @@
   "name": "tdom",
   "license": "MPL-2.0",
   "description": "XML and HTML parsing, DOM manipulation, and XPath support for Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "xml", "html", "json", "dom", "xpath", "parsing"],
   "url": "https://tdom.org/",
   "version": "0.9.6",

@@ -2,6 +2,7 @@
 	"name":	"tjson",
 	"license": "MIT",
 	"description": "JSON parsing, generation, and JSONPath queries for Tcl.",
+	"languages": ["C", "TCL"],
 	"tags": ["tcl", "json", "jsonpath", "parsing", "serialization"],
 	"url": "https://github.com/jerily/tjson",
 	"version":	"1.0.27",

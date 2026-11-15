@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "2.0.1",
   "description": "Bcrypt password hashing and verification for Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "security", "passwords", "hashing", "authentication"],
   "scripts": {},
   "dependencies": {

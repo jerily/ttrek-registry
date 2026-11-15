@@ -2,6 +2,7 @@
   "name": "valkey-tcl",
   "license": "MIT",
   "description": "Tcl client for Valkey and Redis-compatible servers.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "valkey", "redis", "database", "client"],
   "url": "https://github.com/jerily/valkey-tcl",
   "version": "1.0.3",

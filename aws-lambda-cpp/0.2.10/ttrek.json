@@ -2,6 +2,7 @@
 	"name":	"aws-lambda-cpp",
 	"license": "Apache-2.0",
 	"description": "C++ runtime for AWS Lambda functions.",
+	"languages": ["C++"],
 	"tags": ["cpp", "aws", "lambda", "serverless", "runtime"],
 	"url": "https://github.com/awslabs/aws-lambda-cpp",
 	"version":	"0.2.10",

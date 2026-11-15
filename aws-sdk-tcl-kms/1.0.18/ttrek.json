@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "1.0.18",
   "description": "AWS kms client for Tcl 8.6 and 9.x.",
+  "languages": ["C++", "TCL"],
   "tags": ["tcl", "aws", "cloud", "kms", "encryption", "key-management"],
   "url": "https://github.com/jerily/aws-sdk-tcl",
   "scripts": {},

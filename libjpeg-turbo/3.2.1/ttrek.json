@@ -2,6 +2,7 @@
   "name": "libjpeg-turbo",
   "license": "IJG AND BSD-3-Clause",
   "description": "JPEG image encoding and decoding library with SIMD acceleration.",
+  "languages": ["C"],
   "tags": [
     "c",
     "graphics",

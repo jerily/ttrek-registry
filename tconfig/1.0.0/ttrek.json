@@ -2,6 +2,7 @@
 	"name":	"tconfig",
 	"license": "MIT",
 	"description": "Encrypted configuration storage with AWS KMS and SSM integration for Tcl.",
+	"languages": ["TCL"],
 	"tags": ["tcl", "configuration", "encryption", "aws", "kms", "ssm"],
 	"url": "https://github.com/jerily/tconfig",
 	"version":	"1.0.0",

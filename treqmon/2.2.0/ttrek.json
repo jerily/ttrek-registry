@@ -2,6 +2,7 @@
   "name": "treqmon",
   "license": "MIT",
   "description": "HTTP request monitoring with configurable Jinja layouts and tpathexp routes.",
+  "languages": ["TCL"],
   "tags": [
     "tcl",
     "http",

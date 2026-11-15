@@ -2,6 +2,7 @@
 	"name":	"tdbcpostgres",
 	"license": "TCL",
 	"description": "PostgreSQL database driver for Tcl Database Connectivity.",
+	"languages": ["C", "TCL"],
 	"tags": ["tcl", "tdbc", "postgresql", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbcpostgres",
 	"version":	"1.1.8",

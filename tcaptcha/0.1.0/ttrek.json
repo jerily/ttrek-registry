@@ -2,6 +2,7 @@
   "name": "tcaptcha",
   "license": "MIT",
   "description": "Session-bound PNG CAPTCHA challenges for Tcl applications.",
+  "languages": ["TCL"],
   "tags": ["tcl", "web", "captcha", "images", "png", "authentication"],
   "url": "https://github.com/jerily/tcaptcha",
   "version": "0.1.0",

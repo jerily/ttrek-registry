@@ -2,6 +2,7 @@
   "name": "libarchive",
   "license": "BSD-2-Clause",
   "description": "C library and tools for reading and writing archive formats.",
+  "languages": ["C"],
   "tags": ["c", "archives", "compression", "tar", "zip"],
   "url": "https://github.com/libarchive/libarchive",
   "version": "3.8.11",

@@ -3,6 +3,7 @@
   "license": "Apache-2.0",
   "version": "1.11.924",
   "description": "AWS SDK for C++ ssm client library.",
+  "languages": ["C++"],
   "tags": ["cpp", "aws", "cloud", "ssm", "configuration", "parameter-store"],
   "url": "https://github.com/aws/aws-sdk-cpp",
   "scripts": {},

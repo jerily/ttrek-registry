@@ -2,6 +2,7 @@
 	"name": "protobuf",
 	"license": "BSD-3-Clause",
 	"description": "Protocol Buffers compiler and serialization libraries.",
+	"languages": ["C++"],
 	"tags": ["protobuf", "serialization", "code-generation"],
 	"url": "https://github.com/protocolbuffers/protobuf",
 	"version": "21.9.0",

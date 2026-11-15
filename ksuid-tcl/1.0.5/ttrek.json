@@ -2,6 +2,7 @@
   "name": "ksuid-tcl",
   "license": "MIT",
   "description": "Generation and parsing of sortable unique identifiers for Tcl.",
+  "languages": ["C++", "TCL"],
   "tags": ["tcl", "identifiers", "ksuid", "sorting"],
   "url": "https://github.com/jerily/ksuid-tcl",
   "version": "1.0.5",

@@ -2,6 +2,7 @@
   "name": "libgd",
   "license": "GD",
   "description": "GD graphics drawing library with PNG, JPEG, GIF, and FreeType support.",
+  "languages": ["C"],
   "tags": [
     "c",
     "graphics",

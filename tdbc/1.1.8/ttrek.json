@@ -2,6 +2,7 @@
 	"name":	"tdbc",
 	"license": "TCL",
 	"description": "Common Tcl interface for SQL database connections and queries.",
+	"languages": ["C", "TCL"],
 	"tags": ["tcl", "tdbc", "sql", "database"],
 	"url": "https://github.com/tcltk/tdbc",
 	"version":	"1.1.8",

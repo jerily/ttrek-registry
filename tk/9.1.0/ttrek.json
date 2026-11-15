@@ -2,6 +2,7 @@
   "name": "tk",
   "license": "TCL",
   "description": "Cross-platform graphical user interface toolkit for Tcl.",
+  "languages": ["C", "TCL"],
   "tags": ["tcl", "tk", "gui", "widgets"],
   "url": "https://github.com/tcltk/tk",
   "version": "9.1.0",
