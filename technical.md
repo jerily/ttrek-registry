@@ -14,12 +14,14 @@ Use SPDX expressions for alternatives or exceptions, such as
 Check the upstream license notice for the packaged version; this field describes
 the package's license, not the licenses of its dependencies.
 
-`LicenseRef-Proprietary` identifies the notice used by `example-community` and
-older releases of `web-forum` (through 0.1.9) and `web-user` (through 0.2.1):
+`LicenseRef-Proprietary` identifies the notice used by older releases of
+`web-forum` (through 0.1.9) and `web-user` (through 0.2.1):
 "Copyright (c) 2026 Jerily LTD. All rights reserved. Private software.
 Redistribution requires permission." These releases do not declare a license
 from the SPDX License List. `web-forum` 0.1.10 and `web-user` 0.2.2 adopt MIT;
 keep the original license metadata on the older packaged versions.
+
+All registered versions of `example-community` use MIT.
 
 Add a `tags` array with concise topics, formats, and relevant technologies,
 for example `"tags": ["tcl", "xml", "json", "parsing"]`. Prefer lowercase tags
