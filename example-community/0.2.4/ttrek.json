@@ -1,6 +1,6 @@
 {
   "name": "example-community",
-  "license": "LicenseRef-Proprietary",
+  "license": "MIT",
   "version": "0.2.4",
   "scripts": {
     "start": {
