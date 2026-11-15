@@ -1,0 +1,61 @@
+{
+  "name": "example-community",
+  "license": "MIT",
+  "version": "0.3.0",
+  "scripts": {
+    "start": {
+      "file": "start.sh"
+    }
+  },
+  "dependencies": {
+    "tpersist": "^0.1.4",
+    "tcl": ">=9.1.0,<10.0.0",
+    "web-user": "=0.5.0",
+    "web-forum": "=0.3.0",
+    "twebserver": "^1.47.57",
+    "web-wiki": "=0.1.5",
+    "web-blog": "=0.1.5",
+    "tconfig": "1.0.0",
+    "web-static-wiki": "=0.1.8",
+    "tpathexp": "^1.2.0"
+  },
+  "devDependencies": {},
+  "description": "Community site with accounts, editorial permissions, moderated discussions, wiki, and blog.",
+  "tags": [
+    "tcl",
+    "example",
+    "web",
+    "community",
+    "forum",
+    "wiki",
+    "blog"
+  ],
+  "url": "https://github.com/jerily/example-community",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/example-community/releases/download/v0.3.0/example-community-0.3.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
