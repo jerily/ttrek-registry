@@ -1,0 +1,63 @@
+{
+  "name": "pure-tcl-aws-s3",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Tcl client for AWS S3, without the AWS C++ SDK.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/pure-tcl-aws-s3",
+  "tags": [
+    "tcl",
+    "aws",
+    "s3"
+  ],
+  "scripts": {
+    "example-list-buckets": {
+      "file": "run-example.sh",
+      "args": [
+        "list-buckets"
+      ]
+    },
+    "example-list-objects": {
+      "file": "run-example.sh",
+      "args": [
+        "list-objects"
+      ]
+    },
+    "example-presign": {
+      "file": "run-example.sh",
+      "args": [
+        "presign"
+      ]
+    }
+  },
+  "dependencies": {
+    "pure-tcl-aws-core": "^0.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-aws-s3/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
