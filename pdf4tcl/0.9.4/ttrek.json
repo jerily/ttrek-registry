@@ -1,0 +1,51 @@
+{
+  "name": "pdf4tcl",
+  "version": "0.9.4",
+  "description": "Generate PDF documents in pure Tcl.",
+  "url": "https://pdf4tcl.sourceforge.net/",
+  "license": "TCL",
+  "languages": [
+    "Tcl"
+  ],
+  "tags": [
+    "tcl",
+    "pdf"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/pdf4tcl/pdf4tcl094.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "install.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "autogen",
+        "path": "sh",
+        "options": [
+          {
+            "name": "ttrek-install.sh"
+          },
+          {
+            "name": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

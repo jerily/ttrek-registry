@@ -9,7 +9,7 @@
 	},
 	"dependencies":	{
 		"valkey-tcl": ">=1.0.0",
-		"twebserver": ">=1.47.53"
+		"twebserver": ">=1.47.58"
 	},
 	"devDependencies":	{
 	},

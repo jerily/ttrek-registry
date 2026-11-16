@@ -13,6 +13,21 @@
   "dependencies": {
     "tcl": ">=8.6.18,<8.7.0"
   },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [
@@ -29,12 +44,34 @@
         "p_num": "1"
       },
       {
+        "cmd": "env_variable",
+        "name": "TK_CONFIGURE",
+        "op": "set",
+        "value": "$SOURCE_DIR/unix/configure"
+      },
+      {
+        "cmd": "unpack",
+        "as": "tk",
+        "shared": "tk-8.6.18",
+        "select": true
+      },
+      {
         "cmd": "cd"
       },
       {
+        "cmd": "env_variable",
+        "name": "CFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
         "cmd": "configure",
-        "path": "$SOURCE_DIR/unix/configure",
+        "path": "$TK_CONFIGURE",
         "options": [
+          {
+            "name": "srcdir",
+            "value": "$SOURCE_DIR/unix"
+          },
           {
             "name": "with-tcl",
             "value": "$INSTALL_DIR/lib"

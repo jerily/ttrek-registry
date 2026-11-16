@@ -1,0 +1,109 @@
+{
+  "name": "tkimg",
+  "version": "2.1.2",
+  "description": "Additional photo image formats for Tk.",
+  "url": "https://tkimg.sourceforge.net/",
+  "license": "TCL AND Zlib AND libpng-2.0 AND IJG AND libtiff",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "tk",
+    "images",
+    "png",
+    "jpeg",
+    "tiff"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tk": ">=8.6.18,<8.7.0"
+  },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/tkimg/tkimg/2.1/tkimg%202.1.2/Img-2.1.2.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "append",
+        "value": "-I/opt/X11/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "append",
+        "value": "-L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG_PATH",
+        "op": "set",
+        "value": "${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "with-tk",
+            "value": "$INSTALL_DIR/lib"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-libraries"
+      }
+    ]
+  }
+}

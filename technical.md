@@ -38,6 +38,32 @@ Declare everything the package needs to build and run here. `devDependencies`
 is used for a root project's development tools; it is ignored when a registry
 package is installed as a dependency.
 
+`externalDependencies` describes requirements supplied by the host rather than
+another registry package. This metadata is currently informational; checking it
+in `ttrek` will be implemented separately. For example:
+
+```json
+"externalDependencies": {
+  "xquartz": {
+    "platforms": ["darwin"],
+    "check": {
+      "files": [
+        "/opt/X11/include/X11/Xlib.h",
+        "/opt/X11/lib/libX11.dylib"
+      ]
+    },
+    "installHint": "brew install --cask xquartz",
+    "url": "https://www.xquartz.org/"
+  }
+}
+```
+
+Use lowercase operating system names in `platforms`. All paths in `check.files`
+are required. `installHint` is guidance for the user, not an automatic install
+command. Declare XQuartz on packages that directly use the X11 development
+files; pure Tcl/Tk packages inherit that requirement through their Tk dependency.
+The file checks describe build prerequisites and do not require a running display.
+
 `build.default` is an array of command objects executed in order. Common commands
 include `download`, `unpack`, `cd`, `configure`, `cmake_config`, `make`, and
 `make_install`. Build steps can refer to `$SOURCE_DIR` and `$INSTALL_DIR`.
