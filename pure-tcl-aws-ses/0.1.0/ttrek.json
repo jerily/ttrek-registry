@@ -1,0 +1,63 @@
+{
+  "name": "pure-tcl-aws-ses",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Tcl client for AWS SES, without the AWS C++ SDK.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/pure-tcl-aws-ses",
+  "tags": [
+    "tcl",
+    "aws",
+    "ses"
+  ],
+  "scripts": {
+    "example-quota": {
+      "file": "run-example.sh",
+      "args": [
+        "quota"
+      ]
+    },
+    "example-list-identities": {
+      "file": "run-example.sh",
+      "args": [
+        "list-identities"
+      ]
+    },
+    "example-send": {
+      "file": "run-example.sh",
+      "args": [
+        "send"
+      ]
+    }
+  },
+  "dependencies": {
+    "pure-tcl-aws-core": "^0.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-aws-ses/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "pure-tcl-aws-iam",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Tcl client for AWS IAM, without the AWS C++ SDK.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/pure-tcl-aws-iam",
+  "tags": [
+    "tcl",
+    "aws",
+    "iam"
+  ],
+  "scripts": {
+    "example-list-policies": {
+      "file": "run-example.sh",
+      "args": [
+        "list-policies"
+      ]
+    }
+  },
+  "dependencies": {
+    "pure-tcl-aws-core": "^0.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-aws-iam/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "pure-tcl-aws-dynamodb",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Tcl client for AWS DYNAMODB, without the AWS C++ SDK.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/pure-tcl-aws-dynamodb",
+  "tags": [
+    "tcl",
+    "aws",
+    "dynamodb"
+  ],
+  "scripts": {
+    "example-list-tables": {
+      "file": "run-example.sh",
+      "args": [
+        "list-tables"
+      ]
+    },
+    "example-get-item": {
+      "file": "run-example.sh",
+      "args": [
+        "get-item"
+      ]
+    }
+  },
+  "dependencies": {
+    "pure-tcl-aws-core": "^0.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-aws-dynamodb/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
