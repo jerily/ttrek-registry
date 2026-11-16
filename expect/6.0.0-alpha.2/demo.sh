@@ -5,7 +5,7 @@ work=$(mktemp -d "${TMPDIR:-/tmp}/ttrek-expect.XXXXXX")
 trap 'rm -rf "$work"' EXIT HUP INT TERM
 cat > "$work/example.tcl" <<'TCL'
 lappend auto_path [file join $::env(PROJECT_INSTALL_DIR) lib]
-package require Expect
+package require -exact Expect 6.0a2
 set timeout 5
 log_user 0
 spawn -noecho /bin/sh -c {printf 'Name: '; read name; printf 'Hello, %s\n' "$name"}
@@ -25,4 +25,4 @@ set status [wait]
 if {[lindex $status 2] != 0 || [lindex $status 3] != 0} {error "child failed: $status"}
 puts "Expect successfully drove an interactive shell."
 TCL
-"$PROJECT_INSTALL_DIR/bin/tclsh8.6" "$work/example.tcl" "$@"
+"$PROJECT_INSTALL_DIR/bin/expect" "$work/example.tcl" "$@"
