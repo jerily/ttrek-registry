@@ -2,18 +2,39 @@
   "name": "libxrender",
   "license": "HPND-sell-variant",
   "description": "Client library for the X11 Render extension.",
-  "languages": ["C"],
-  "tags": ["x11", "graphics", "rendering"],
+  "languages": [
+    "C"
+  ],
+  "tags": [
+    "x11",
+    "graphics",
+    "rendering"
+  ],
   "url": "https://gitlab.freedesktop.org/xorg/lib/libxrender",
   "version": "0.9.13",
   "scripts": {},
   "dependencies": {},
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [
       {
         "cmd": "download",
-        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXrender-0.9.13.tar.xz"
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXrender-0.9.13.tar.gz"
       },
       {
         "cmd": "unpack"
@@ -27,6 +48,24 @@
         "op": "set",
         "value": "pkg-config --static",
         "if": "+static"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "append",
+        "value": "-I/opt/X11/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "append",
+        "value": "-L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG_PATH",
+        "op": "set",
+        "value": "${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
       },
       {
         "cmd": "configure",

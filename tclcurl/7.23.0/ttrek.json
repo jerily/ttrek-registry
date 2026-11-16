@@ -1,0 +1,74 @@
+{
+  "name": "tclcurl",
+  "version": "7.23.0",
+  "description": "Tcl bindings to libcurl for URL transfers.",
+  "url": "https://github.com/flightaware/tclcurl-fa",
+  "license": "TCL",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "curl",
+    "http",
+    "networking"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "curl": "^8.23.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/flightaware/tclcurl-fa/archive/refs/tags/v7.23.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "with-curlprefix",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}

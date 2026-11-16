@@ -1,0 +1,54 @@
+{
+  "name": "bwidget",
+  "version": "1.10.1",
+  "description": "Additional widgets written in Tcl/Tk.",
+  "url": "https://github.com/tcltk/bwidget",
+  "license": "TCL",
+  "languages": [
+    "Tcl"
+  ],
+  "tags": [
+    "tcl",
+    "tk",
+    "gui",
+    "widgets"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tk": ">=8.6.18,<8.7.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/tcltk/bwidget/archive/refs/tags/bwidget-1-10-1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "install.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "autogen",
+        "path": "sh",
+        "options": [
+          {
+            "name": "ttrek-install.sh"
+          },
+          {
+            "name": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -17,6 +17,10 @@ disabled.
 Tk 8.6 uses Xft when its development files are available and otherwise falls
 back to classic X11 fonts.
 
+Tk 8.6 keeps its unmodified sources in ttrek's shared source cache so extensions
+can use private headers after build cleanup. This requires a ttrek version with
+shared-source support; existing installations need a forced Tk rebuild to adopt it.
+
 On macOS, both recipes add `pkg-config --libs x11` to `LDFLAGS` before
 configuration checks for X11, preserving existing linker flags. This supplies
 the library search path when X11 is installed outside the default paths.

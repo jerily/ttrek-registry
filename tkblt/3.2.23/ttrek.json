@@ -1,0 +1,126 @@
+{
+  "name": "tkblt",
+  "version": "3.2.23",
+  "description": "BLT-derived graph, barchart and vector commands for Tk.",
+  "url": "https://github.com/wjoye/tkblt",
+  "license": "MIT",
+  "languages": [
+    "Tcl",
+    "C++"
+  ],
+  "tags": [
+    "tcl",
+    "tk",
+    "gui",
+    "plotting"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tk": ">=8.6.18,<8.7.0"
+  },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/wjoye/tkblt/archive/refs/tags/v3.2.23.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "append",
+        "value": "-I/opt/X11/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "append",
+        "value": "-L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG_PATH",
+        "op": "set",
+        "value": "${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "with-tk",
+            "value": "$INSTALL_DIR/lib"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          {
+            "name": "MAKE_LIB",
+            "value": "$(subst $(CC),$(CXX),$(MAKE_SHARED_LIB))"
+          },
+          {
+            "name": "LIBS",
+            "value": "-lX11 ${LIBS}"
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "MAKE_LIB",
+            "value": "$(subst $(CC),$(CXX),$(MAKE_SHARED_LIB))"
+          },
+          {
+            "name": "LIBS",
+            "value": "-lX11 ${LIBS}"
+          }
+        ]
+      }
+    ]
+  }
+}

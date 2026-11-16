@@ -1,0 +1,59 @@
+{
+  "name": "tkcon",
+  "version": "2.7.11",
+  "description": "Interactive graphical console for Tcl/Tk.",
+  "url": "https://github.com/wjoye/tkcon",
+  "license": "TCL",
+  "languages": [
+    "Tcl"
+  ],
+  "tags": [
+    "tcl",
+    "tk",
+    "console",
+    "debugging"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tk": ">=8.6.18,<8.7.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/wjoye/tkcon/archive/refs/tags/v2.7.11.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "install.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "package-version.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "autogen",
+        "path": "sh",
+        "options": [
+          {
+            "name": "ttrek-install.sh"
+          },
+          {
+            "name": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

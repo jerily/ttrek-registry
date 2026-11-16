@@ -3,7 +3,8 @@
 Builds [libXrender 0.9.13](https://gitlab.freedesktop.org/xorg/lib/libxrender),
 the X11 Render extension client library used by Xft. Requires a C compiler,
 make, pkg-config, and existing X11 development files with Xorg protocol
-headers (`x11`, `xproto`, and `renderproto` pkg-config metadata).
+headers (`x11`, `xproto`, and `renderproto` pkg-config metadata). On macOS,
+install XQuartz; its standard `/opt/X11` paths are detected automatically.
 
 ```sh
 ttrek install libxrender -y

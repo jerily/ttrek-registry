@@ -15,6 +15,21 @@
     "tcl": ">=9.1.0,<9.2.0",
     "libxft": "^2.3.9"
   },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [

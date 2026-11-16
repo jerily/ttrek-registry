@@ -11,7 +11,7 @@
     "tjson": "^1.0.26",
     "aws-sdk-tcl-s3": "^1.0.17",
     "tpersist": "^0.1.4",
-    "twebserver": "^1.47.55"
+    "twebserver": "^1.47.58"
   },
   "devDependencies": {},
   "description": "Read-only Markdown wiki with directory or SQL storage and explicit synchronization.",
