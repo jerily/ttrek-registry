@@ -1,0 +1,94 @@
+{
+  "name": "tkdnd",
+  "version": "2.9.5",
+  "description": "Native drag and drop for Tk widgets.",
+  "url": "https://github.com/petasis/tkdnd",
+  "license": "TCL",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "tk",
+    "gui",
+    "drag-and-drop"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tk": ">=8.6.18,<8.7.0",
+    "libxcursor": "^1.2.3"
+  },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/petasis/tkdnd/archive/refs/tags/tkdnd-release-test-v2.9.5.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "xquartz.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "with-tk",
+            "value": "$INSTALL_DIR/lib"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}

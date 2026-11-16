@@ -1,0 +1,229 @@
+--- a/configure
++++ b/configure
+@@ -6693,7 +6693,7 @@
+ 
+ fi
+ 	    # TEA specific: use LDFLAGS_DEFAULT instead of LDFLAGS
+-	    SHLIB_LD='${CC} -dynamiclib ${CFLAGS} ${LDFLAGS_DEFAULT}'
++	    SHLIB_LD='${CC} -dynamiclib ${CFLAGS} ${LDFLAGS_DEFAULT} -install_name "$(pkglibdir)/$(PKG_LIB_FILE)"'
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ld accepts -single_module flag" >&5
+ $as_echo_n "checking if ld accepts -single_module flag... " >&6; }
+ if ${tcl_cv_ld_single_module+:} false; then :
+@@ -6733,12 +6733,6 @@
+ 	    vers=`echo ${PACKAGE_VERSION} | sed -e 's/^\([0-9]\{1,5\}\)\(\(\.[0-9]\{1,3\}\)\{0,2\}\).*$/\1\2/p' -e d`
+ 	    SHLIB_LD="${SHLIB_LD} -current_version ${vers:-0} -compatibility_version ${vers:-0}"
+ 	    SHLIB_SUFFIX=".dylib"
+-	    # Don't use -prebind when building for Mac OS X 10.4 or later only:
+-	    if test "`echo "${MACOSX_DEPLOYMENT_TARGET}" | awk -F '10\\.' '{print int($2)}'`" -lt 4 -a \
+-		"`echo "${CPPFLAGS}" | awk -F '-mmacosx-version-min=10\\.' '{print int($2)}'`" -lt 4; then :
+-
+-		LDFLAGS="$LDFLAGS -prebind"
+-fi
+ 	    LDFLAGS="$LDFLAGS -headerpad_max_install_names"
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ld accepts -search_paths_first flag" >&5
+ $as_echo_n "checking if ld accepts -search_paths_first flag... " >&6; }
+@@ -7682,6 +7676,20 @@
+ fi
+ 
+ 
++ac_fn_c_check_header_mongrel "$LINENO" "pty.h" "ac_cv_header_pty_h" "$ac_includes_default"
++if test "x$ac_cv_header_pty_h" = xyes; then :
++  $as_echo "#define HAVE_PTY_H 1" >>confdefs.h
++
++fi
++
++
++ac_fn_c_check_header_mongrel "$LINENO" "util.h" "ac_cv_header_util_h" "$ac_includes_default"
++if test "x$ac_cv_header_util_h" = xyes; then :
++  $as_echo "#define HAVE_UTIL_H 1" >>confdefs.h
++
++fi
++
++
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sys/bsdtypes.h" >&5
+ $as_echo_n "checking for sys/bsdtypes.h... " >&6; }
+@@ -7994,7 +8002,7 @@
+ {
+ extern long timezone;
+ 	    timezone += 1;
+-	    exit (0);
++	    return 0;
+   ;
+   return 0;
+ }
+@@ -8030,7 +8038,7 @@
+ {
+ extern time_t timezone;
+ 		timezone += 1;
+-		exit (0);
++		return 0;
+   ;
+   return 0;
+ }
+@@ -8792,6 +8800,10 @@
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif
++
+ int
+ main ()
+ {
+@@ -8831,7 +8843,7 @@
+ /* end confdefs.h.  */
+ 
+ #include <sys/wait.h>
+-main() {
++int main() {
+ #ifndef WNOHANG
+ 	return 0;
+ #else
+@@ -8867,7 +8879,7 @@
+ 
+ #include <stdio.h>
+ #include <sys/wait.h>
+-main() {
++int main() {
+ #ifdef WNOHANG
+ 	FILE *fp = fopen("wnohang","w");
+ 	fprintf(fp,"%d",WNOHANG);
+@@ -8935,6 +8947,13 @@
+ /* end confdefs.h.  */
+ 
+ #include <signal.h>
++#ifdef HAVE_UNISTD_H
++#include <unistd.h>
++#endif
++#ifndef NO_SYS_WAIT_H
++#include <sys/wait.h>
++#endif
++
+ #define RETSIGTYPE $retsigtype
+ 
+ int signal_rearms = 0;
+@@ -8952,7 +8971,7 @@
+ signal_rearms++;
+ }
+ 
+-main()
++int main()
+ {
+ 	signal(SIGINT,parent_sigint_handler);
+ 
+@@ -8966,8 +8985,9 @@
+ 
+ 		wait(&status);
+ 		unlink("core");
+-		exit(signal_rearms);
++		return signal_rearms;
+ 	}
++	return -1;
+ }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+@@ -9234,10 +9254,10 @@
+ /* end confdefs.h.  */
+ 
+ #include <sgtty.h>
+-main()
++int main()
+ {
+   struct sgttyb tmp;
+-  exit(0);
++  return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+@@ -9274,10 +9294,10 @@
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <termio.h>
+-  main()
++  int main()
+   {
+     struct termio tmp;
+-    exit(0);
++    return 0;
+   }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+@@ -9312,10 +9332,10 @@
+ #  include <inttypes.h>
+ #  endif
+ #  include <termios.h>
+-  main()
++  int main()
+   {
+     struct termios tmp;
+-    exit(0);
++    return 0;
+   }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+@@ -9350,7 +9370,7 @@
+ #include <inttypes.h>
+ #endif
+ #include <termios.h>
+-main() {
++int main() {
+ #if defined(TCGETS) || defined(TCGETA)
+ 	return 0;
+ #else
+@@ -9374,8 +9394,8 @@
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if TIOCGWINSZ in termios.h" >&5
+-$as_echo_n "checking if TIOCGWINSZ in termios.h... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if termios.h and sys/ioctl.h may both be included" >&5
++$as_echo_n "checking if termios.h and sys/ioctl.h may both be included... " >&6; }
+ if test "$cross_compiling" = yes; then :
+   as_fn_error $? "Expect can't be cross compiled" "$LINENO" 5
+ 
+@@ -9388,16 +9408,13 @@
+ #include <inttypes.h>
+ #endif
+ #include <termios.h>
+-main() {
+-#ifdef TIOCGWINSZ
++#include <sys/ioctl.h>
++int main() {
+ 	return 0;
+-#else
+-	return 1;
+-#endif
+ }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+-  $as_echo "#define HAVE_TIOCGWINSZ_IN_TERMIOS_H 1" >>confdefs.h
++  $as_echo "#define HAVE_TERMIOS_AND_IOCTL_H_TOGETHER 1" >>confdefs.h
+ 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+@@ -9423,7 +9440,7 @@
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+-main(){
++int main(){
+ #ifdef CRAY
+ 	return 0;
+ #else
+@@ -9565,12 +9582,12 @@
+ 
+ extern char *tzname[2];
+ extern int daylight;
+-main()
++int main()
+ {
+   int *x = &daylight;
+   char **y = tzname;
+ 
+-  exit(0);
++  return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :

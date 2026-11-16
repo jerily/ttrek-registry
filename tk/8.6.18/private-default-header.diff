@@ -1,0 +1,11 @@
+--- a/unix/Makefile.in
++++ b/unix/Makefile.in
+@@ -562,7 +562,7 @@
+ 	$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS)
+ 
+ # The private headers we want installed for install-private-headers
+-PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
++PRIVATE_HDRS = $(GENERIC_DIR)/default.h $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
+ 	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
+ 	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
+ 

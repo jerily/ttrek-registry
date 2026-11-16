@@ -1,0 +1,38 @@
+--- a/tclconfig/config.guess
++++ b/tclconfig/config.guess
+@@ -808,6 +808,9 @@
+ 	exit 0 ;;
+     i*86:Minix:*:*)
+ 	echo ${UNAME_MACHINE}-pc-minix
++	exit 0 ;;
++    aarch64:Linux:*:*)
++	echo aarch64-unknown-linux-gnu
+ 	exit 0 ;;
+     arm*:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-gnu
+@@ -1155,9 +1158,15 @@
+ 	echo ${UNAME_MACHINE}-apple-rhapsody${UNAME_RELEASE}
+ 	exit 0 ;;
+     *:Darwin:*:*)
++	case ${UNAME_MACHINE} in
++	    arm64|aarch64) UNAME_PROCESSOR=aarch64 ;;
++	    x86_64) UNAME_PROCESSOR=x86_64 ;;
++	    *)
+ 	case `uname -p` in
+ 	    *86) UNAME_PROCESSOR=i686 ;;
+ 	    powerpc) UNAME_PROCESSOR=powerpc ;;
++	esac
++	;;
+ 	esac
+ 	echo ${UNAME_PROCESSOR}-apple-darwin${UNAME_RELEASE}
+ 	exit 0 ;;
+--- a/tclconfig/config.sub
++++ b/tclconfig/config.sub
+@@ -291,6 +291,7 @@
+ 		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
++	| aarch64-* \
+ 	| a29k-* \
+ 	| alpha-* | alphaev[4-8]-* | alphaev56-* | alphaev6[78]-* \
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \

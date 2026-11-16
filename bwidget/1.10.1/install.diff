@@ -1,0 +1,12 @@
+--- a/ttrek-install.sh
++++ b/ttrek-install.sh
+@@ -0,0 +1,9 @@
++#!/bin/sh
++set -eu
++prefix=$1
++dest="$prefix/lib/bwidget1.10.1"
++mkdir -p "$dest"
++cp -R *.tcl "$dest/"
++cp -R images "$dest/"
++cp -R lang "$dest/"
++cp -R LICENSE.txt "$dest/"

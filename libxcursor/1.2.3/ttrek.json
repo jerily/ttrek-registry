@@ -1,0 +1,89 @@
+{
+  "name": "libxcursor",
+  "version": "1.2.3",
+  "description": "X11 cursor management library.",
+  "url": "https://gitlab.freedesktop.org/xorg/lib/libxcursor",
+  "license": "HPND-sell-variant",
+  "languages": [
+    "C"
+  ],
+  "tags": [
+    "x11",
+    "cursor"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "libxfixes": "^6.0.2",
+    "libxrender": "^0.9.13"
+  },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXcursor-1.2.3.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "xquartz.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "libdir",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "disable-static"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}

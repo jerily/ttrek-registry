@@ -1,0 +1,28 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -131,7 +131,10 @@
+ generic/tkbltDecls.h
+ ])
+ TEA_ADD_INCLUDES([])
+-TEA_ADD_LIBS([-lstdc++])
++case `uname -s` in
++    Darwin) TEA_ADD_LIBS([-lc++]) ;;
++    *) TEA_ADD_LIBS([-lstdc++]) ;;
++esac
+ if test "${TEA_PLATFORM}" = "windows" -a "$GCC" != "yes"; then
+ TEA_ADD_CFLAGS([-TP -EHsc -D_CRT_SECURE_NO_WARNINGS -D_USE_MATH_DEFINES])
+ fi
+--- a/configure
++++ b/configure
+@@ -6355,7 +6355,10 @@
+ 
+ 
+ 
+-    vars="-lstdc++"
++    case `uname -s` in
++        Darwin) vars="-lc++" ;;
++        *) vars="-lstdc++" ;;
++    esac
+     for i in $vars; do
+ 	if test "${TEA_PLATFORM}" = "windows" -a "$GCC" = "yes" ; then
+ 	    # Convert foo.lib to -lfoo for GCC.  No-op if not *.lib

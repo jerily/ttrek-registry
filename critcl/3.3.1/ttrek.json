@@ -1,0 +1,55 @@
+{
+  "name": "critcl",
+  "version": "3.3.1",
+  "description": "Compile inline C code from Tcl scripts.",
+  "url": "https://github.com/andreas-kupries/critcl",
+  "license": "TCL",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "c",
+    "compiler"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0",
+    "tcllib": "^2.0.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.3.1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "autogen",
+        "path": "$INSTALL_DIR/bin/tclsh8.6",
+        "options": [
+          {
+            "name": "build.tcl"
+          },
+          {
+            "name": "install"
+          },
+          {
+            "name": "--prefix"
+          },
+          {
+            "name": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

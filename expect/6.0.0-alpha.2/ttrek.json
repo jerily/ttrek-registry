@@ -1,0 +1,67 @@
+{
+  "name": "expect",
+  "version": "6.0.0-alpha.2",
+  "description": "Automate interactive command-line programs.",
+  "url": "https://github.com/tcltk-depot/expect",
+  "license": "LicenseRef-Public-Domain",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "automation",
+    "terminal"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/tcltk-depot/expect/archive/refs/tags/v6.0a2.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
