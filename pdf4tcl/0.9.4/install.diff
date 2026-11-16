@@ -1,0 +1,11 @@
+--- a/ttrek-install.sh
++++ b/ttrek-install.sh
+@@ -0,0 +1,8 @@
++#!/bin/sh
++set -eu
++prefix=$1
++dest="$prefix/lib/pdf4tcl0.9.4"
++mkdir -p "$dest"
++cp -R *.tcl "$dest/"
++cp -R bitmaps "$dest/"
++cp -R licence.terms "$dest/"

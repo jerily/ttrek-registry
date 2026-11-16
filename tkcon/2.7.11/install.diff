@@ -1,0 +1,11 @@
+--- a/ttrek-install.sh
++++ b/ttrek-install.sh
+@@ -0,0 +1,8 @@
++#!/bin/sh
++set -eu
++prefix=$1
++dest="$prefix/lib/tkcon2.7.11"
++mkdir -p "$dest"
++cp -R tkcon.tcl "$dest/"
++cp -R pkgIndex.tcl "$dest/"
++cp docs/license.terms "$dest/"

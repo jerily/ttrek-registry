@@ -1,0 +1,107 @@
+{
+  "name": "readline",
+  "version": "8.3.6",
+  "description": "Line editing and history library for interactive programs.",
+  "url": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+  "license": "GPL-3.0-or-later",
+  "languages": [
+    "C"
+  ],
+  "tags": [
+    "readline",
+    "terminal",
+    "history"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "ncurses": "^6.6.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-001.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-002.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-003.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-004.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-005.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "patch",
+        "filename": "readline83-006.diff",
+        "p_num": "0"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-curses"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          {
+            "name": "SHLIB_LIBS",
+            "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib -lncursesw"
+          }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "SHLIB_LIBS",
+            "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib -lncursesw"
+          }
+        ]
+      }
+    ]
+  }
+}

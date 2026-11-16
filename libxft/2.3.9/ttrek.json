@@ -12,6 +12,21 @@
     "libfreetype": "^2.15.0",
     "libxrender": "^0.9.13"
   },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [

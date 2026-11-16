@@ -1,0 +1,106 @@
+{
+  "name": "expect",
+  "version": "5.45.4",
+  "description": "Automate interactive command-line programs.",
+  "url": "https://core.tcl-lang.org/expect/index",
+  "license": "LicenseRef-Public-Domain",
+  "languages": [
+    "Tcl",
+    "C"
+  ],
+  "tags": [
+    "tcl",
+    "automation",
+    "terminal"
+  ],
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.18,<8.7.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "headers.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "darwin-pty.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "darwin-linker.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "configure.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "arm64.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "channel-version.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "prepend",
+        "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CFLAGS",
+        "op": "append",
+        "value": "-std=gnu17"
+      },
+      {
+        "cmd": "configure",
+        "options": [
+          {
+            "name": "with-tcl",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "enable-shared"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}

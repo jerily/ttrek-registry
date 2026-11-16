@@ -13,6 +13,21 @@
   "dependencies": {
     "tcl": ">=8.6.18,<8.7.0"
   },
+  "externalDependencies": {
+    "xquartz": {
+      "platforms": [
+        "darwin"
+      ],
+      "check": {
+        "files": [
+          "/opt/X11/include/X11/Xlib.h",
+          "/opt/X11/lib/libX11.dylib"
+        ]
+      },
+      "installHint": "brew install --cask xquartz",
+      "url": "https://www.xquartz.org/"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [
@@ -26,6 +41,11 @@
       {
         "cmd": "patch",
         "filename": "darwin-x11.diff",
+        "p_num": "1"
+      },
+      {
+        "cmd": "patch",
+        "filename": "private-default-header.diff",
         "p_num": "1"
       },
       {
@@ -51,6 +71,16 @@
       },
       {
         "cmd": "make_install"
+      },
+      {
+        "cmd": "make_install",
+        "target": "install-private-headers",
+        "options": [
+          {
+            "name": "PRIVATE_INCLUDE_DIR",
+            "value": "$INSTALL_DIR/include"
+          }
+        ]
       }
     ]
   }
