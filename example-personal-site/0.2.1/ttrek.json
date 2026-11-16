@@ -1,0 +1,62 @@
+{
+  "name": "example-personal-site",
+  "license": "MIT",
+  "version": "0.2.1",
+  "scripts": {
+    "start": {
+      "file": "start.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "twebserver": "^1.47.58",
+    "web-static-wiki": "=0.1.9",
+    "web-static-blog": "=0.1.8",
+    "tpathexp": "^1.2.0",
+    "jinja2-tcl": "^0.1.1",
+    "tjson": "^1.0.27"
+  },
+  "devDependencies": {},
+  "description": "Static personal site with a Markdown notebook, journal, and local images.",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "example",
+    "web",
+    "website",
+    "wiki",
+    "blog",
+    "markdown",
+    "static-site"
+  ],
+  "url": "https://github.com/jerily/example-personal-site",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/example-personal-site/archive/refs/tags/v0.2.1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
