@@ -2,7 +2,7 @@
   "name": "expect",
   "version": "5.45.4",
   "description": "Automate interactive command-line programs.",
-  "url": "https://core.tcl-lang.org/expect/index",
+  "url": "https://github.com/tcltk-depot/expect",
   "license": "LicenseRef-Public-Domain",
   "languages": [
     "Tcl",
