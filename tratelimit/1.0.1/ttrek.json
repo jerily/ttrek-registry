@@ -8,7 +8,7 @@
   "scripts": {},
   "dependencies": {
     "valkey-tcl": ">=1.0.1",
-    "twebserver": ">=1.47.53"
+    "twebserver": ">=1.47.56"
   },
   "devDependencies": {},
   "build": {
