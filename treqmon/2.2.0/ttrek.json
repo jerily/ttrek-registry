@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "valkey-tcl": ">=1.0.1",
-    "twebserver": ">=1.47.56",
+    "twebserver": ">=1.47.58",
     "jinja2-tcl": "^0.1.0",
     "tjson": ">=1.0.26",
     "thread": ">=2.8.9",
