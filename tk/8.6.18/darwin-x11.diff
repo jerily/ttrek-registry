@@ -1,6 +1,6 @@
 --- a/unix/configure.in
 +++ b/unix/configure.in
-@@ -369,6 +369,21 @@
+@@ -369,6 +369,15 @@
      #	autoconf macro will return an include directory that contains
      #	no include files, so double-check its result just to be safe.
      #--------------------------------------------------------------------
@@ -8,12 +8,6 @@
 +    # XQuartz libraries may be outside the default linker search path.
 +    case $system in
 +        Darwin-*)
-+            if test -d /opt/X11; then
-+                CPPFLAGS="$CPPFLAGS -I/opt/X11/include"
-+                LDFLAGS="$LDFLAGS -L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
-+                PKG_CONFIG_PATH="${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
-+                export PKG_CONFIG_PATH
-+            fi
 +            if tk_x11_libs=`pkg-config --libs x11 2>/dev/null`; then
 +                LDFLAGS="$LDFLAGS $tk_x11_libs"
 +            fi
@@ -24,7 +18,7 @@
      TK_WINDOWINGSYSTEM=X11
 --- a/unix/configure
 +++ b/unix/configure
-@@ -9471,6 +9471,21 @@
+@@ -9471,6 +9471,15 @@
      #	autoconf macro will return an include directory that contains
      #	no include files, so double-check its result just to be safe.
      #--------------------------------------------------------------------
@@ -32,12 +26,6 @@
 +    # XQuartz libraries may be outside the default linker search path.
 +    case $system in
 +        Darwin-*)
-+            if test -d /opt/X11; then
-+                CPPFLAGS="$CPPFLAGS -I/opt/X11/include"
-+                LDFLAGS="$LDFLAGS -L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
-+                PKG_CONFIG_PATH="${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
-+                export PKG_CONFIG_PATH
-+            fi
 +            if tk_x11_libs=`pkg-config --libs x11 2>/dev/null`; then
 +                LDFLAGS="$LDFLAGS $tk_x11_libs"
 +            fi

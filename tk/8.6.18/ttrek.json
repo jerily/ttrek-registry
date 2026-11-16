@@ -44,17 +44,34 @@
         "p_num": "1"
       },
       {
-        "cmd": "patch",
-        "filename": "private-default-header.diff",
-        "p_num": "1"
+        "cmd": "env_variable",
+        "name": "TK_CONFIGURE",
+        "op": "set",
+        "value": "$SOURCE_DIR/unix/configure"
+      },
+      {
+        "cmd": "unpack",
+        "as": "tk",
+        "shared": "tk-8.6.18",
+        "select": true
       },
       {
         "cmd": "cd"
       },
       {
+        "cmd": "env_variable",
+        "name": "CFLAGS",
+        "op": "prepend",
+        "value": "-I$INSTALL_DIR/include"
+      },
+      {
         "cmd": "configure",
-        "path": "$SOURCE_DIR/unix/configure",
+        "path": "$TK_CONFIGURE",
         "options": [
+          {
+            "name": "srcdir",
+            "value": "$SOURCE_DIR/unix"
+          },
           {
             "name": "with-tcl",
             "value": "$INSTALL_DIR/lib"
@@ -71,16 +88,6 @@
       },
       {
         "cmd": "make_install"
-      },
-      {
-        "cmd": "make_install",
-        "target": "install-private-headers",
-        "options": [
-          {
-            "name": "PRIVATE_INCLUDE_DIR",
-            "value": "$INSTALL_DIR/include"
-          }
-        ]
       }
     ]
   }

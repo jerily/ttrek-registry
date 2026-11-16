@@ -50,11 +50,6 @@
       },
       {
         "cmd": "patch",
-        "filename": "darwin-cxx.diff",
-        "p_num": "1"
-      },
-      {
-        "cmd": "patch",
         "filename": "xquartz.diff",
         "p_num": "1"
       },
@@ -88,10 +83,30 @@
       },
       {
         "cmd": "make",
-        "parallel": true
+        "parallel": true,
+        "options": [
+          {
+            "name": "MAKE_LIB",
+            "value": "$(subst $(CC),$(CXX),$(MAKE_SHARED_LIB))"
+          },
+          {
+            "name": "LIBS",
+            "value": "-lX11 ${LIBS}"
+          }
+        ]
       },
       {
-        "cmd": "make_install"
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "MAKE_LIB",
+            "value": "$(subst $(CC),$(CXX),$(MAKE_SHARED_LIB))"
+          },
+          {
+            "name": "LIBS",
+            "value": "-lX11 ${LIBS}"
+          }
+        ]
       }
     ]
   }
