@@ -50,11 +50,6 @@
         "cmd": "unpack"
       },
       {
-        "cmd": "patch",
-        "filename": "xquartz.diff",
-        "p_num": "1"
-      },
-      {
         "cmd": "cd"
       },
       {
@@ -68,6 +63,24 @@
         "name": "LDFLAGS",
         "op": "prepend",
         "value": "-L$INSTALL_DIR/lib -Wl,-rpath,$INSTALL_DIR/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "CPPFLAGS",
+        "op": "append",
+        "value": "-I/opt/X11/include"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "LDFLAGS",
+        "op": "append",
+        "value": "-L/opt/X11/lib -Wl,-rpath,/opt/X11/lib"
+      },
+      {
+        "cmd": "env_variable",
+        "name": "PKG_CONFIG_PATH",
+        "op": "set",
+        "value": "${PKG_CONFIG_PATH:+${PKG_CONFIG_PATH}:}/opt/X11/lib/pkgconfig:/opt/X11/share/pkgconfig"
       },
       {
         "cmd": "configure",
