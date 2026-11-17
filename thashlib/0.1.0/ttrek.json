@@ -1,0 +1,70 @@
+{
+  "name": "thashlib",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "OpenSSL-backed hashes, HMAC, secure random bytes and hex encoding for Tcl.",
+  "languages": [
+    "C",
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/thashlib",
+  "tags": [
+    "tcl",
+    "hashing",
+    "cryptography",
+    "hmac"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.14",
+    "openssl": "^3.0.13"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/thashlib/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "TCL_INCLUDE_PATH",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "OPENSSL_ROOT_DIR",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
