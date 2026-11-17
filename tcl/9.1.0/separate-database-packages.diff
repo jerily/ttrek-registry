@@ -1,0 +1,26 @@
+--- a/unix/Makefile.in
++++ b/unix/Makefile.in
+@@ -2076,6 +2076,7 @@
+ 
+ configure-packages:
+ 	@for i in $(PKGS_DIR)/*; do \
++	    case "$$i" in */sqlite*|*/tdbcsqlite*|*/tdbcpostgres*) continue ;; esac; \
+ 	    if [ -d $$i ] ; then \
+ 		if [ -x $$i/configure ] ; then \
+ 		    pkg=`basename $$i`; \
+@@ -2094,6 +2095,7 @@
+ 
+ packages: configure-packages ${STUB_LIB_FILE}
+ 	@for i in $(PKGS_DIR)/*; do \
++	    case "$$i" in */sqlite*|*/tdbcsqlite*|*/tdbcpostgres*) continue ;; esac; \
+ 	    if [ -d $$i ] ; then \
+ 		pkg=`basename $$i`; \
+ 		if [ -f $(PKG_DIR)/$$pkg/Makefile ] ; then \
+@@ -2105,6 +2107,7 @@
+ 
+ install-packages: packages
+ 	@for i in $(PKGS_DIR)/*; do \
++	    case "$$i" in */sqlite*|*/tdbcsqlite*|*/tdbcpostgres*) continue ;; esac; \
+ 	    if [ -d $$i ] ; then \
+ 		pkg=`basename $$i`; \
+ 		if [ -f $(PKG_DIR)/$$pkg/Makefile ] ; then \
