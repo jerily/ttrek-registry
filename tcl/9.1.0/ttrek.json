@@ -2,8 +2,16 @@
   "name": "tcl",
   "license": "TCL",
   "description": "Tcl scripting language interpreter and development libraries.",
-  "languages": ["C", "TCL"],
-  "tags": ["tcl", "language", "interpreter", "runtime"],
+  "languages": [
+    "C",
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "language",
+    "interpreter",
+    "runtime"
+  ],
   "url": "https://github.com/tcltk/tcl",
   "version": "9.1.0",
   "scripts": {},
@@ -19,6 +27,11 @@
       },
       {
         "cmd": "unpack"
+      },
+      {
+        "cmd": "patch",
+        "filename": "separate-database-packages.diff",
+        "p_num": "1"
       },
       {
         "cmd": "cd"

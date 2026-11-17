@@ -2,7 +2,10 @@
   "name": "tpersist",
   "license": "MIT",
   "description": "SQL queries, versioned schemas, and JSONL schema/data backups through TDBC for Tcl.",
-  "languages": ["C", "TCL"],
+  "languages": [
+    "C",
+    "TCL"
+  ],
   "tags": [
     "tcl",
     "tdbc",
@@ -17,7 +20,6 @@
   "dependencies": {
     "tcl": ">=8.6.14",
     "tdbc": ">=1.1.8",
-    "tdbcsqlite3": ">=1.1.8",
     "tjson": "^1.0.27"
   },
   "devDependencies": {},

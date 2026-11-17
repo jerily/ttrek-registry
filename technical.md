@@ -120,3 +120,19 @@ Replace `tjson@1.0.26` with the package and version you are editing. Generation
 resolves dependencies and emits the build commands; it does not build packages.
 Run `bash build.sh` to test the build, which installs into `build/install` beside
 the script. Add `-static` to `gen-script` to check conditional static builds.
+
+## Conditional dependencies and USE flags
+
+Declare unsigned feature names with `"iuse": ["local"]`. Registries also infer
+these names from signed `if` conditions, including whitespace-separated lists.
+Installations store requested settings in `ttrek-manifest.json`, not `ttrek.json`.
+An absent flag is disabled: `-local` matches by default, and `+local` must be enabled
+explicitly. Multiple conditions are ANDed. Dependency entries may be version
+strings or objects such as `{"version": "^1.0.0", "if": "+local"}`. Root project
+dependencies and devDependencies use the same syntax.
+
+The Tcl 9.1 recipe excludes bundled SQLite and PostgreSQL drivers so that explicit
+`sqlite3`, `tdbcsqlite3` and `tdbcpostgres` recipes own those files and conditional
+resolution controls whether they are built. `tpersist` loads drivers lazily;
+consumers declare the drivers they need. The `web-user` recipe selects SQLite
+and its session adapter with `+local`, PostgreSQL and its adapter with `-local`.
