@@ -1,0 +1,48 @@
+{
+  "name": "tcaptcha",
+  "license": "MIT",
+  "description": "Session-bound PNG CAPTCHA challenges for Tcl applications.",
+  "languages": ["TCL"],
+  "tags": ["tcl", "web", "captcha", "images", "png", "authentication"],
+  "url": "https://github.com/jerily/tcaptcha",
+  "version": "1.0.0",
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.14,<10.0.0",
+    "tclgd": "^1.4.0",
+    "tink-tcl": "20240704.0.2",
+    "thashlib": "^0.1.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tcaptcha/archive/refs/tags/v1.0.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}

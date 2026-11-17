@@ -1,10 +1,10 @@
 # tcaptcha
 
 `tcaptcha` generates PNG CAPTCHA challenges for Tcl 8.6 and Tcl 9. It uses
-`tclgd` for images, Tink for keyed verification, and `twebserver` 1.47.57 or newer
+`tclgd` for images, Tink for keyed verification, and `thashlib` 0.1.0 or newer
 for cryptographic randomness. The package is MIT licensed.
 
-The recipe targets the public `jerily/tcaptcha` release `v0.1.0`.
+The latest recipe targets the public `jerily/tcaptcha` release `v1.0.0`.
 Its source URL is pinned to that Git tag.
 
 After installation, run the example through its `file` script reference:
