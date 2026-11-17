@@ -1,0 +1,57 @@
+{
+  "name": "pure-tcl-aws-sqs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Tcl client for AWS SQS, without the AWS C++ SDK.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/pure-tcl-aws-sqs",
+  "tags": [
+    "tcl",
+    "aws",
+    "sqs"
+  ],
+  "scripts": {
+    "example-list-queues": {
+      "file": "run-example.sh",
+      "args": [
+        "list-queues"
+      ]
+    },
+    "example-queue-url": {
+      "file": "run-example.sh",
+      "args": [
+        "queue-url"
+      ]
+    }
+  },
+  "dependencies": {
+    "pure-tcl-aws-core": "^1.0.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-aws-sqs/archive/refs/tags/v1.0.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
