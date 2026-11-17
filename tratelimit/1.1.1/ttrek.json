@@ -1,0 +1,50 @@
+{
+  "name": "tratelimit",
+  "license": "MIT",
+  "description": "Request rate limiting middleware for Tcl web applications.",
+  "languages": ["TCL"],
+  "tags": [
+    "tcl",
+    "http",
+    "web",
+    "middleware",
+    "rate-limiting"
+  ],
+  "url": "https://github.com/jerily/tratelimit",
+  "version": "1.1.1",
+  "scripts": {
+    "demo": {
+      "file": "demo.sh"
+    }
+  },
+  "dependencies": {
+    "valkey-tcl": ">=1.0.1",
+    "twebserver": ">=1.47.58",
+    "tpathexp": "^1.2.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tratelimit/archive/refs/tags/v1.1.1.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
