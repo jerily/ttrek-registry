@@ -1,0 +1,48 @@
+{
+  "name": "pure-tcl-oauth2-server",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "pure-tcl-oauth2-core": "^0.1.0"
+  },
+  "devDependencies": {},
+  "description": "OAuth2 and OpenID Connect authorization-server components for Tcl.",
+  "url": "https://github.com/jerily/pure-tcl-oauth2-server",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "oauth2",
+    "openid-connect",
+    "authentication"
+  ],
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-oauth2-server/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
