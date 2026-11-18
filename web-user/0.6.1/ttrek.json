@@ -1,7 +1,7 @@
 {
   "name": "web-user",
   "license": "MIT",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "iuse": [
     "local"
   ],
@@ -42,7 +42,7 @@
     "pure-tcl-oauth2-client": "^0.1.0"
   },
   "devDependencies": {},
-  "description": "Accounts, Google Login, recovery, MFA, and private mount configuration for Tcl sites.",
+  "description": "Accounts, Google and email-code sign-in, MFA, and private mount configuration for Tcl sites.",
   "languages": [
     "TCL"
   ],
@@ -62,7 +62,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/web-user/archive/refs/tags/v0.6.0.tar.gz"
+        "url": "https://github.com/jerily/web-user/archive/refs/tags/v0.6.1.tar.gz"
       },
       {
         "cmd": "unpack"
