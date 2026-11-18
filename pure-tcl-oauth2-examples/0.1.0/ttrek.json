@@ -1,0 +1,53 @@
+{
+  "name": "pure-tcl-oauth2-examples",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "pure-tcl-oauth2-client": "^0.1.0",
+    "pure-tcl-oauth2-server": "^0.1.0",
+    "twebserver": "^1.47.58",
+    "tpathexp": "^1.2.0",
+    "tpersist": "^0.1.5",
+    "web-user": "^0.6.0"
+  },
+  "devDependencies": {},
+  "description": "Runnable Tcl OAuth2 client/server and Google Login examples.",
+  "url": "https://github.com/jerily/pure-tcl-oauth2-examples",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "oauth2",
+    "openid-connect",
+    "authentication"
+  ],
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-oauth2-examples/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}

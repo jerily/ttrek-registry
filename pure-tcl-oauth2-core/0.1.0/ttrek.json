@@ -1,0 +1,50 @@
+{
+  "name": "pure-tcl-oauth2-core",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "tjson": "^1.0.28",
+    "thashlib": "^0.1.1",
+    "tink-tcl": "^20240704.0.3"
+  },
+  "devDependencies": {},
+  "description": "Shared OAuth2 and OpenID Connect primitives for Tcl using tjson and Tink.",
+  "url": "https://github.com/jerily/pure-tcl-oauth2-core",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "oauth2",
+    "openid-connect",
+    "authentication"
+  ],
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/pure-tcl-oauth2-core/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
