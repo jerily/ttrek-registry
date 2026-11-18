@@ -1,0 +1,55 @@
+{
+  "name": "web-forum",
+  "license": "MIT",
+  "version": "0.3.4",
+  "scripts": {},
+  "dependencies": {
+    "tpersist": "^0.1.4",
+    "tcl": ">=9.1.0,<10.0.0",
+    "web-user": "^0.7.2",
+    "ksuid-tcl": "^1.0.5",
+    "cmark-gfm-tcl": "^0.1.0",
+    "topenapi": "^0.2.0",
+    "tcaptcha": "^1.0.0"
+  },
+  "devDependencies": {},
+  "description": "Markdown discussions with moderation, CAPTCHA, public profiles, and pagination.",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "web",
+    "forum",
+    "markdown",
+    "community"
+  ],
+  "url": "https://github.com/jerily/web-forum",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/web-forum/archive/refs/tags/v0.3.4.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
