@@ -23,7 +23,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/tyaml/archive/refs/tags/v0.1.0.tar.gz"
+        "url": "https://github.com/jerily/tyaml/releases/download/v0.1.0/tyaml-0.1.0.tar.gz"
       },
       {
         "cmd": "unpack"
