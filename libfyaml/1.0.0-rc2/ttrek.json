@@ -1,0 +1,87 @@
+{
+  "name": "libfyaml",
+  "version": "1.0.0-rc2",
+  "license": "MIT",
+  "description": "YAML parser, emitter and generic value API for C.",
+  "languages": [
+    "C"
+  ],
+  "tags": [
+    "yaml",
+    "parsing",
+    "serialization"
+  ],
+  "url": "https://github.com/pantoniou/libfyaml",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/pantoniou/libfyaml/archive/refs/tags/v1.0.0-rc2.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_INSTALL_LIBDIR",
+            "value": "lib"
+          },
+          {
+            "name": "CMAKE_POSITION_INDEPENDENT_CODE",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_PORTABLE_TARGET",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_GENERIC",
+            "value": "ON"
+          },
+          {
+            "name": "ENABLE_REFLECTION",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_PYTHON_BINDINGS",
+            "value": "OFF"
+          },
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          },
+          {
+            "name": "ENABLE_NETWORK",
+            "value": "OFF"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "tyaml",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "YAML parsing, emission and document handles for Tcl, powered by libfyaml.",
+  "languages": [
+    "C",
+    "TCL"
+  ],
+  "tags": [
+    "yaml",
+    "parsing",
+    "serialization"
+  ],
+  "url": "https://github.com/jerily/tyaml",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=8.6.14",
+    "libfyaml": "1.0.0-rc2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tyaml/archive/refs/tags/v0.1.0.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "CMAKE_BUILD_TYPE",
+            "value": "Release"
+          },
+          {
+            "name": "CMAKE_PREFIX_PATH",
+            "value": "$INSTALL_DIR"
+          },
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "TCL_INCLUDE_PATH",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_make",
+        "config": "Release",
+        "parallel": true
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
