@@ -4,7 +4,7 @@
   "description": "PostgreSQL database driver for NaviServer.",
   "languages": ["C", "TCL"],
   "tags": ["tcl", "naviserver", "postgresql", "sql", "database"],
-  "url": "https://naviserver.sourceforge.io/",
+  "url": "https://github.com/naviserver-project/nsdbpg",
   "version": "5.1.2",
   "scripts": {},
   "dependencies": {
