@@ -25,7 +25,7 @@ GNU utilities, CommonMark, PDF, or office-format implementations. See upstream's
 From a project initialized with `ttrek init -y`:
 
 ```sh
-ttrek install -registry /path/to/ttrek-registry tclutils@0.69.0 -y
+ttrek install tclutils@0.69.0 -y
 ttrek run -package tclutils -script check-package
 ```
 

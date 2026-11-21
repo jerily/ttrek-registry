@@ -16,7 +16,7 @@ sudo apt install build-essential cmake pkg-config
 Install from a ttrek project:
 
 ```sh
-ttrek install -registry /path/to/ttrek-registry harfbuzz@15.0.0
+ttrek install harfbuzz@15.0.0
 ```
 
 The default build is shared. Use the project's `useFlags: ["+static"]` or

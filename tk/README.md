@@ -48,17 +48,13 @@ To rebuild an existing Tk 9.1 installation with smooth fonts, run
 For Tk 8.6, run `ttrek install tk@8.6.18 -y` instead and use `wish8.6` below.
 Use separate project directories to try both release lines.
 
-To use a development checkout, pass `-registry /path/to/ttrek-registry` to
-`ttrek init` or `ttrek install`. A project with a saved registry path continues
-to use that registry instead of the synced default.
-
 ## Run the examples
 
 From the project directory, run one command at a time and close its window
 before starting the next:
 
 ```sh
-REGISTRY="$HOME/.local/ttrek-registry" # Or your development checkout.
+REGISTRY="$HOME/.local/ttrek-registry"
 ttrek run wish9.1 "$REGISTRY/tk/tasks.tcl"
 ttrek run wish9.1 "$REGISTRY/tk/editor.tcl"
 ttrek run wish9.1 "$REGISTRY/tk/chart.tcl"

@@ -8,7 +8,7 @@ no system FreeType development package is needed.
 From a ttrek project:
 
 ```sh
-ttrek install -registry /path/to/ttrek-registry libfreetype@2.15.0
+ttrek install libfreetype@2.15.0
 ```
 
 The default build is shared; `useFlags: ["+static"]` or
