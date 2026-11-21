@@ -24,12 +24,11 @@ Create a project, then install OpenACS and its dependencies:
 mkdir openacs-project
 cd openacs-project
 ttrek init -y
-ttrek install -registry /path/to/ttrek-registry openacs@5.10.1
+ttrek install openacs@5.10.1
 ```
 
-In an existing project, run just the install command. Omit `-registry` to use
-your synced registry or the registry API. Use a CLI with `run -package` support
-and a registry containing the OpenACS recipe scripts.
+In an existing project, run just the install command. The instance scripts
+require a CLI with `run -package` support.
 
 Installation saves this recipe's named scripts with the installed package in
 `ttrek-venv/ttrek-manifest.json`. They run offline against this environment;
@@ -37,7 +36,7 @@ there is no need to copy scripts into the project spec. For an older installatio
 refresh the recipe and cache its scripts with:
 
 ```sh
-ttrek install -force -registry /path/to/ttrek-registry openacs@5.10.1
+ttrek install -force openacs@5.10.1
 ```
 
 The recipe installs a source template in `ttrek-venv/local/share/openacs-5.10.1`
@@ -110,7 +109,7 @@ For a build script that can run independently of `ttrek`, use `gen-script`
 instead of `ttrek install`:
 
 ```sh
-ttrek gen-script -registry /path/to/ttrek-registry openacs@5.10.1 > build.sh
+ttrek gen-script openacs@5.10.1 > build.sh
 bash build.sh
 ```
 

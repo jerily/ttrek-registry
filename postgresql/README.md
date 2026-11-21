@@ -6,7 +6,7 @@ contrib extensions (including `hstore`, `pgcrypto`, and `pg_trgm`). It enables
 OpenSSL and zlib and omits optional ICU and readline dependencies.
 
 ```sh
-ttrek gen-script -registry /path/to/ttrek-registry postgresql@16.15.0 > build.sh
+ttrek gen-script postgresql@16.15.0 > build.sh
 bash build.sh
 ```
 

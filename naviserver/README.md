@@ -10,7 +10,7 @@ In a new project directory:
 
 ```sh
 ttrek init -y
-ttrek install -registry /path/to/ttrek-registry naviserver@5.1.2
+ttrek install naviserver@5.1.2
 ttrek run -package naviserver -script start-example
 ```
 
@@ -40,7 +40,7 @@ and nsstats 1.15.
 For the released OpenACS 5.10.1 line, select Tcl 8.6 explicitly:
 
 ```sh
-ttrek gen-script -registry /path/to/ttrek-registry \
+ttrek gen-script \
   naviserver@5.1.1 nsdbpg@5.1.1 nssmtpd@5.1.1 nsstats@5.1.1 \
   'tcl@^8.6.15' > build.sh
 bash build.sh

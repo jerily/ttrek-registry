@@ -20,7 +20,7 @@ or forks at review time. See the shared [review and validation](../tclutils/vali
 
 ```sh
 ttrek init -y
-ttrek install -registry /path/to/ttrek-registry tkutils@0.49.0 -y
+ttrek install tkutils@0.49.0 -y
 ttrek run -package tkutils -script check-package
 ```
 
