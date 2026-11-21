@@ -1,14 +1,30 @@
 # NaviServer and OpenACS modules
 
-NaviServer 5.1.1 replaces the former 4.99.30 and 5.0.0-alpha recipes. It uses
-the upstream release tarball, including its generated configure script and
-documentation. The server includes `nsdb`, `nsssl`, `nslog`, and `revproxy`;
-these do not need separate recipes.
+The registry provides NaviServer 4.99.35, 5.0.7, 5.1.1, and 5.1.2 using the
+[upstream releases](https://github.com/naviserver-project/naviserver/releases).
+The 4.99.35 recipe selects Tcl 8.6. The 5.x recipes support Tcl 8.6 and Tcl 9.
 
-The external modules `nsdbpg`, `nssmtpd`, and `nsstats` use the matching
-NaviServer 5.1.1 modules archive. Their registry version identifies that archive,
-not the individual module's internal version. They depend on NaviServer 5.1.1
-so they build against the same installed headers and module makefiles.
+## Run the example
+
+In a new project directory:
+
+```sh
+ttrek init -y
+ttrek install -registry /path/to/ttrek-registry naviserver@5.1.2
+ttrek run -package naviserver -script start-example
+```
+
+Open <http://127.0.0.1:8000/> to see `Hello from NaviServer!`. Press Ctrl-C to
+stop the foreground server. The script writes its configuration and example page
+under `naviserver-example/` in the project. The same command works after
+installing `naviserver@4.99.35` or `naviserver@5.0.7`.
+
+## External modules
+
+The 5.1.1 and 5.1.2 module recipes each use the matching upstream modules
+archive and depend on that exact NaviServer version. All three modules changed
+in the 5.1.2 archive. The bundled versions are nsdbpg 2.10, nssmtpd 2.8,
+and nsstats 1.15.
 
 - `nsdbpg` supplies the PostgreSQL driver required by OpenACS with PostgreSQL.
   It depends on `libpq` 16.15.0 (upstream PostgreSQL 16.15), which installs the

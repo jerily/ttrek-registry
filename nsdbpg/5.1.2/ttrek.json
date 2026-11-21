@@ -1,0 +1,42 @@
+{
+  "name": "nsdbpg",
+  "license": "MPL-2.0",
+  "description": "PostgreSQL database driver for NaviServer.",
+  "languages": ["C", "TCL"],
+  "tags": ["tcl", "naviserver", "postgresql", "sql", "database"],
+  "url": "https://naviserver.sourceforge.io/",
+  "version": "5.1.2",
+  "scripts": {},
+  "dependencies": {
+    "naviserver": "=5.1.2",
+    "libpq": "^16.15.0"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/naviserver/naviserver/5.1.2/naviserver-5.1.2-modules.tar.gz"
+      },
+      { "cmd": "unpack" },
+      { "cmd": "cd", "dirname": "$SOURCE_DIR/nsdbpg" },
+      {
+        "cmd": "make",
+        "parallel": true,
+        "options": [
+          { "name": "NAVISERVER", "value": "$INSTALL_DIR" },
+          { "name": "PGINCLUDE", "value": "$INSTALL_DIR/include" },
+          { "name": "PGLIB", "value": "$INSTALL_DIR/lib" }
+        ]
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          { "name": "NAVISERVER", "value": "$INSTALL_DIR" },
+          { "name": "PGINCLUDE", "value": "$INSTALL_DIR/include" },
+          { "name": "PGLIB", "value": "$INSTALL_DIR/lib" }
+        ]
+      }
+    ]
+  }
+}

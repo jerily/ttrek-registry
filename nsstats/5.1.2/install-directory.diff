@@ -1,0 +1,6 @@
+--- a/nsstats/Makefile
++++ b/nsstats/Makefile
+@@ -9 +9,2 @@
+-install:
++install:
++	$(MKDIR) "$(INSTSRVPAG)"
