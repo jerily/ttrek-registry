@@ -1,0 +1,32 @@
+{
+  "name": "nsstats",
+  "license": "MPL-2.0",
+  "description": "Server statistics and monitoring module for NaviServer.",
+  "languages": ["TCL"],
+  "tags": ["tcl", "naviserver", "monitoring", "statistics"],
+  "url": "https://naviserver.sourceforge.io/",
+  "version": "5.1.2",
+  "scripts": {},
+  "dependencies": {
+    "naviserver": "=5.1.2"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://downloads.sourceforge.net/project/naviserver/naviserver/5.1.2/naviserver-5.1.2-modules.tar.gz"
+      },
+      { "cmd": "unpack" },
+      { "cmd": "patch", "filename": "install-directory.diff", "p_num": "1" },
+      { "cmd": "cd", "dirname": "$SOURCE_DIR/nsstats" },
+      {
+        "cmd": "make_install",
+        "options": [
+          { "name": "NAVISERVER", "value": "$INSTALL_DIR" },
+          { "name": "INSTSRVPAG", "value": "$INSTALL_DIR/share/nsstats" }
+        ]
+      }
+    ]
+  }
+}
