@@ -1,0 +1,67 @@
+{
+  "name": "tjson",
+  "license": "MIT",
+  "description": "JSON parsing, JSON Lines streaming, generation, and JSONPath queries for Tcl.",
+  "languages": [
+    "C",
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "json",
+    "jsonpath",
+    "jsonl",
+    "parsing",
+    "serialization"
+  ],
+  "url": "https://github.com/jerily/tjson",
+  "version": "1.0.30",
+  "scripts": {
+    "demo-jsonl": {
+      "file": "demo-jsonl.sh"
+    }
+  },
+  "dependencies": {
+    "tcl": ">=8.6.14"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tjson/archive/refs/tags/v1.0.30.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "TCL_LIBRARY_DIR",
+            "value": "$INSTALL_DIR/lib"
+          },
+          {
+            "name": "TCL_INCLUDE_PATH",
+            "value": "$INSTALL_DIR/include"
+          },
+          {
+            "name": "BUILD_SHARED_LIBS",
+            "value": "OFF",
+            "if": "+static"
+          }
+        ]
+      },
+      {
+        "cmd": "make",
+        "parallel": true
+      },
+      {
+        "cmd": "make_install"
+      }
+    ]
+  }
+}
