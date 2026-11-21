@@ -4,7 +4,7 @@
   "description": "Server statistics and monitoring module for NaviServer.",
   "languages": ["TCL"],
   "tags": ["tcl", "naviserver", "monitoring", "statistics"],
-  "url": "https://naviserver.sourceforge.io/",
+  "url": "https://github.com/naviserver-project/nsstats",
   "version": "5.1.2",
   "scripts": {},
   "dependencies": {

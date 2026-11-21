@@ -4,7 +4,7 @@
   "description": "Multithreaded web application server with embedded Tcl.",
   "languages": ["C", "TCL"],
   "tags": ["tcl", "web", "http", "server", "concurrency"],
-  "url": "https://naviserver.sourceforge.io/",
+  "url": "https://github.com/naviserver-project/naviserver",
   "version": "5.0.7",
   "scripts": {
     "start-example": { "file": "start-example.sh" }
