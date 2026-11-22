@@ -1,0 +1,38 @@
+{
+  "name": "tpersist-examples",
+  "license": "MIT",
+  "description": "Runnable SQLite and query-building examples for tpersist.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/tpersist-examples",
+  "version": "0.1.8",
+  "dependencies": {
+    "tpersist": "^0.1.8",
+    "tpersist-sqlite": "^0.1.8"
+  },
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tpersist-examples/archive/refs/tags/v0.1.8.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}
