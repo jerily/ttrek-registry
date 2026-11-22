@@ -1,0 +1,35 @@
+{
+  "name": "mysql",
+  "license": "GPL-2.0-only",
+  "description": "MySQL Community Server and command-line clients.",
+  "languages": ["C", "C++"],
+  "tags": ["mysql", "sql", "database", "server"],
+  "url": "https://www.mysql.com/",
+  "version": "8.4.13",
+  "scripts": {},
+  "dependencies": {
+    "openssl": "^3.5.9"
+  },
+  "devDependencies": {},
+  "build": {
+    "default": [
+      {"cmd": "download", "url": "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.13.tar.gz"},
+      {"cmd": "unpack"},
+      {"cmd": "cd"},
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {"name": "CMAKE_INSTALL_PREFIX", "value": "$INSTALL_DIR/mysql"},
+          {"name": "INSTALL_LAYOUT", "value": "STANDALONE"},
+          {"name": "CMAKE_BUILD_TYPE", "value": "Release"},
+          {"name": "WITH_SSL", "value": "$INSTALL_DIR"},
+          {"name": "CMAKE_INSTALL_RPATH_USE_LINK_PATH", "value": "ON"},
+          {"name": "WITH_UNIT_TESTS", "value": "OFF"},
+          {"name": "WITH_ROUTER", "value": "OFF"}
+        ]
+      },
+      {"cmd": "cmake_make", "parallel": true},
+      {"cmd": "cmake_install"}
+    ]
+  }
+}
