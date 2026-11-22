@@ -1,0 +1,37 @@
+{
+  "name": "tpersist-mysql",
+  "license": "MIT",
+  "description": "MySQL connection adapter for tpersist.",
+  "languages": [
+    "TCL"
+  ],
+  "url": "https://github.com/jerily/tpersist-mysql",
+  "version": "0.1.8",
+  "dependencies": {
+    "tdbcmysql": ">=1.1.8"
+  },
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/tpersist-mysql/archive/refs/tags/v0.1.8.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd",
+        "dirname": "$SOURCE_DIR"
+      },
+      {
+        "cmd": "make_install",
+        "options": [
+          {
+            "name": "PREFIX",
+            "value": "$INSTALL_DIR"
+          }
+        ]
+      }
+    ]
+  }
+}

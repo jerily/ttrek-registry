@@ -1,0 +1,71 @@
+{
+  "name": "web-user",
+  "license": "MIT",
+  "version": "0.7.4",
+  "scripts": {},
+  "dependencies": {
+    "tcl": ">=9.1.0,<10.0.0",
+    "tpersist": "^0.1.8",
+    "tpathexp": "^1.1.0",
+    "jinja2-tcl": "^0.2.0",
+    "tjson": "^1.0.28",
+    "tink-tcl": "20240704.0.3",
+    "tmfa": "1.1.2",
+    "tqrcodegen": "^1.1.1",
+    "ksuid-tcl": "^1.0.5",
+    "bcrypt-tcl": "2.0.1",
+    "twebserver": "^1.47.56",
+    "tsession": "^2.0.1",
+    "topenapi": "^0.2.0",
+    "tsession-sqlite": "^1.0.2",
+    "tsession-postgres": "^1.0.2",
+    "pure-tcl-aws-ses": "^1.0.0",
+    "pure-tcl-aws-sqs": "^1.0.0",
+    "tcaptcha": "^1.0.0",
+    "pure-tcl-oauth2-client": "^0.1.0"
+  },
+  "devDependencies": {},
+  "description": "Accounts, Google sign-in, email-code signup and sign-in, MFA, and private mount configuration for Tcl sites.",
+  "languages": [
+    "TCL"
+  ],
+  "tags": [
+    "tcl",
+    "web",
+    "authentication",
+    "accounts",
+    "mfa",
+    "authorization",
+    "oauth2",
+    "openid-connect",
+    "google-login"
+  ],
+  "url": "https://github.com/jerily/web-user",
+  "build": {
+    "default": [
+      {
+        "cmd": "download",
+        "url": "https://github.com/jerily/web-user/archive/refs/tags/v0.7.4.tar.gz"
+      },
+      {
+        "cmd": "unpack"
+      },
+      {
+        "cmd": "cd"
+      },
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {
+            "name": "BUILD_TESTING",
+            "value": "OFF"
+          }
+        ]
+      },
+      {
+        "cmd": "cmake_install",
+        "config": "Release"
+      }
+    ]
+  }
+}
