@@ -2,7 +2,7 @@
 
 `mysql@8.4.13` builds the MySQL 8.4 LTS server and clients from source. Build
 from a ttrek project with a C++20 compiler, CMake, and the platform's MySQL
-build prerequisites. On Linux, install Bison, patchelf, pkg-config, and the
+build prerequisites. On Linux, install Bison, pkg-config, and the
 ncurses, libtirpc, and libaio development packages. [Upstream build prerequisites](https://dev.mysql.com/doc/refman/8.4/en/source-installation-prerequisites.html)
 
 ```sh

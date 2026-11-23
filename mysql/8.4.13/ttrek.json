@@ -10,6 +10,15 @@
   "dependencies": {
     "openssl": "^3.5.9"
   },
+  "externalDependencies": {
+    "ncurses": {
+      "platforms": ["linux"],
+      "check": {
+        "files": ["/usr/include/curses.h"]
+      },
+      "installHint": "sudo apt install libncurses-dev"
+    }
+  },
   "devDependencies": {},
   "build": {
     "default": [
@@ -22,7 +31,11 @@
           {"name": "CMAKE_INSTALL_PREFIX", "value": "$INSTALL_DIR/mysql"},
           {"name": "INSTALL_LAYOUT", "value": "STANDALONE"},
           {"name": "CMAKE_BUILD_TYPE", "value": "Release"},
-          {"name": "WITH_SSL", "value": "$INSTALL_DIR"},
+          {"name": "WITH_SSL", "value": "system"},
+          {"name": "OPENSSL_ROOT_DIR", "value": "$INSTALL_DIR"},
+          {"name": "WITH_EDITLINE", "value": "bundled"},
+          {"name": "WITH_AUTHENTICATION_LDAP", "value": "OFF"},
+          {"name": "WITHOUT_AUTHENTICATION_LDAP_SASL_CLIENT", "value": "ON"},
           {"name": "CMAKE_INSTALL_RPATH_USE_LINK_PATH", "value": "ON"},
           {"name": "WITH_UNIT_TESTS", "value": "OFF"},
           {"name": "WITH_ROUTER", "value": "OFF"}
