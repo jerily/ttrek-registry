@@ -8,7 +8,8 @@
   "url": "https://github.com/jerily/tpersist-mysql",
   "version": "0.1.8",
   "dependencies": {
-    "tdbcmysql": ">=1.1.8"
+    "tdbcmysql": ">=1.1.8",
+    "libmysqlclient": "^8.4.13"
   },
   "build": {
     "default": [

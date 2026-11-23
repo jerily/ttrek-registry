@@ -1,0 +1,41 @@
+{
+  "name": "libmysqlclient",
+  "license": "GPL-2.0-only",
+  "description": "Oracle MySQL C API client library and headers.",
+  "languages": ["C", "C++"],
+  "tags": ["mysql", "sql", "database", "client"],
+  "url": "https://dev.mysql.com/doc/c-api/8.4/en/",
+  "version": "8.4.13",
+  "dependencies": {
+    "openssl": "^3.5.9"
+  },
+  "build": {
+    "default": [
+      {"cmd": "download", "url": "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.13.tar.gz"},
+      {"cmd": "unpack"},
+      {"cmd": "patch", "filename": "skip-cli-editline.diff", "p_num": "1"},
+      {"cmd": "cd"},
+      {
+        "cmd": "cmake_config",
+        "options": [
+          {"name": "CMAKE_BUILD_TYPE", "value": "Release"},
+          {"name": "INSTALL_LAYOUT", "value": "STANDALONE"},
+          {"name": "INSTALL_LIBDIR", "value": "lib"},
+          {"name": "INSTALL_INCLUDEDIR", "value": "include/mysql"},
+          {"name": "WITHOUT_SERVER", "value": "ON"},
+          {"name": "WITH_SSL", "value": "system"},
+          {"name": "OPENSSL_ROOT_DIR", "value": "$INSTALL_DIR"},
+          {"name": "WITH_TIRPC", "value": "bundled"},
+          {"name": "WITH_AUTHENTICATION_LDAP", "value": "OFF"},
+          {"name": "WITH_UNIT_TESTS", "value": "OFF"},
+          {"name": "WITH_ROUTER", "value": "OFF"}
+        ]
+      },
+      {"cmd": "cd", "dirname": "$BUILD_DIR/libmysql"},
+      {"cmd": "make", "parallel": true},
+      {"cmd": "make_install", "target": "install/local"},
+      {"cmd": "cd", "dirname": "$BUILD_DIR/include"},
+      {"cmd": "make_install", "target": "install/local"}
+    ]
+  }
+}
